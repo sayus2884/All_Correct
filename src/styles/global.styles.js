@@ -29,6 +29,8 @@ const GlobalStyles = createGlobalStyle`
     -o-transition: all 350ms ease-in-out;
     -webkit-transition: all 350ms ease-in-out;
     transition: all 350ms ease-in-out;
+    background-color: #191919;
+    min-height: 100vh;
   }
 `;
 

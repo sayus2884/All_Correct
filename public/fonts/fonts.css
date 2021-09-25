@@ -30,3 +30,11 @@
   font-display: swap;
   src: url("./inter-700.woff2") format("woff2"), url("./inter-700.woff") format("woff");
 }
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("./inter-900.woff2") format("woff2"), url("./inter-900.woff") format("woff");
+}

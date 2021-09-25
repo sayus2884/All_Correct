@@ -10,7 +10,7 @@ function theme() {
     colors: {
       white: "#FFFFFF",
       black: "#000000;",
-      primary: "#f00"
+      primary: "#191919",
     },
   };
 }

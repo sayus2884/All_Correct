@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link rel="preload" as="font" href="/fonts/inter-700.woff2" crossOrigin="anonymous" />
+          <link rel="preload" as="font" href="/fonts/inter-900.woff2" crossOrigin="anonymous" />
           <link
             rel="stylesheet"
             as="style"
