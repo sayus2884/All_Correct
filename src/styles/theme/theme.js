@@ -12,6 +12,9 @@ function theme() {
       black: "#000000;",
       primary: "#191919",
     },
+    padding: {
+      lg: "0 min(2.8vw, 40px)",
+    }
   };
 }
 
