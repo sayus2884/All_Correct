@@ -13,13 +13,6 @@ export const CompanyWrapper = styled.div`
   margin-bottom: 80px;
 `;
 
-export const Title = styled.div`
-  padding-right: 150px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-`;
-
 export const Logo = styled.div`
   display: grid;
   cursor: pointer;
@@ -104,6 +97,11 @@ export const Copyright = styled.div`
   /* identical to box height, or 125% */
   letter-spacing: -0.01em;
   color: ${({ theme }) => theme.colors.white};
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.white};
+  }
 
   p {
     padding-right: 70px;

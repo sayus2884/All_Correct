@@ -74,7 +74,15 @@ const Footer = () => {
       </AddressWrapper>
 
       <Copyright>
-        <p>© Allcorrect Group 2006—2021, «Legal information»</p>
+        <p>
+          © Allcorrect Group 2006—2021,
+          <Link
+            href="https://allcorrectgames.com/legal-information/"
+            target="_blank"
+            rel="noopener">
+            <a>«Legal information»</a>
+          </Link>
+        </p>
         <p>site@allcorrectgames.com</p>
       </Copyright>
       <SocialWrapper>
