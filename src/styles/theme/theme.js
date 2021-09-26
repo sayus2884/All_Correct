@@ -5,12 +5,16 @@ function theme() {
   return {
     fonts: {
       inter: "Inter, sans-serif",
+      condensed: "Roboto Condensed, sans-serif",
     },
     colors: {
       white: "#FFFFFF",
-      black: "#191919;",
+      black: "#000000;",
       blue: "#4A8EFF",
-      background: " #1A1A1A",
+      dark: "#191919",
+    },
+    padding: {
+      lg: "0 min(2.8vw, 40px)",
     },
   };
 }

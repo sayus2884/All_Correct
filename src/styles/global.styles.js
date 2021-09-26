@@ -7,6 +7,10 @@ const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
   }
 
   html {
@@ -17,7 +21,6 @@ const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     text-size-adjust: 100%;
-    font-size: 62.5%;
     overflow-x: hidden;
   }
 
@@ -29,9 +32,6 @@ const GlobalStyles = createGlobalStyle`
     -o-transition: all 350ms ease-in-out;
     -webkit-transition: all 350ms ease-in-out;
     transition: all 350ms ease-in-out;
-    background-color: ${({ theme }) => theme.colors.background};
-    max-width: 1440px;
-    width: 100%;
   }
 `;
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FooterWrapper = styled.div`
   padding: 60px 40px;
   position: relative;
+  font-family: ${(props) => props.theme.fonts.inter};
 `;
 
 export const CompanyWrapper = styled.div`
@@ -91,7 +92,6 @@ export const Copyright = styled.div`
   /* identical to box height, or 125% */
   letter-spacing: -0.01em;
   color: ${({ theme }) => theme.colors.white};
-  max-width: 660px;
 
   p {
     padding-right: 70px;

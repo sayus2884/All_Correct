@@ -1,11 +1,11 @@
-// import Example from "../components/Example/Example.js";
-import Footer from "../components/Footer";
+import Nav from "../components/Nav/Nav.js";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
     <>
+      <Nav />
       <Footer />
-      {/* <Example>My page</Example> */}
     </>
   );
 }
