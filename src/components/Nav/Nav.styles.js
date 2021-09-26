@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: relative;
+  height: 166px;
   padding: ${(props) => props.theme.padding.lg};
   padding-top: 40px;
   width: 100%;
@@ -12,7 +13,6 @@ export const Container = styled.div`
 export const Logo = styled.div`
   display: grid;
   cursor: pointer;
-  max-height: 126px;
 `;
 
 export const Menu = styled.div`
