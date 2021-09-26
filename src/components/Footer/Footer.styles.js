@@ -1,68 +1,21 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.div`
-  padding: 60px 40px;
-  position: relative;
+  padding: ${(props) => props.theme.padding.lg};
+  padding-top: 20px;
+  padding-bottom: 60px;
   font-family: ${(props) => props.theme.fonts.inter};
+  display: grid;
+  gap: 80px;
 `;
 
-export const CompanyWrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 80px;
-`;
 
-export const Logo = styled.div`
-  display: grid;
-  cursor: pointer;
-`;
-
-export const Text = styled.p`
-  font-style: normal;
-  font-weight: 900;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
-  color: ${(props) => props.theme.colors[props.color] || props.theme.colors.white};
-
-  &.normal {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-  }
-`;
-
-export const NavigationItem = styled.li`
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  /* identical to box height, or 125% */
-  letter-spacing: -0.01em;
-
-  a {
-    text-decoration: none;
-    color: ${(props) => props.theme.colors[props.color] || props.theme.colors.white};
-  }
-`;
-
-export const Menu = styled.div`
-  display: grid;
-  column-gap: 20px;
-  row-gap: 32px;
-  grid-template-columns: repeat(7, auto);
-  grid-auto-rows: min-content;
-  align-content: center;
-
-  & > * {
-    height: min-content;
-    cursor: pointer;
-  }
-
-  & .block {
-    grid-column: 1/-1;
-    width: max-content;
-    justify-self: end;
+  &.grid {
+    display: grid;
+    gap: 80px;
   }
 `;
 
@@ -75,7 +28,6 @@ export const AddressWrapper = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   max-width: 286px;
-  padding-bottom: 80px;
 
   p {
     margin: 0;
@@ -94,7 +46,6 @@ export const Copyright = styled.div`
   justify-content: flex-start;
   font-size: 16px;
   line-height: 20px;
-  /* identical to box height, or 125% */
   letter-spacing: -0.01em;
   color: ${({ theme }) => theme.colors.white};
 
@@ -118,9 +69,8 @@ export const SocialWrapper = styled.ul`
   justify-content: space-around;
   align-items: baseline;
   list-style-type: none;
-  position: absolute;
-  right: 50px;
-  bottom: 60px;
+  gap: 22px;
+  align-self: end;
 `;
 
 export const SocialItem = styled.li`
@@ -130,7 +80,6 @@ export const SocialItem = styled.li`
   letter-spacing: -0.01em;
   display: flex;
   justify-content: flex-end;
-  margin: 0 0 22px;
   max-width: 107px;
   padding: 0;
 

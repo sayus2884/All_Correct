@@ -1,8 +1,8 @@
 import { Container, Logo, Menu, Text } from "./Nav.styles";
 
-function Nav() {
+function Nav({ lang, inherit }) {
   return (
-    <Container>
+    <Container inherit={inherit}>
       <Logo>
         <Text color="blue">Allcorrect</Text>
         <Text>Game outsourcing studio</Text>
@@ -29,7 +29,7 @@ function Nav() {
         <Text className="normal" color="blue">
           Get in touch
         </Text>
-        <Text className="normal block">Ru</Text>
+        {lang && <Text className="normal block">Ru</Text>}
       </Menu>
     </Container>
   );
