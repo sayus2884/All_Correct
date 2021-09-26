@@ -1,5 +1,5 @@
-import Example from "../components/Example/Example.js";
+import Nav from "../components/Nav/Nav.js";
 
 export default function Home() {
-  return <Example>My page</Example>;
+  return <Nav />;
 }
