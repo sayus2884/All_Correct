@@ -10,41 +10,33 @@ export const CompanyWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 `;
 
 export const Title = styled.div`
-  font-weight: 900;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
   padding-right: 150px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
-  span {
-    /*  Color the span with theme.blue color */
-    color: ${({ theme }) => theme.colors.blue};
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
-    color: ${({ theme }) => theme.colors.white};
-    width: 647px;
-  }
 `;
 
-export const NavigationWrapper = styled.ul`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  list-style-type: none;
-  .color & {
-    color: ${({ theme }) => theme.colors.primary};
+export const Logo = styled.div`
+  display: grid;
+  cursor: pointer;
+`;
+
+export const Text = styled.p`
+  font-style: normal;
+  font-weight: 900;
+  font-size: 52px;
+  line-height: 63px;
+  letter-spacing: -0.01em;
+  color: ${(props) => props.theme.colors[props.color] || props.theme.colors.white};
+
+  &.normal {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
   }
 `;
 
@@ -58,6 +50,26 @@ export const NavigationItem = styled.li`
   a {
     text-decoration: none;
     color: ${(props) => props.theme.colors[props.color] || props.theme.colors.white};
+  }
+`;
+
+export const Menu = styled.div`
+  display: grid;
+  column-gap: 20px;
+  row-gap: 32px;
+  grid-template-columns: repeat(7, auto);
+  grid-auto-rows: min-content;
+  align-content: center;
+
+  & > * {
+    height: min-content;
+    cursor: pointer;
+  }
+
+  & .block {
+    grid-column: 1/-1;
+    width: max-content;
+    justify-self: end;
   }
 `;
 
@@ -118,7 +130,6 @@ export const SocialItem = styled.li`
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.01em;
-  color: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: flex-end;
   margin: 0 0 22px;

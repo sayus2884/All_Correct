@@ -9,22 +9,24 @@ import {
   CompanyWrapper,
   Copyright,
   FooterWrapper,
+  GridWrapper,
+  Logo,
   NavigationItem,
-  NavigationWrapper,
   SocialItem,
   SocialWrapper,
-  Title,
+  Text,
 } from "./Footer.styled";
+import { Menu } from "../Nav/Nav.styles";
 
 const Footer = () => {
   return (
     <FooterWrapper>
       <CompanyWrapper>
-        <Title>
-          <span>Allcorrect</span>
-          <p>Game outsourcing studio</p>
-        </Title>
-        <NavigationWrapper>
+        <Logo>
+          <Text color="blue">Allcorrect</Text>
+          <Text>Game outsourcing studio</Text>
+        </Logo>
+        <Menu>
           <NavigationItem>
             <Link href="/">
               <a>Portfolio</a>
@@ -32,7 +34,7 @@ const Footer = () => {
           </NavigationItem>
           <NavigationItem>
             <Link href="/about">
-              <a>About Us</a>
+              <a>About us</a>
             </Link>
           </NavigationItem>
           <NavigationItem>
@@ -60,7 +62,7 @@ const Footer = () => {
               <a>Get in touch</a>
             </Link>
           </NavigationItem>
-        </NavigationWrapper>
+        </Menu>
       </CompanyWrapper>
       <AddressWrapper>
         <p>
@@ -70,6 +72,7 @@ const Footer = () => {
           <span>CANADA:</span> 119 Spadina Ave, Toronto, ON M6E3J3
         </p>
       </AddressWrapper>
+
       <Copyright>
         <p>© Allcorrect Group 2006—2021, «Legal information»</p>
         <p>site@allcorrectgames.com</p>
