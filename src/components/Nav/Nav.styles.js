@@ -21,7 +21,7 @@ export const Menu = styled.div`
   row-gap: 32px;
   grid-template-columns: repeat(7, auto);
   grid-auto-rows: min-content;
-  align-content: center;
+  margin-top: 30px;
 
   & > * {
     height: min-content;
