@@ -28,21 +28,8 @@ export const CompanyList = styled.ul`
   flex-wrap: wrap;
 `;
 
-export const Company = styled.li`
-  background: red;
-  height: 149px;
-  width: 149px;
-  margin: 0 0 102px 90px;
-
-
-  &:nth-child(5n + 1) {
-    background: blue;
-    margin-left: 110px;
-  }
-
-  &:first-child {
-    min-width: 280px;
-    margin-right: 84px;
-    margin: 0 84px 0 0;
-  }
+export const CompanyItem = styled.li`
+  max-width: 280px;
+  margin-right: 84px;
+  margin: 0 84px 0 0;
 `;
