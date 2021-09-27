@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.ul`
   width:100%;
   position: relative;
-  padding: ${(props) => props.theme.padding.lg};
   display: flex;
   flex-direction: column;
   color: ${(props) => props.theme.colors.white};
@@ -29,6 +28,7 @@ export const Title = styled.h2`
   font-weight: bold;
   font-size: 32px;
   line-height: 30px;
+  letter-spacing: -0.01em;
 `
 
 export const DropdownButton = styled.button`
@@ -38,6 +38,7 @@ export const DropdownButton = styled.button`
   font-weight: bold;
   font-size: 32px;
   line-height: 30px;
+  letter-spacing: -0.01em;
 
   &:hover {
     cursor: pointer;

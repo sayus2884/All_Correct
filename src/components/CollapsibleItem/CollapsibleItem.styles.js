@@ -6,13 +6,19 @@ export const Container = styled.li`
   flex-direction: column;
 
   border-bottom: 1px solid  ${(props) => props.theme.colors.white};
+  padding-top: 70px;
+
+  &:first-child {
+    padding-top: 0;
+  }
 `;
 
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 70px 0 30px;
+  padding-bottom: 30px;
+  align-items: center;
 `
 
 export const Title = styled.h2`
