@@ -1,4 +1,4 @@
-import { Container, Item, HeaderContainer, Title, DropdownButton, Content } from "./Collapsible.styles";
+import { Container } from "./Collapsible.styles";
 
 function Collapsible({ children }) {
 
