@@ -9,13 +9,13 @@ function theme() {
     },
     colors: {
       white: "#FFFFFF",
-      black: "#000000;",
+      black: "#000000",
       blue: "#4A8EFF",
       dark: "#191919",
     },
     padding: {
       lg: "0 min(2.8vw, 40px)",
-    }
+    },
   };
 }
 
