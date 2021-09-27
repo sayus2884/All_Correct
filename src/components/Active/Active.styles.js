@@ -5,6 +5,7 @@ export const ActiveWrapper = styled.section`
   justify-content: space-between;
   margin: 250px 40px;
   align-items: center;
+  letter-spacing: -0.01em;
 `;
 
 export const BoxWrapper = styled.ul`
