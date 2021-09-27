@@ -17,7 +17,9 @@ export const Item = styled.div`
 
 export const Image = styled.img`
   height: 507px;
+  min-width: 901px;
   max-width: 901px;
+  object-fit: cover;
 `;
 
 export const Info = styled.div`

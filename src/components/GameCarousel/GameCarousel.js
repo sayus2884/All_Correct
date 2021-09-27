@@ -5,11 +5,11 @@ import { Carousel } from 'react-responsive-carousel';
 function GameCarousel({ children }) {
 
   const fakeData = [
-    { game: 'Apex Legends', company: "Electronic Arts"},
-    { game: 'Star Wars: Jedi Fallen Order', company: "Electronic Arts"},
-    { game: `Lily's Garden`, company: "Electronic Arts"},
-    { game: 'Klepto Cats', company: "Tactile Games"},
-    { game: 'Anthem', company: "Electronic Arts"},
+    { game: 'Apex Legends', company: "Electronic Arts", url: '/apex.png'},
+    { game: 'Star Wars Jedi: Fallen Order', company: "Electronic Arts", url: '/jfo.jpg'},
+    { game: `Lily's Garden`, company: "Electronic Arts", url: '/lilys.jpg'},
+    { game: 'Klepto Cats', company: "Tactile Games", url: '/kleptocats_2.jpg'},
+    { game: 'Anthem', company: "Electronic Arts", url: '/anthem.jpg'},
   ]
 
   const handleTitleClick = (event) => {
@@ -22,12 +22,11 @@ function GameCarousel({ children }) {
       <Carousel
         thumbWidth={300}
         showStatus={false}
-        autoPlay={true}
         showArrows={false}>
 
         {fakeData.map((item, key) => (
           <Item key={key}>
-              <Image src="/apex.png"/>
+              <Image src={item.url}/>
 
               <Info className="info">
 
