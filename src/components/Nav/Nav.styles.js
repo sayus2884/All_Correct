@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   height: 166px;
-  padding: ${(props) => props.theme.padding.lg};
+  padding: ${(props) => (props.inherit ? "" : props.theme.padding.lg)};
   padding-top: 40px;
   width: 100%;
   display: flex;

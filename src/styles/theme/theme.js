@@ -15,7 +15,7 @@ function theme() {
     },
     padding: {
       lg: "0 min(2.8vw, 40px)",
-    }
+    },
   };
 }
 
