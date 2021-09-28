@@ -7,10 +7,6 @@ export default function Home() {
 
   return(
     <>
-      <Nav />
-      <Services/>
-  return (
-    <>
       <Nav lang={true} />
       <Services />
       <Footer />
