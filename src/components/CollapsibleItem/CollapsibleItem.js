@@ -8,7 +8,6 @@ function CollapsibleItem({ title, children }) {
   const handleClick = (event) => {
     event.preventDefault();
     setIsOpen(!isOpen);
-    console.log('handling click');
   }
 
   return (
