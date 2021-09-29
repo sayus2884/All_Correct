@@ -1,5 +1,5 @@
 import { Container, Text, ReviewsContainer, Review, Body, Logo, Img } from "./Reviews.styles";
-import Image from "Next/image";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 function Reviews() {
