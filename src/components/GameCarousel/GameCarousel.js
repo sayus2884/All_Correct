@@ -20,9 +20,10 @@ function GameCarousel({ children }) {
   return (
     <Container>
       <Carousel
-        thumbWidth={300}
         showStatus={false}
-        showArrows={false}>
+        showArrows={false}
+        showThumbs={false}
+        autoPlay={true}>
 
         {fakeData.map((item, key) => (
           <Item key={key}>
