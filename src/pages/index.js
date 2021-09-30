@@ -1,18 +1,15 @@
 import Nav from "../components/Nav/Nav.js";
-import Reviews from "../components/Reviews/Reviews.js";
-import Footer from "../components/Footer/Footer";
-
 import Services from "../components/Services/Services.js";
+import Reviews from "../components/Reviews/Reviews.js";
+import Footer from "../components/Footer/Footer.js";
 
 export default function Home() {
-
-  return(
+  return (
     <>
       <Nav lang={true} />
-   <Services />
+      <Services />
       <Reviews />
       <Footer />
-
     </>
   );
 }
