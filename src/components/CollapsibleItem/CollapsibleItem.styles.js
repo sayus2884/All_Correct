@@ -42,7 +42,7 @@ export const Content = styled.div`
   visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
   height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   padding: ${({ isOpen }) => (isOpen ? "30px 0 60px" : "0")};
-  transition: padding-top 0.2s ease-out, padding-bottom 0.1s;
+  transition: padding 0.2s ease-out;
   line-height: 19px;
   font-size: 16px;
 `;
