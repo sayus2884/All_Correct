@@ -5,10 +5,10 @@ import CollapsibleItem from "../CollapsibleItem/CollapsibleItem.js";
 
 function Services() {
   const fakedata = [
-    { title: "Lean game localization" },
-    { title: "Lcoalization and functional game testing" },
+    { title: "Learn game localization" },
+    { title: "Localization and functional game testing" },
     { title: "Voiceovers" },
-    { title: "Gameart" },
+    { title: "Game art" },
   ];
 
   return (

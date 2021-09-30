@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ActiveWrapper = styled.section`
   display: flex;
   justify-content: space-between;
-  padding: ${props => props.theme.padding.lg};
+  padding: ${(props) => props.theme.padding.lg};
   padding-top: 250px;
   padding-bottom: 150px;
   align-items: center;
