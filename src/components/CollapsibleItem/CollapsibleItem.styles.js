@@ -43,7 +43,12 @@ export const Content = styled.div`
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   padding: ${({ isOpen }) => (isOpen ? "30px 0 60px" : "0")};
-  transition: all 0.1s ease-out, padding-top 0.2s ease-out, padding-bottom 0.1s ease-out, height 0s;
+  transition: all 0.1s ease-out, padding-top 0.3s ease-out, padding-bottom 0.2s ease-out, height 0s,
+    opacity 0.4s 0.1s;
+  transition: ${({ isOpen }) =>
+    isOpen
+      ? "all 0.1s ease-out, padding-top 0.3s ease-out, padding-bottom 0.1s ease-out, height 0s, opacity .4s .1s"
+      : "all 0.1s ease-out, height 0s, opacity 0s"};
   line-height: 19px;
   font-size: 16px;
 `;
