@@ -40,9 +40,10 @@ export const DropdownButton = styled.button`
 
 export const Content = styled.div`
   visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
+  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   height: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   padding: ${({ isOpen }) => (isOpen ? "30px 0 60px" : "0")};
-  transition: padding 0.2s ease-out;
+  transition: all 0.1s ease-out, padding-top 0.2s ease-out, padding-bottom 0.1s ease-out, height 0s;
   line-height: 19px;
   font-size: 16px;
 `;
