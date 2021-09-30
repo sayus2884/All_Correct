@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const ActiveWrapper = styled.section`
   display: flex;
   justify-content: space-between;
-  margin: 250px 40px;
+  padding: ${props => props.theme.padding.lg};
+  padding-top: 250px;
+  padding-bottom: 150px;
   align-items: center;
   letter-spacing: -0.01em;
 `;
@@ -44,19 +46,20 @@ export const BoxItem = styled.li`
 export const TextWrapper = styled.div`
   width: 541px;
   font-family: ${({ theme }) => theme.fonts.inter};
+  padding-right: 14px;
+  display: grid;
+  gap: 20px;
 
   p {
     color: ${({ theme }) => theme.colors.white};
     font-weight: 400;
     font-size: 16px;
     line-height: 1.25;
-    padding-right: 14px;
 
     &:first-of-type {
       font-size: 32px;
       font-weight: 700;
       line-height: 1.125;
-      margin-bottom: 20px;
     }
   }
 `;
