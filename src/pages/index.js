@@ -5,6 +5,7 @@ import Reviews from "../components/Reviews/Reviews.js";
 import Footer from "../components/Footer/Footer.js";
 
 import GameModal from "../components/GameModal/GameModal.js";
+import GameInfo from "../components/GameInfo/GameInfo.js";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <Reviews />
 
       <GameModal>
-        <div> Items ere</div>
+        <GameInfo />
       </GameModal>
 
       <Footer />

@@ -1,18 +1,28 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Overlay, Container } from "./GameModal.styles";
+import { Overlay, Container, CloseButton } from "./GameModal.styles";
 
 function GameModal({ children }) {
   const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     setMounted(true);
     return () => setMounted(false);
   }, []);
 
-  const jsx = (
+  const handleClose = (event) => {
+    event.preventDefault();
+    setIsOpen(false);
+  };
+
+  const jsx = isOpen && (
     <Overlay>
-      <Container>{children}</Container>
+      <Container>
+        {children}
+
+        <CloseButton onClick={handleClose}>X</CloseButton>
+      </Container>
     </Overlay>
   );
 

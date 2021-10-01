@@ -13,6 +13,13 @@ export const Overlay = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
-  padding: 40px;
+  flex-direction: column;
+  margin: 40px;
+`;
+
+export const CloseButton = styled.div`
+  position: absolute;
+  right: 0;
 `;
