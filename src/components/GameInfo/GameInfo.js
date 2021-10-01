@@ -35,7 +35,7 @@ function arrToString(arr) {
 function GameInfo({ games }) {
   const [index, setIndex] = useState(0);
 
-  const { title, services, genre, languages, description } = games[index];
+  const { title, services, platforms, genre, languages, description } = games[index];
 
   const handleNavigateLeft = (event) => {
     event.preventDefault();
@@ -59,7 +59,7 @@ function GameInfo({ games }) {
 
   return (
     <>
-      <Title>The Title</Title>
+      <Title>{title}</Title>
       <TwoColumns>
         <Carousel>
           <Image />
@@ -73,8 +73,8 @@ function GameInfo({ games }) {
         </Carousel>
 
         <InfoContainer>
-          <InfoItem type="Service" data={title} />
-          <InfoItem type="Platforms" data={arrToString(services)} />
+          <InfoItem type="Service" data={arrToString(services)} />
+          <InfoItem type="Platforms" data={arrToString(platforms)} />
           <InfoItem type="Genre" data={arrToString(genre)} />
           <InfoItem type="Languages" data={arrToString(languages)} />
           <InfoItem type="Description" data={description} />
