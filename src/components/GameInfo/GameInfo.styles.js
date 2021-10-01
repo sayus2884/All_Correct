@@ -27,8 +27,9 @@ export const CarouselContainer = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 107px;
   object-fit: cover;
+  min-height: 407px;
+  max-height: 407px;
 `;
 
 export const Controller = styled.div`
@@ -83,6 +84,11 @@ export const Data = styled.p`
   letter-spacing: -0.01em;
 `;
 
-export const Date = styled.div`
+export const DateText = styled.p`
   margin-top: 77px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+
+  letter-spacing: -0.01em;
 `;

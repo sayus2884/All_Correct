@@ -10,7 +10,7 @@ import {
   Controller,
   ArrowButton,
   Counter,
-  Date,
+  DateText,
   TwoColumns,
   Image,
   InfoContainer,
@@ -96,7 +96,7 @@ function GameInfo({ games }) {
           <InfoItem type="Description" data={description} />
         </InfoContainer>
       </TwoColumns>
-      <Date>Date and stuff</Date>
+      <DateText>DateText and stuff</DateText>
     </>
   );
 }
