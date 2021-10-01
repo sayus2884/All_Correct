@@ -14,16 +14,49 @@ import {
   Data,
 } from "./GameInfo.styles";
 
-function InfoItem(props) {
+function InfoItem({ type, data }) {
   return (
     <Info>
-      <Type>title</Type>
-      <Data>data</Data>
+      <Type>{type}:</Type>
+      <Data>{data}</Data>
     </Info>
   );
 }
 
-function GameInfo(props) {
+function arrToString(arr) {
+  let text = "";
+  arr.forEach((item, i) => {
+    text += `${item}, `;
+  });
+
+  return text;
+}
+
+function GameInfo({ games }) {
+  const [index, setIndex] = useState(0);
+
+  const { title, services, genre, languages, description } = games[index];
+
+  const handleNavigateLeft = (event) => {
+    event.preventDefault();
+
+    if (index <= 0) {
+      return;
+    }
+
+    setIndex(index - 1);
+  };
+
+  const handleNavigateRight = (event) => {
+    event.preventDefault();
+
+    if (index >= games.length - 1) {
+      return;
+    }
+
+    setIndex(index + 1);
+  };
+
   return (
     <>
       <Title>The Title</Title>
@@ -31,18 +64,20 @@ function GameInfo(props) {
         <Carousel>
           <Image />
           <Controller>
-            <button>left</button>
-            <p>1/10</p>
-            <button>right</button>
+            <button onClick={handleNavigateLeft}>left</button>
+            <p>
+              {index + 1}/{games.length}
+            </p>
+            <button onClick={handleNavigateRight}>right</button>
           </Controller>
         </Carousel>
 
         <InfoContainer>
-          <InfoItem />
-          <InfoItem />
-          <InfoItem />
-          <InfoItem />
-          <InfoItem />
+          <InfoItem type="Service" data={title} />
+          <InfoItem type="Platforms" data={arrToString(services)} />
+          <InfoItem type="Genre" data={arrToString(genre)} />
+          <InfoItem type="Languages" data={arrToString(languages)} />
+          <InfoItem type="Description" data={description} />
         </InfoContainer>
       </TwoColumns>
       <Date>Date and stuff</Date>

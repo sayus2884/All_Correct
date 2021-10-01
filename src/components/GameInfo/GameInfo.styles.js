@@ -25,7 +25,7 @@ export const Carousel = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 507px;
+  height: 107px;
   width: 901px;
   background: red;
 `;
@@ -53,7 +53,12 @@ export const Type = styled.h3`
 
   letter-spacing: -0.01em;
 `;
-export const Data = styled.p``;
+export const Data = styled.p`
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+`;
 
 export const Date = styled.div`
   margin-top: 77px;
