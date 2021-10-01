@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.nav`
   position: relative;
   height: 166px;
-  padding: ${(props) => props.theme.padding.lg};
+  padding: ${(props) => (props.inherit ? "" : props.theme.padding.lg)};
   padding-top: 40px;
   width: 100%;
   display: flex;
@@ -21,7 +21,7 @@ export const Menu = styled.div`
   row-gap: 32px;
   grid-template-columns: repeat(7, auto);
   grid-auto-rows: min-content;
-  align-content: center;
+  margin-top: 30px;
 
   & > * {
     height: min-content;
