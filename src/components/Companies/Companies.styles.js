@@ -8,7 +8,6 @@ export const Container = styled.div`
   font-family: ${(props) => props.theme.fonts.inter};
 
   margin-top: 250px;
-
 `;
 
 export const Title = styled.h2`
