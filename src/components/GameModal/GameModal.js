@@ -298,7 +298,7 @@ function GameModal({ children }) {
       <Container>
         <GameInfo games={gamesData} />
 
-        <CloseButton onClick={handleClose}>X</CloseButton>
+        <CloseButton onClick={handleClose}>&#10005;</CloseButton>
       </Container>
     </Overlay>
   );

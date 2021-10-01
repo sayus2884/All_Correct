@@ -19,7 +19,17 @@ export const Container = styled.div`
   margin: 40px;
 `;
 
-export const CloseButton = styled.div`
+export const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: ${(props) => props.theme.colors.white};
   position: absolute;
   right: 0;
+
+  font-weight: bold;
+  font-size: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

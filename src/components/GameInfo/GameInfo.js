@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+
+import { Carousel } from "react-responsive-carousel";
+
 import {
   Container,
   Title,
-  Carousel,
+  CarouselContainer,
   Controller,
+  ArrowButton,
+  Counter,
   Date,
   TwoColumns,
   Image,
@@ -37,7 +42,7 @@ function GameInfo({ games }) {
 
   const { title, services, platforms, genre, languages, description } = games[index];
 
-  const handleNavigateLeft = (event) => {
+  const handlePrevButton = (event) => {
     event.preventDefault();
 
     if (index <= 0) {
@@ -47,7 +52,7 @@ function GameInfo({ games }) {
     setIndex(index - 1);
   };
 
-  const handleNavigateRight = (event) => {
+  const handleNextButton = (event) => {
     event.preventDefault();
 
     if (index >= games.length - 1) {
@@ -61,16 +66,27 @@ function GameInfo({ games }) {
     <>
       <Title>{title}</Title>
       <TwoColumns>
-        <Carousel>
-          <Image />
+        <CarouselContainer>
+          <Carousel
+            style={{ margin: 0 }}
+            selectedItem={index}
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}>
+            {games.map((game, i) => (
+              <Image src={game.image} key={i} alt={game.title} />
+            ))}
+          </Carousel>
+
           <Controller>
-            <button onClick={handleNavigateLeft}>left</button>
-            <p>
+            <ArrowButton onClick={handlePrevButton}>&#10229;</ArrowButton>
+            <Counter>
               {index + 1}/{games.length}
-            </p>
-            <button onClick={handleNavigateRight}>right</button>
+            </Counter>
+            <ArrowButton onClick={handleNextButton}>&#10230;</ArrowButton>
           </Controller>
-        </Carousel>
+        </CarouselContainer>
 
         <InfoContainer>
           <InfoItem type="Service" data={arrToString(services)} />

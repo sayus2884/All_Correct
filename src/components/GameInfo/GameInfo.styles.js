@@ -19,21 +19,44 @@ export const TwoColumns = styled.div`
   gap: 40px;
 `;
 
-export const Carousel = styled.div`
+export const CarouselContainer = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 901px;
+  min-width: 901px;
 `;
 
 export const Image = styled.img`
   height: 107px;
-  width: 901px;
-  background: red;
+  object-fit: cover;
 `;
+
 export const Controller = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
+`;
+
+export const Counter = styled.p`
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+`;
+export const ArrowButton = styled.button`
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+
+  background: none;
+  border: none;
+  color: #4a8eff;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const InfoContainer = styled.ul``;
