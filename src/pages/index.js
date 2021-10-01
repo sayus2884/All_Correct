@@ -4,6 +4,8 @@ import Active from "../components/Active/Active.js";
 import Reviews from "../components/Reviews/Reviews.js";
 import Footer from "../components/Footer/Footer.js";
 
+import GameModal from "../components/GameModal/GameModal.js";
+
 export default function Home() {
   return (
     <>
@@ -11,6 +13,11 @@ export default function Home() {
       <Services />
       <Active />
       <Reviews />
+
+      <GameModal>
+        <div> Items ere</div>
+      </GameModal>
+
       <Footer />
     </>
   );
