@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.li`
-  margin: 0 0 102px 90px;
-
   &:nth-child(5n + 1) {
     margin-left: 110px;
   }
+`;
+
+export const Link = styled.a`
+  font-size: 0;
+  line-height: 0;
 `;
 
 export const Image = styled.img`

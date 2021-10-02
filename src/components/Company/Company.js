@@ -1,11 +1,11 @@
-import { Container, Image } from "./Company.styles";
+import { Container, Link, Image } from "./Company.styles";
 
 function Company({ url, src }) {
   return (
     <Container>
-      <a href={url} target="blank" rel="noreferrer">
+      <Link href={url} target="blank" rel="noreferrer">
         <Image src={src} alt="" />
-      </a>
+      </Link>
     </Container>
   );
 }

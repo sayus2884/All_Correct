@@ -25,6 +25,9 @@ export const CompanyList = styled.ul`
 
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+
+  gap: 90px;
 `;
 
 export const CompanyItem = styled.li`
