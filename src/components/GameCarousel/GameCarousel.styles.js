@@ -13,6 +13,10 @@ export const Container = styled.div`
 export const Item = styled.div`
   display: flex;
   width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Image = styled.img`
