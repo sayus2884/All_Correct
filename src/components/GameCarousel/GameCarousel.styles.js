@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Item = styled.div`
   display: flex;
-  width:100%;
+  width: 100%;
 `;
 
 export const Image = styled.img`
@@ -54,7 +54,7 @@ export const LinkContainer = styled.span`
   bottom: 0;
   right: 40px;
 
-  font-family: ${(props) => props.theme.fonts.inter };
+  font-family: ${(props) => props.theme.fonts.inter};
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
