@@ -3,10 +3,8 @@ import { Text } from "../Games/Games.styles";
 
 export const Wrapper = styled.div`
   position: relative;
-  display: grid;
+  display: flex;
   gap: 10px;
-  grid-template-columns: auto 1fr;
-  grid-auto-rows: min-content;
 `;
 
 export const Item = styled(Text)`
@@ -41,13 +39,11 @@ export const Icon = styled.div`
 
 export const DropdownMenu = styled.div`
   position: absolute;
-  grid-column: span 2;
   display: grid;
   background: ${(props) => props.theme.colors.white};
   border-radius: 4px;
   overflow: hidden;
   gap: 5px;
-  width: 100%;
   min-width: 329px;
   z-index: 1;
   top: 100%;
