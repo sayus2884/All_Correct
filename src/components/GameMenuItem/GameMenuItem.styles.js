@@ -2,13 +2,27 @@ import styled from "styled-components";
 import { Text } from "../Games/Games.styles";
 
 export const Wrapper = styled.div`
-  display: flex;
+  position: relative;
+  display: grid;
   gap: 10px;
-  align-items: center;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: min-content;
 `;
 
 export const Item = styled(Text)`
   line-height: 30px;
+
+  &.black {
+    color: ${(props) => props.theme.colors.black};
+    padding-bottom: 5px;
+    padding-left: 11px;
+  }
+
+  &.menu {
+    background: #eaeaea;
+    border-radius: 4px;
+    padding: 5px 11px;
+  }
 `;
 
 export const Icon = styled.div`
@@ -20,4 +34,26 @@ export const Icon = styled.div`
   background-repeat: no-repeat;
   cursor: pointer;
   margin-top: 2px;
+  align-self: center;
+  transform: ${(props) => (props.open ? "rotate(0deg)" : "rotate(-90deg)")};
+  transition: all 0.2s;
+`;
+
+export const DropdownMenu = styled.div`
+  position: absolute;
+  grid-column: span 2;
+  display: grid;
+  background: ${(props) => props.theme.colors.white};
+  border-radius: 4px;
+  overflow: hidden;
+  gap: 5px;
+  width: 100%;
+  min-width: 329px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  padding: ${(props) => (props.open ? "11px 5px" : 0)};
+  max-height: ${(props) => (props.open ? "100vh" : 0)};
+  transition: padding 0.1s;
 `;
