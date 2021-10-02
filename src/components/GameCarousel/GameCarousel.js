@@ -33,7 +33,9 @@ function GameCarousel({ children }) {
         showArrows={false}
         showThumbs={false}
         emulateTouch={true}
-        autoPlay={true}>
+        autoPlay={true}
+        interval={4500}
+        infiniteLoop={true}>
         {fakeData.map((item, key) => (
           <Item key={key}>
             <Image src={item.url} />
