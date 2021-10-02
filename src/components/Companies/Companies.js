@@ -24,8 +24,8 @@ function Companies({ children }) {
           <Title>These companies work with us</Title>
         </CompanyItem>
 
-        {companies.map(({ url, src }, i) => (
-          <Company key={i} url={url} src={src} />
+        {companies.map(({ url, src, alt }, i) => (
+          <Company key={i} url={url} src={src} alt={alt} />
         ))}
       </CompanyList>
     </Container>

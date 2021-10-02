@@ -27,11 +27,10 @@ export const CompanyList = styled.ul`
   flex-wrap: wrap;
   align-items: center;
 
-  gap: 90px;
+  gap: 90px 102px;
 `;
 
 export const CompanyItem = styled.li`
   max-width: 280px;
-  margin-right: 84px;
-  margin: 0 84px 0 0;
+  margin-right: 75px;
 `;
