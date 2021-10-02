@@ -22,7 +22,7 @@ export const GamesGrid = styled.div`
   grid-template-columns: repeat(3, auto);
   grid-auto-rows: auto;
   overflow: hidden;
-  animation: ${(props) => (props.show ? "" : "shrink .5s alternate")};
+  animation: ${(props) => (props.show ? "" : "shrink .5s ease-out forwards")};
 
   @keyframes shrink {
     0% {
