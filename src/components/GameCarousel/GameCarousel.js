@@ -1,8 +1,9 @@
+import Image from "next/image";
 import {
   Container,
   Item,
-  Image,
   Info,
+  ImageWrapper,
   TitleContainer,
   Title,
   Highlight,
@@ -34,11 +35,21 @@ function GameCarousel({ children }) {
         showThumbs={false}
         emulateTouch={true}
         autoPlay={true}
-        interval={4500}
+        interval={2500}
+        transitionTime={700}
         infiniteLoop={true}>
         {fakeData.map((item, key) => (
           <Item key={key}>
-            <Image src={item.url} />
+            <ImageWrapper>
+              <Image
+                src={item.url}
+                alt={item.game}
+                objectFit="cover"
+                layout="responsive"
+                width={901}
+                height={507}
+              />
+            </ImageWrapper>
 
             <Info className="info">
               <TitleContainer onClick={handleTitleClick}>

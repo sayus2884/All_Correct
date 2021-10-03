@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Container = styled.div`
   padding: ${(props) => props.theme.padding.lg};
@@ -19,11 +20,11 @@ export const Item = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  height: 507px;
+export const ImageWrapper = styled.div`
+  position: relative;
+  min-height: 507px;
   min-width: 901px;
   max-width: 901px;
-  object-fit: cover;
 `;
 
 export const Info = styled.div`
