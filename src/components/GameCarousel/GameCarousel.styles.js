@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "next/image";
 
 export const Container = styled.div`
   padding: ${(props) => props.theme.padding.lg};
@@ -14,24 +13,20 @@ export const Container = styled.div`
 export const Item = styled.div`
   display: flex;
   width: 100%;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
+  gap: 40px;
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
-  min-height: 507px;
-  min-width: 901px;
-  max-width: 901px;
+  height: 507px;
+  width: 901px;
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding-left: 40px;
+  flex: 1;
 `;
 
 export const TitleContainer = styled.div`

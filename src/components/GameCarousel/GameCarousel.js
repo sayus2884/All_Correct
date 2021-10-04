@@ -13,7 +13,7 @@ import {
 
 import { Carousel } from "react-responsive-carousel";
 
-function GameCarousel({ children }) {
+function GameCarousel() {
   const fakeData = [
     { game: "Apex Legends", company: "Electronic Arts", url: "/images/carousel/apex.png" },
     {
@@ -50,9 +50,8 @@ function GameCarousel({ children }) {
                 src={item.url}
                 priority={true}
                 objectFit="cover"
-                layout="responsive"
-                width={901}
-                height={507}
+                objectPosition="center"
+                layout="fill"
               />
             </ImageWrapper>
 
