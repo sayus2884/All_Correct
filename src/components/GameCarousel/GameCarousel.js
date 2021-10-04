@@ -9,9 +9,8 @@ import {
   Highlight,
   LinkContainer,
   Link,
+  Carousel,
 } from "./GameCarousel.styles";
-
-import { Carousel } from "react-responsive-carousel";
 
 function GameCarousel() {
   const fakeData = [

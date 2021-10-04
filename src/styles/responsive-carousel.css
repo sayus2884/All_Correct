@@ -1,7 +1,0 @@
-.carousel .control-dots {
-  position: absolute;
-  bottom: 0;
-  left: calc(901px + 40px - 8px);
-  max-width: max-content;
-  margin: 0;
-}

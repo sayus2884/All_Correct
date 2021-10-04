@@ -1,4 +1,22 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
+import { Carousel as Slider } from "react-responsive-carousel";
+
+export const Carousel = styled(Slider)`
+  & .carousel .control-dots {
+    margin: 0;
+    width: max-content;
+    left: calc(901px + 40px);
+    display: flex;
+    gap: 12px;
+
+    & .dot {
+      margin: 0;
+      width: 12px;
+      height: 12px;
+    }
+  }
+`;
 
 export const Container = styled.div`
   padding: ${(props) => props.theme.padding.lg};
