@@ -47,7 +47,7 @@ export const Content = styled.div`
     opacity 0.4s 0.1s;
   transition: ${({ isOpen }) =>
     isOpen
-      ? "all 0.1s ease-out, padding-top 0.3s ease-out, padding-bottom 0.1s ease-out, height 0s, opacity .4s .1s"
+      ? "all 0.1s ease-out, padding-top 0.3s ease, padding-bottom 0.1s linear, height 0s, opacity .4s .1s"
       : "all 0.1s ease-out, height 0s, opacity 0s"};
   line-height: 19px;
   font-size: 16px;
