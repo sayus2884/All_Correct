@@ -1,6 +1,6 @@
 import { Container, Title } from "./Services.styles";
 
-import Collapsibles from "../Collapsible/Collapsible.js";
+import Collapsibles from "../Collapsibles/Collapsibles.js";
 import CollapsibleItem from "../CollapsibleItem/CollapsibleItem.js";
 
 function Services() {

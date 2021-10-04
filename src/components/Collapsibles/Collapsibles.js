@@ -1,4 +1,4 @@
-import { Container } from "./Collapsible.styles";
+import { Container } from "./Collapsibles.styles";
 
 function Collapsibles({ children }) {
   return <Container>{children}</Container>;
