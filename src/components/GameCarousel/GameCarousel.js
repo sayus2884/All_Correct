@@ -15,11 +15,11 @@ import { Carousel } from "react-responsive-carousel";
 
 function GameCarousel({ children }) {
   const fakeData = [
-    { game: "Apex Legends", company: "Electronic Arts", url: "/apex.png" },
-    { game: "Star Wars Jedi: Fallen Order", company: "Electronic Arts", url: "/jfo.jpg" },
-    { game: `Lily's Garden`, company: "Electronic Arts", url: "/lilys.jpg" },
-    { game: "Klepto Cats", company: "Tactile Games", url: "/kleptocats_2.jpg" },
-    { game: "Anthem", company: "Electronic Arts", url: "/anthem.jpg" },
+    { game: "Apex Legends", company: "Electronic Arts", url: "/images/carousel/apex.png" },
+    { game: "Star Wars Jedi: Fallen Order", company: "Electronic Arts", url: "/images/carousel/jfo.jpg" },
+    { game: `Lily's Garden`, company: "Electronic Arts", url: "/images/carousel/lilys.jpg" },
+    { game: "Klepto Cats", company: "Tactile Games", url: "/images/carousel/kleptocats_2.jpg" },
+    { game: "Anthem", company: "Electronic Arts", url: "/images/carousel/anthem.jpg" },
   ];
 
   const handleTitleClick = (event) => {
@@ -48,6 +48,7 @@ function GameCarousel({ children }) {
                 layout="responsive"
                 width={901}
                 height={507}
+                priority={true}
               />
             </ImageWrapper>
 
