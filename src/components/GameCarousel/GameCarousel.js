@@ -48,8 +48,6 @@ function GameCarousel({ children }) {
               <Image
                 alt={item.game}
                 src={item.url}
-                // blurDataURL={item.url}
-                // placeholder="blur"
                 priority={true}
                 objectFit="cover"
                 layout="responsive"
