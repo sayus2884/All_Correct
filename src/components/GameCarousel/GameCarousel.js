@@ -16,7 +16,11 @@ import { Carousel } from "react-responsive-carousel";
 function GameCarousel({ children }) {
   const fakeData = [
     { game: "Apex Legends", company: "Electronic Arts", url: "/images/carousel/apex.png" },
-    { game: "Star Wars Jedi: Fallen Order", company: "Electronic Arts", url: "/images/carousel/jfo.jpg" },
+    {
+      game: "Star Wars Jedi: Fallen Order",
+      company: "Electronic Arts",
+      url: "/images/carousel/jfo.jpg",
+    },
     { game: `Lily's Garden`, company: "Electronic Arts", url: "/images/carousel/lilys.jpg" },
     { game: "Klepto Cats", company: "Tactile Games", url: "/images/carousel/kleptocats_2.jpg" },
     { game: "Anthem", company: "Electronic Arts", url: "/images/carousel/anthem.jpg" },
@@ -42,13 +46,15 @@ function GameCarousel({ children }) {
           <Item key={key}>
             <ImageWrapper>
               <Image
-                src={item.url}
                 alt={item.game}
+                src={item.url}
+                blurDataURL={item.url}
+                priority={true}
+                placeholder="blur"
                 objectFit="cover"
                 layout="responsive"
                 width={901}
                 height={507}
-                priority={true}
               />
             </ImageWrapper>
 
