@@ -64,9 +64,9 @@ function Games({ games, setGames }) {
               </Img>
               <Text>
                 <Text as="span" className="blue">
-                  {e.caption.blue}
+                  {e.title}
                 </Text>{" "}
-                {e.caption.white}
+                {e.publisher}
               </Text>
             </GameCard>
           ))}
