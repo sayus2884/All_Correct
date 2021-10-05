@@ -17,12 +17,26 @@ import { games as allGames } from "../utils/data";
 
 export default function Home({ allGames }) {
   const { showGameModal, openGameModal, closeGameModal } = useGameModal();
-  const { selectedGames, carouselGames, setSelectedGames } = useGames(allGames);
+  const {
+    selectedGames,
+    carouselGames,
+    setSelectedGames,
+    selectedGameIndex,
+    setSelectedGameIndex,
+  } = useGames(allGames);
 
   return (
     <>
       <GameModalContext.Provider
-        value={{ selectedGames, setSelectedGames, showGameModal, openGameModal, closeGameModal }}>
+        value={{
+          selectedGames,
+          setSelectedGames,
+          selectedGameIndex,
+          setSelectedGameIndex,
+          showGameModal,
+          openGameModal,
+          closeGameModal,
+        }}>
         <Nav lang={true} />
         <GameCarousel games={carouselGames} />
         <Services />

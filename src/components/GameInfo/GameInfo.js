@@ -36,8 +36,8 @@ function arrToString(arr) {
   return text;
 }
 
-function GameInfo({ games }) {
-  const [index, setIndex] = useState(0);
+function GameInfo({ games, selectedIndex }) {
+  const [index, setIndex] = useState(selectedIndex);
 
   const { title, services, platforms, genre, languages, description, date } = games[index];
 

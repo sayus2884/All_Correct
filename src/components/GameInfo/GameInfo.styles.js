@@ -25,6 +25,7 @@ export const CarouselContainer = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  position: relative;
   height: 407px;
 `;
 
