@@ -12,19 +12,7 @@ import {
   Carousel,
 } from "./GameCarousel.styles";
 
-function GameCarousel() {
-  const fakeData = [
-    { game: "Apex Legends", company: "Electronic Arts", url: "/images/carousel/apex.png" },
-    {
-      game: "Star Wars Jedi: Fallen Order",
-      company: "Electronic Arts",
-      url: "/images/carousel/jfo.jpg",
-    },
-    { game: `Lily's Garden`, company: "Electronic Arts", url: "/images/carousel/lilys.jpg" },
-    { game: "Klepto Cats", company: "Tactile Games", url: "/images/carousel/kleptocats_2.jpg" },
-    { game: "Anthem", company: "Electronic Arts", url: "/images/carousel/anthem.jpg" },
-  ];
-
+function GameCarousel({ games }) {
   const handleTitleClick = (event) => {
     event.preventDefault();
     alert("Open game modal");
@@ -41,12 +29,12 @@ function GameCarousel() {
         interval={2500}
         transitionTime={700}
         infiniteLoop={true}>
-        {fakeData.map((item, key) => (
+        {games.slice(0, 5).map((game, key) => (
           <Item key={key}>
             <ImageWrapper>
               <Image
-                alt={item.game}
-                src={item.url}
+                alt={game.title}
+                src={game.image}
                 priority={true}
                 objectFit="cover"
                 objectPosition="center"
@@ -58,9 +46,9 @@ function GameCarousel() {
               <TitleContainer onClick={handleTitleClick}>
                 <Title>We've localized</Title>
                 <Title>
-                  <Highlight> {item.game}</Highlight> game
+                  <Highlight> {game.title}</Highlight> game
                 </Title>
-                <Title>by {item.company}</Title>
+                <Title>by {game.publisher}</Title>
               </TitleContainer>
             </Info>
           </Item>

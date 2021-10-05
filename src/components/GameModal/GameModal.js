@@ -281,7 +281,7 @@ const gamesData = [
 
 function GameModal({ children }) {
   const [mounted, setMounted] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
