@@ -9,25 +9,30 @@ import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
 import { useState } from "react";
 
+import GameModalContext from "../context/GameModalContext.js";
 import useGames from "../hooks/UseGames.js";
+import useGameModal from "../hooks/UseGameModal.js";
 
 import { games as allGames } from "../utils/data";
 
 export default function Home({ allGames }) {
-  const { games, carouselGames } = useGames(allGames);
+  const { showGameModal, openGameModal, closeGameModal } = useGameModal();
+  const { selectedGames, carouselGames, setSelectedGames } = useGames(allGames);
 
   return (
     <>
-      <Nav lang={true} />
-      <GameCarousel games={carouselGames} />
-      <Services />
-      <Companies />
-      <Active />
-      <Games games={games} />
-      <Reviews />
-      <GameModal />
-
-      <Footer />
+      <GameModalContext.Provider
+        value={{ selectedGames, setSelectedGames, showGameModal, openGameModal, closeGameModal }}>
+        <Nav lang={true} />
+        <GameCarousel games={carouselGames} />
+        <Services />
+        <Companies />
+        <Active />
+        <Games games={allGames} />
+        <Reviews />
+        <GameModal />
+        <Footer />
+      </GameModalContext.Provider>
     </>
   );
 }

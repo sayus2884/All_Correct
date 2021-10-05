@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Image from "next/image";
 import {
   Container,
@@ -12,10 +13,15 @@ import {
   Carousel,
 } from "./GameCarousel.styles";
 
+import GameModalContext from "../../context/GameModalContext";
+
 function GameCarousel({ games }) {
+  const { openGameModal, setSelectedGames } = useContext(GameModalContext);
+
   const handleTitleClick = (event) => {
     event.preventDefault();
-    alert("Open game modal");
+    setSelectedGames(games);
+    openGameModal(true);
   };
 
   return (

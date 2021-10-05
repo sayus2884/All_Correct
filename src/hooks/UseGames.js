@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const UseGames = (gamesData = []) => {
-  const [games, setGames] = useState(gamesData);
+  const [selectedGames, setSelectedGames] = useState(gamesData);
 
-  const carouselGames = games.slice(0, 10);
+  const carouselGames = gamesData.slice(0, 10);
 
-  return { games, setGames, carouselGames };
+  return { selectedGames, carouselGames, setSelectedGames };
 };
 
 export default UseGames;
