@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-
+import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
-
 import {
   Container,
   Title,
@@ -12,7 +11,7 @@ import {
   Counter,
   DateText,
   TwoColumns,
-  Image,
+  ImageWrapper,
   InfoContainer,
   Info,
   Type,
@@ -74,8 +73,17 @@ function GameInfo({ games }) {
             showStatus={false}
             showThumbs={false}
             showIndicators={false}>
-            {games.map((game, i) => (
-              <Image src={game.image} key={i} alt={game.title} />
+            {games.map((game, key) => (
+              <ImageWrapper key={key}>
+                <Image
+                  alt={game.title}
+                  src={game.image}
+                  priority={true}
+                  objectFit="cover"
+                  objectPosition="center"
+                  layout="fill"
+                />
+              </ImageWrapper>
             ))}
           </Carousel>
 
@@ -86,6 +94,7 @@ function GameInfo({ games }) {
             </Counter>
             <ArrowButton onClick={handleNextButton}>&#10230;</ArrowButton>
           </Controller>
+          <DateText>DateText and stuff</DateText>
         </CarouselContainer>
 
         <InfoContainer>
@@ -96,7 +105,6 @@ function GameInfo({ games }) {
           <InfoItem type="Description" data={description} />
         </InfoContainer>
       </TwoColumns>
-      <DateText>DateText and stuff</DateText>
     </>
   );
 }

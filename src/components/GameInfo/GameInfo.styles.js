@@ -20,16 +20,12 @@ export const TwoColumns = styled.div`
 `;
 
 export const CarouselContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   max-width: 901px;
   min-width: 901px;
 `;
 
-export const Image = styled.img`
-  object-fit: cover;
-  min-height: 407px;
-  max-height: 407px;
+export const ImageWrapper = styled.div`
+  height: 407px;
 `;
 
 export const Controller = styled.div`

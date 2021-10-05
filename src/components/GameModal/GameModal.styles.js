@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Overlay = styled.div`
+  height: 100vh;
+  overflow: auto;
+  z-index: 999;
   width: 100%;
   color: ${(props) => props.theme.colors.white};
   font-family: ${(props) => props.theme.fonts.inter};
