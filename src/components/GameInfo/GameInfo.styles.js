@@ -57,17 +57,18 @@ export const ArrowButton = styled.button`
   }
 `;
 
-export const InfoContainer = styled.ul``;
+export const InfoContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+`;
 export const Info = styled.li`
-  margin-bottom: 32px;
-
-  &:last-child {
-    margin: 0;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;
 export const Type = styled.h3`
   color: #9d9d9d;
-  margin-bottom: 8px;
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;

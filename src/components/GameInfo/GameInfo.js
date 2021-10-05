@@ -33,7 +33,7 @@ function arrToString(arr) {
     text += `${item}, `;
   });
 
-  return text;
+  return text.slice(0, -2);
 }
 
 function GameInfo({ games, selectedIndex }) {
