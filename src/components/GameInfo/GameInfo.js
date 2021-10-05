@@ -39,7 +39,7 @@ function arrToString(arr) {
 function GameInfo({ games }) {
   const [index, setIndex] = useState(0);
 
-  const { title, services, platforms, genre, languages, description } = games[index];
+  const { title, services, platforms, genre, languages, description, date } = games[index];
 
   const handlePrevButton = (event) => {
     event.preventDefault();
@@ -94,7 +94,7 @@ function GameInfo({ games }) {
             </Counter>
             <ArrowButton onClick={handleNextButton}>&#10230;</ArrowButton>
           </Controller>
-          <DateText>DateText and stuff</DateText>
+          <DateText>{date}</DateText>
         </CarouselContainer>
 
         <InfoContainer>
