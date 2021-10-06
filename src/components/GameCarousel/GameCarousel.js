@@ -20,7 +20,6 @@ function GameCarousel({ games }) {
 
   const handleTitleClick = (event) => {
     event.preventDefault();
-    console.log(games[parseInt(event.currentTarget.dataset.index)]);
     setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
     openGameModal(true);
   };
