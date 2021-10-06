@@ -17,22 +17,14 @@ import { games as allGames } from "../utils/data";
 
 export default function Home({ allGames }) {
   const { showGameModal, openGameModal, closeGameModal } = useGameModal();
-  const {
-    selectedGames,
-    carouselGames,
-    setSelectedGames,
-    selectedGameIndex,
-    setSelectedGameIndex,
-  } = useGames(allGames);
+  const { selectedGame, carouselGames, setSelectedGame } = useGames(allGames);
 
   return (
     <>
       <GameModalContext.Provider
         value={{
-          selectedGames,
-          setSelectedGames,
-          selectedGameIndex,
-          setSelectedGameIndex,
+          selectedGame,
+          setSelectedGame,
           showGameModal,
           openGameModal,
           closeGameModal,

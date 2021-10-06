@@ -7,9 +7,7 @@ import GameInfo from "../GameInfo/GameInfo.js";
 import GameModalContext from "../../context/GameModalContext";
 
 function GameModal({ children }) {
-  const { selectedGames, selectedGameIndex, showGameModal, closeGameModal } = useContext(
-    GameModalContext,
-  );
+  const { selectedGame, showGameModal, closeGameModal } = useContext(GameModalContext);
 
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +25,7 @@ function GameModal({ children }) {
   const jsx = showGameModal && (
     <Overlay>
       <Container>
-        <GameInfo games={selectedGames} selectedIndex={selectedGameIndex} />
+        <GameInfo game={selectedGame} />
 
         <CloseButton onClick={handleClose}>&#10005;</CloseButton>
       </Container>

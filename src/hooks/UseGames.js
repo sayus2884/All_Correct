@@ -1,17 +1,14 @@
 import { useState } from "react";
 
 const UseGames = (gamesData = []) => {
-  const [selectedGames, setSelectedGames] = useState(gamesData);
-  const [selectedGameIndex, setSelectedGameIndex] = useState(0);
+  const [selectedGame, setSelectedGame] = useState({});
 
   const carouselGames = gamesData.slice(0, 10);
 
   return {
-    selectedGames,
+    selectedGame,
     carouselGames,
-    setSelectedGames,
-    selectedGameIndex,
-    setSelectedGameIndex,
+    setSelectedGame,
   };
 };
 

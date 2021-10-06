@@ -16,12 +16,12 @@ import {
 import GameModalContext from "../../context/GameModalContext";
 
 function GameCarousel({ games }) {
-  const { openGameModal, setSelectedGames, setSelectedGameIndex } = useContext(GameModalContext);
+  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
 
   const handleTitleClick = (event) => {
     event.preventDefault();
-    setSelectedGames(games);
-    setSelectedGameIndex(parseInt(event.currentTarget.dataset.index));
+    console.log(games[parseInt(event.currentTarget.dataset.index)]);
+    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
     openGameModal(true);
   };
 

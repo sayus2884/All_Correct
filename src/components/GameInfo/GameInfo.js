@@ -36,29 +36,33 @@ function arrToString(arr) {
   return text.slice(0, -2);
 }
 
-function GameInfo({ games, selectedIndex }) {
-  const [index, setIndex] = useState(selectedIndex);
+function GameInfo({ game }) {
+  const [index, setIndex] = useState(0);
 
-  const { title, services, platforms, genre, languages, description, date } = games[index];
+  const { title, services, platforms, genre, languages, description, date } = game;
 
   const handlePrevButton = (event) => {
     event.preventDefault();
 
-    if (index <= 0) {
-      return;
-    }
+    // if (index <= 0) {
+    //   return;
+    // }
+    //
+    // setIndex(index - 1);
 
-    setIndex(index - 1);
+    console.log("handle previous");
   };
 
   const handleNextButton = (event) => {
     event.preventDefault();
 
-    if (index >= games.length - 1) {
-      return;
-    }
+    console.log("handle Next");
 
-    setIndex(index + 1);
+    // if (index >= game.length - 1) {
+    //   return;
+    // }
+    //
+    // setIndex(index + 1);
   };
 
   return (
@@ -73,24 +77,22 @@ function GameInfo({ games, selectedIndex }) {
             showStatus={false}
             showThumbs={false}
             showIndicators={false}>
-            {games.map((game, key) => (
-              <ImageWrapper key={key}>
-                <Image
-                  alt={game.title}
-                  src={game.image}
-                  priority={true}
-                  objectFit="cover"
-                  objectPosition="center"
-                  layout="fill"
-                />
-              </ImageWrapper>
-            ))}
+            <ImageWrapper>
+              <Image
+                alt={game.title}
+                src={game.image}
+                priority={true}
+                objectFit="cover"
+                objectPosition="center"
+                layout="fill"
+              />
+            </ImageWrapper>
           </Carousel>
 
           <Controller>
             <ArrowButton onClick={handlePrevButton}>&#10229;</ArrowButton>
             <Counter>
-              {index + 1}/{games.length}
+              {index + 1}/{10}
             </Counter>
             <ArrowButton onClick={handleNextButton}>&#10230;</ArrowButton>
           </Controller>
