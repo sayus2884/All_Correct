@@ -54,7 +54,7 @@ function GameInfo({ game }) {
   const handleNextButton = (event) => {
     event.preventDefault();
 
-    if (index >= game.length - 1) {
+    if (index >= images.length - 1) {
       return;
     }
 

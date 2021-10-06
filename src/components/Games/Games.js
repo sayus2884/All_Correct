@@ -7,15 +7,14 @@ import { useState } from "react";
 import GameModalContext from "../../context/GameModalContext";
 
 function Games({ games, setGames }) {
-  const { openGameModal, setSelectedGames, setSelectedGameIndex } = useContext(GameModalContext);
+  const { openGameModal, setSelectedGame, setSelectedGameIndex } = useContext(GameModalContext);
 
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
 
   function openModal(event) {
     event.preventDefault();
-    setSelectedGames(games); // NOTE: Change argument to filtered games
-    setSelectedGameIndex(parseInt(event.currentTarget.dataset.index));
+    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
     openGameModal(true);
   }
 
