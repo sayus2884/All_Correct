@@ -7,7 +7,7 @@ import { useState } from "react";
 import GameModalContext from "../../context/GameModalContext";
 
 function Games({ games, setGames }) {
-  const { openGameModal, setSelectedGame, setSelectedGameIndex } = useContext(GameModalContext);
+  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
 
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
