@@ -64,11 +64,11 @@ function Games({ games, setGames }) {
             <GameCard key={i} delay={i > 5 ? i - 5 : 0} data-index={i} onClick={openModal}>
               <Img>
                 <Image
-                  src={e.image}
+                  src={e.images[0]}
                   alt="review Image"
                   layout="fill"
                   placeholder="blur"
-                  blurDataURL={e.image}
+                  blurDataURL={e.images[0]}
                   quality={25}
                   objectFit="cover"
                   objectPosition="center"

@@ -18,7 +18,7 @@ export const games = [
       "Japanese",
     ],
     description: "51,356 words of in-game marketing text",
-    image: "/images/games/apex.jpg",
+    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
   },
   {
     title: "Grime",
@@ -41,7 +41,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/images/games/grime.jpg",
+    images: ["/images/games/grime.jpg"],
   },
   {
     title: "Mordhau",
@@ -64,7 +64,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/images/games/mordau.jpg",
+    images: ["/images/games/mordau.jpg"],
   },
   {
     title: "Murder In The Alps",
@@ -87,7 +87,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/images/games/murder_alps.jpg",
+    images: ["/images/games/murder_alps.jpg"],
   },
   {
     title: "The Crew",
@@ -99,7 +99,7 @@ export const games = [
     languages: ["Russian"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/images/games/crew2.jpg",
+    images: ["/images/games/crew2.jpg"],
   },
   {
     title: "Dragon Storm Fantasy",
@@ -111,7 +111,7 @@ export const games = [
     languages: ["Russian", "German", "Turkish"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    image: "/images/games/dragon_storm_fantasy.jpg",
+    images: ["/images/games/dragon_storm_fantasy.jpg"],
   },
   {
     title: "The Long Journey Home",
@@ -145,7 +145,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/long_journey_home.jpg",
+    images: ["/images/games/long_journey_home.jpg"],
   },
   {
     title: "Tales of Berseria",
@@ -179,7 +179,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/tales_of_berseria.jpg",
+    images: ["/images/games/tales_of_berseria.jpg"],
   },
   {
     title: "The Sims 4",
@@ -191,7 +191,7 @@ export const games = [
     languages: ["Norwegian"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/sims4.jpg",
+    images: ["/images/games/sims4.jpg"],
   },
   {
     title: "Turnip Boy Commits Tax Evasion",
@@ -210,7 +210,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/turnip_boy.jpg",
+    images: ["/images/games/turnip_boy.jpg"],
   },
   {
     title: "Anthem",
@@ -229,7 +229,7 @@ export const games = [
     ],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/anthem.jpg",
+    images: ["/images/games/anthem.jpg"],
   },
   {
     title: "Crisis Action",
@@ -241,7 +241,7 @@ export const games = [
     languages: ["Russian"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/crisis_action.jpg",
+    images: ["/images/games/crisis_action.jpg"],
   },
   {
     title: "Cool Game",
@@ -253,7 +253,7 @@ export const games = [
     languages: ["Russian"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/sniper_arena.jpg",
+    images: ["/images/games/sniper_arena.jpg"],
   },
   {
     title: "Another Cool Game",
@@ -265,7 +265,7 @@ export const games = [
     languages: ["Russian"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/plants_vs_zombies.jpg",
+    images: ["/images/games/plants_vs_zombies.jpg"],
   },
   {
     title: "Classic Game",
@@ -277,6 +277,6 @@ export const games = [
     languages: ["Russian"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/games/wonderful101.jpg",
+    images: ["/images/games/wonderful101.jpg"],
   },
 ];

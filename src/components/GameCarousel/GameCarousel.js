@@ -41,7 +41,7 @@ function GameCarousel({ games }) {
             <ImageWrapper>
               <Image
                 alt={game.title}
-                src={game.image}
+                src={game.images[0]}
                 priority={true}
                 objectFit="cover"
                 objectPosition="center"

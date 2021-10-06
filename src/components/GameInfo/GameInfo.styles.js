@@ -52,6 +52,8 @@ export const ArrowButton = styled.button`
   border: none;
   color: #4a8eff;
 
+  visibility: ${({ show }) => (show ? "visible" : "hidden")};
+
   &:hover {
     cursor: pointer;
   }

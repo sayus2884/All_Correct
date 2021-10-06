@@ -39,30 +39,26 @@ function arrToString(arr) {
 function GameInfo({ game }) {
   const [index, setIndex] = useState(0);
 
-  const { title, services, platforms, genre, languages, description, date } = game;
+  const { title, services, platforms, genre, languages, description, images, date } = game;
 
   const handlePrevButton = (event) => {
     event.preventDefault();
 
-    // if (index <= 0) {
-    //   return;
-    // }
-    //
-    // setIndex(index - 1);
+    if (index <= 0) {
+      return;
+    }
 
-    console.log("handle previous");
+    setIndex(index - 1);
   };
 
   const handleNextButton = (event) => {
     event.preventDefault();
 
-    console.log("handle Next");
+    if (index >= game.length - 1) {
+      return;
+    }
 
-    // if (index >= game.length - 1) {
-    //   return;
-    // }
-    //
-    // setIndex(index + 1);
+    setIndex(index + 1);
   };
 
   return (
@@ -77,24 +73,30 @@ function GameInfo({ game }) {
             showStatus={false}
             showThumbs={false}
             showIndicators={false}>
-            <ImageWrapper>
-              <Image
-                alt={game.title}
-                src={game.image}
-                priority={true}
-                objectFit="cover"
-                objectPosition="center"
-                layout="fill"
-              />
-            </ImageWrapper>
+            {images.map((src, key) => (
+              <ImageWrapper key={key}>
+                <Image
+                  alt={game.title}
+                  src={src}
+                  priority={true}
+                  objectFit="cover"
+                  objectPosition="center"
+                  layout="fill"
+                />
+              </ImageWrapper>
+            ))}
           </Carousel>
 
           <Controller>
-            <ArrowButton onClick={handlePrevButton}>&#10229;</ArrowButton>
+            <ArrowButton show={images.length > 1} onClick={handlePrevButton}>
+              &#10229;
+            </ArrowButton>
             <Counter>
-              {index + 1}/{10}
+              {index + 1}/{images.length}
             </Counter>
-            <ArrowButton onClick={handleNextButton}>&#10230;</ArrowButton>
+            <ArrowButton show={images.length > 1} onClick={handleNextButton}>
+              &#10230;
+            </ArrowButton>
           </Controller>
           <DateText>{date}</DateText>
         </CarouselContainer>
