@@ -1,11 +1,11 @@
 import { Container, Logo, Menu, Text } from "./Nav.styles";
 
-function Nav({ lang, inherit }) {
+function Nav({ lang, title = "Game outsourcing studio", inherit }) {
   return (
     <Container inherit={inherit}>
       <Logo>
         <Text color="blue">Allcorrect</Text>
-        <Text>Game outsourcing studio</Text>
+        <Text>{title}</Text>
       </Logo>
       <Menu>
         <Text as="a" href="#" rel="noreferrer noopener" className="normal">
