@@ -9,8 +9,8 @@ import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
 import GetInTouchText from "../components/GetInTouchText/GetInTouchText.js";
 
-import UseModal from "../hooks/UseModal.js";
-import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
+// import UseModal from "../hooks/UseModal.js";
+// import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
 
 const allGames = [
   {
@@ -38,10 +38,9 @@ const allGames = [
 
 export default function Home({ allGames }) {
   const [games, setGames] = useState(allGames);
-  const { showModal, openModal, closeModal } = UseModal();
 
   return (
-    <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
+    <>
       <Nav lang={true} />
       <GameCarousel />
       <Services />
@@ -51,7 +50,7 @@ export default function Home({ allGames }) {
       <Reviews />
       <GetInTouchText />
       <Footer />
-    </GetInTouchModalContext.Provider>
+    </>
   );
 }
 
