@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Nav from "../components/Nav/Nav.js";
 import Games from "../components/Games/Games.js";
 import Reviews from "../components/Reviews/Reviews.js";
 import Footer from "../components/Footer/Footer.js";
-import { useState } from "react";
+
+import UseModal from "../hooks/UseModal.js";
+import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
 
 const allGames = [
   {
@@ -30,13 +33,16 @@ const allGames = [
 
 export default function Home({ allGames }) {
   const [games, setGames] = useState(allGames);
+  const { showModal, openModal, closeModal } = UseModal();
 
   return (
     <>
-      <Nav lang={true} title="Portfolio" />
-      <Games games={games} />
-      <Reviews />
-      <Footer />
+      <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
+        <Nav lang={true} title="Portfolio" />
+        <Games games={games} />
+        <Reviews />
+        <Footer />
+      </GetInTouchModalContext.Provider>
     </>
   );
 }

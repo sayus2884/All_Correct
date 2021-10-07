@@ -152,12 +152,6 @@ It’s been a real pleasure working together so far, and I hope there are many m
           </Review>
         ))}
       </ReviewsContainer>
-      <Text className="right">
-        <Text as="span" className="blue">
-          Get in touch
-        </Text>{" "}
-        to start your project &#10230;
-      </Text>
     </Container>
   );
 }
