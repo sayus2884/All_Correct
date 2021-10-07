@@ -1,13 +1,8 @@
 import { useState } from "react";
 import Nav from "../components/Nav/Nav.js";
-import GameCarousel from "../components/GameCarousel/GameCarousel.js";
-import Services from "../components/Services/Services.js";
-import Active from "../components/Active/Active.js";
 import Games from "../components/Games/Games.js";
 import Reviews from "../components/Reviews/Reviews.js";
-import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
-import GetInTouchText from "../components/GetInTouchText/GetInTouchText.js";
 
 import UseModal from "../hooks/UseModal.js";
 import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
@@ -41,17 +36,14 @@ export default function Home({ allGames }) {
   const { showModal, openModal, closeModal } = UseModal();
 
   return (
-    <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
-      <Nav lang={true} />
-      <GameCarousel />
-      <Services />
-      <Companies />
-      <Active />
-      <Games games={games} />
-      <Reviews />
-      <GetInTouchText />
-      <Footer />
-    </GetInTouchModalContext.Provider>
+    <>
+      <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
+        <Nav lang={true} title="Portfolio" />
+        <Games games={games} />
+        <Reviews />
+        <Footer />
+      </GetInTouchModalContext.Provider>
+    </>
   );
 }
 
