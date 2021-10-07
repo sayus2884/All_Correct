@@ -8,6 +8,8 @@ import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
 import { useState } from "react";
 
+import WhoWeLookingFor from "../components/WhoWeLookingFor/WhoWeLookingFor.js";
+
 const allGames = [
   {
     image: "/images/games/game-one.png",
@@ -44,6 +46,7 @@ export default function Home({ allGames }) {
       <Active />
       <Games games={games} />
       <Reviews />
+      <WhoWeLookingFor />
       <Footer />
     </>
   );
