@@ -8,6 +8,7 @@ import Reviews from "../components/Reviews/Reviews.js";
 import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
 import GetInTouchText from "../components/GetInTouchText/GetInTouchText.js";
+
 import UseModal from "../hooks/UseModal.js";
 import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
 
