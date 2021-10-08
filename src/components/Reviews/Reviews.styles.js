@@ -5,7 +5,6 @@ export const Container = styled.section`
   padding: ${(props) => props.theme.padding.lg};
   padding-top: 100px;
   padding-right: 0;
-  padding-bottom: 250px;
   box-shadow: ${(props) => `0px -2px 0px ${props.theme.colors.grey} inset`};
 `;
 
