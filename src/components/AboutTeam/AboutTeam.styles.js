@@ -6,6 +6,7 @@ export const AboutWrapper = styled.section`
   letter-spacing: -0.01;
   color: ${({ theme }) => theme.colors.white};
   margin-left: 40px;
+  padding-top: 250px;
 `;
 
 export const AboutTitle = styled.h3`
