@@ -4,9 +4,6 @@ import Games from "../components/Games/Games.js";
 import Reviews from "../components/Reviews/Reviews.js";
 import Footer from "../components/Footer/Footer.js";
 
-import UseModal from "../hooks/UseModal.js";
-import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
-
 const allGames = [
   {
     image: "/images/games/game-one.png",
@@ -33,16 +30,13 @@ const allGames = [
 
 export default function Home({ allGames }) {
   const [games, setGames] = useState(allGames);
-  const { showModal, openModal, closeModal } = UseModal();
 
   return (
     <>
-      <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
-        <Nav lang={true} title="Portfolio" />
-        <Games games={games} />
-        <Reviews />
-        <Footer />
-      </GetInTouchModalContext.Provider>
+      <Nav lang={true} title="Portfolio" />
+      <Games games={games} />
+      <Reviews />
+      <Footer />
     </>
   );
 }

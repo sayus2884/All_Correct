@@ -9,56 +9,17 @@ import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
 import GetInTouchText from "../components/GetInTouchText/GetInTouchText.js";
 
-import UseModal from "../hooks/UseModal.js";
-import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
-
-const allGames = [
-  {
-    image: "/images/games/game-one.png",
-    caption: {
-      white: "by Deadalic Entertainment",
-      blue: "Gragon Strom",
-    },
-  },
-  {
-    image: "/images/games/game-two.png",
-    caption: {
-      white: "by Deadalic Entertainment",
-      blue: "Gragon Strom",
-    },
-  },
-  {
-    image: "/images/games/game-three.png",
-    caption: {
-      white: "Deadalic Entertainment",
-      blue: "Battle Arena Heroes Adventure by",
-    },
-  },
-];
-
 export default function Home({ allGames }) {
-  const [games, setGames] = useState(allGames);
-  const { showModal, openModal, closeModal } = UseModal();
-
   return (
-    <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
+    <>
       <Nav lang={true} />
       <GameCarousel />
       <Services />
       <Companies />
       <Active />
-      <Games games={games} />
       <Reviews />
       <GetInTouchText />
       <Footer />
-    </GetInTouchModalContext.Provider>
+    </>
   );
-}
-
-export async function getStaticProps() {
-  return {
-    props: {
-      allGames,
-    },
-  };
 }
