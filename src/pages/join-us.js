@@ -9,7 +9,7 @@ export default function JoinUs({ allGames }) {
 
   return (
     <>
-      <Nav lang={true} />
+      <Nav lang={true} title={"Join Us"} />
       <JoinUsSection title={"The Allcorrect group is looking for new faces. Join us!"} />
       <JoinUsSection
         title={"Join us! Send your CV"}
