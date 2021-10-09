@@ -14,3 +14,43 @@ export const Title = styled.h2`
   margin-bottom: 80px;
   letter-spacing: -0.01em;
 `;
+
+export const OrderedList = styled.ol`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  letter-spacing: -0.01em;
+  max-width: 1130px;
+`;
+
+export const OrderedItem = styled.li`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+export const GamesContainer = styled.ul`
+  display: flex;
+  gap: 20px;
+  margin-top: 60px;
+`;
+
+export const Link = styled.a`
+  display: block;
+  text-align: right;
+
+  margin: 80px 150px 0 0;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+
+  letter-spacing: -0.01em;
+  color: ${(props) => props.theme.colors.blue};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
