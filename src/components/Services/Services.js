@@ -91,7 +91,7 @@ function GameTesting() {
       <GamesContainer>
         {allGames.map((game, i) => (
           <li key={i}>
-            <GameCard game={game} />
+            <GameCard game={game} width={325} height={221} />
           </li>
         ))}
       </GamesContainer>

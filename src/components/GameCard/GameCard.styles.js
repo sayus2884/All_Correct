@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  grid-template-columns: minmax(300px, 440px);
+  /* grid-template-columns: minmax(300px, 440px); */
   opacity: 0;
   transform: translateY(${(props) => (props.delay > 0 ? "100vh" : 0)});
   animation: ${(props) => `fadein .5s ${props.delay * 0.1}s forwards`};
@@ -18,8 +19,8 @@ export const Container = styled.div`
 
 export const Img = styled.div`
   position: relative;
-  width: ${({ width }) => (width ? `${width}px` : "100%")};
-  height: ${({ height }) => (height ? `${height}px` : "100%")};
+  min-width: ${({ width }) => (width ? `${width}px` : "100%")};
+  min-height: ${({ height }) => (height ? `${height}px` : "100%")};
 `;
 
 export const Text = styled.p`

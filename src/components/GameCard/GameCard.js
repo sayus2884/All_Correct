@@ -2,7 +2,7 @@ import { Container, Img, Text } from "./GameCard.styles";
 import Image from "next/image";
 import { useState } from "react";
 
-function GameCard({ game }) {
+function GameCard({ game, width, height }) {
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
 
@@ -14,7 +14,7 @@ function GameCard({ game }) {
 
   return (
     <Container delay={5}>
-      <Img width={325} height={221}>
+      <Img width={width} height={height}>
         <Image
           src={image}
           alt="review Image"

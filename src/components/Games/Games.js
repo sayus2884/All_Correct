@@ -50,7 +50,7 @@ function Games({ games, setGames }) {
           .reduce((a, c) => [...a, ...c], [])
           .slice(0, showAll ? 100 : 6)
           .map((e, i) => (
-            <GameCard key={i} game={e} />
+            <GameCard key={i} game={e} height={300} />
           ))}
       </GamesGrid>
       <Text className="button blue" onClick={() => setShow(!showAll)}>
