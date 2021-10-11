@@ -1,25 +1,50 @@
-import { useState } from "react";
 import Nav from "../components/Nav/Nav.js";
 import GameCarousel from "../components/GameCarousel/GameCarousel.js";
 import Services from "../components/Services/Services.js";
 import Active from "../components/Active/Active.js";
 import Games from "../components/Games/Games.js";
+import GameModal from "../components/GameModal/GameModal.js";
 import Reviews from "../components/Reviews/Reviews.js";
 import Companies from "../components/Companies/Companies";
 import Footer from "../components/Footer/Footer.js";
-import GetInTouchText from "../components/GetInTouchText/GetInTouchText.js";
+
+import GameModalContext from "../context/GameModalContext.js";
+import useGames from "../hooks/UseGames.js";
+import useGameModal from "../hooks/UseGameModal.js";
+
+import { games as allGames } from "../utils/data";
 
 export default function Home({ allGames }) {
+  const { showGameModal, openGameModal, closeGameModal } = useGameModal();
+  const { selectedGame, carouselGames, setSelectedGame } = useGames(allGames);
+
   return (
     <>
-      <Nav lang={true} />
-      <GameCarousel />
-      <Services />
-      <Companies />
-      <Active />
-      <Reviews />
-      <GetInTouchText />
-      <Footer />
+      <GameModalContext.Provider
+        value={{
+          selectedGame,
+          setSelectedGame,
+          showGameModal,
+          openGameModal,
+          closeGameModal,
+        }}>
+        <Nav lang={true} />
+        <GameCarousel games={carouselGames} />
+        <Services />
+        <Companies />
+        <Active />
+        <Games games={allGames} />
+        <Reviews />
+        <GameModal />
+        <Footer />
+      </GameModalContext.Provider>
     </>
   );
+}
+export async function getStaticProps() {
+  return {
+    props: {
+      allGames,
+    },
+  };
 }
