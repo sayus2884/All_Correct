@@ -1,7 +1,6 @@
 import Nav from "../components/Nav/Nav.js";
 import GameCarousel from "../components/GameCarousel/GameCarousel.js";
 import Services from "../components/Services/Services.js";
-import Pricing from "../components/Pricing/Pricing.js";
 import Active from "../components/Active/Active.js";
 import Games from "../components/Games/Games.js";
 import Reviews from "../components/Reviews/Reviews.js";
@@ -41,7 +40,6 @@ export default function Home({ allGames }) {
       <Nav lang={true} />
       <GameCarousel />
       <Services />
-      <Pricing />
       <Companies />
       <Active />
       <Games games={games} />
