@@ -1,11 +1,22 @@
+import { useContext } from "react";
 import { Container, MenuList, GamesGrid, GameCard, Img, Text } from "./Games.styles";
 import GameMenuItem from "../GameMenuItem/GameMenuItem.js";
 import Image from "next/image";
 import { useState } from "react";
 
+import GameModalContext from "../../context/GameModalContext";
+
 function Games({ games, setGames }) {
+  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
+
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
+
+  function openModal(event) {
+    event.preventDefault();
+    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
+    openGameModal(true);
+  }
 
   function toggle(index) {
     openMenu === index ? setOpen(false) : setOpen(index);
@@ -49,14 +60,14 @@ function Games({ games, setGames }) {
           .reduce((a, c) => [...a, ...c], [])
           .slice(0, showAll ? 100 : 6)
           .map((e, i) => (
-            <GameCard key={i} delay={i > 5 ? i - 5 : 0}>
+            <GameCard key={i} delay={i > 5 ? i - 5 : 0} data-index={i} onClick={openModal}>
               <Img>
                 <Image
-                  src={e.image}
+                  src={e.images[0]}
                   alt="review Image"
                   layout="fill"
                   placeholder="blur"
-                  blurDataURL={e.image}
+                  blurDataURL={e.images[0]}
                   quality={25}
                   objectFit="cover"
                   objectPosition="center"
@@ -64,9 +75,9 @@ function Games({ games, setGames }) {
               </Img>
               <Text>
                 <Text as="span" className="blue">
-                  {e.caption.blue}
+                  {e.title}
                 </Text>{" "}
-                {e.caption.white}
+                {e.publisher}
               </Text>
             </GameCard>
           ))}

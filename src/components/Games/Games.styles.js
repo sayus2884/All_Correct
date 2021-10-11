@@ -48,6 +48,10 @@ export const GameCard = styled.div`
   transform: translateY(${(props) => (props.delay > 0 ? "100vh" : 0)});
   animation: ${(props) => `fadein .5s ${props.delay * 0.1}s forwards`};
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @keyframes fadein {
     to {
       opacity: 1;
