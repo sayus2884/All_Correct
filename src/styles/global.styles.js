@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 const GlobalStyles = createGlobalStyle`
   ${normalize};
 
