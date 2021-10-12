@@ -1,14 +1,27 @@
+import { useEffect, useState } from "react";
+import StackGrid from "react-stack-grid";
 import {
   Container,
   FilterOptions,
   Option,
-  Grid,
-  GridContainer,
-  LearnMore,
-  PostCard,
+  MasonryContainer,
+  TopHeadline,
+  Masonry,
+  LoadMore,
 } from "./Posts.styles";
+import PostCard from "../PostCard/PostCard.js";
 
 function Posts() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/posts")
+      .then((res) => res.json())
+      .then((posts) => {
+        setPosts(posts);
+      });
+  }, []);
+
   return (
     <Container>
       <FilterOptions>
@@ -29,18 +42,20 @@ function Posts() {
         </li>
       </FilterOptions>
 
-      <GridContainer>
-        <Grid>
-          <PostCard> test1</PostCard>
-          <PostCard> test2</PostCard>
-          <PostCard> test3</PostCard>
-          <PostCard> test4</PostCard>
-          <PostCard> test5</PostCard>
-          <PostCard> test6</PostCard>
-        </Grid>
-      </GridContainer>
+      <MasonryContainer>
+        <TopHeadline>
+          {posts.slice(0, 2).map((post, key) => (
+            <PostCard key={key} post={post} />
+          ))}
+        </TopHeadline>
+        <StackGrid columnWidth="33.33%" gutterWidth={20} gutterHeight={20}>
+          {posts.slice(2, posts.length).map((post, key) => (
+            <PostCard key={key} post={post} />
+          ))}
+        </StackGrid>
+      </MasonryContainer>
 
-      <LearnMore>Load More</LearnMore>
+      <LoadMore>Load More ↓</LoadMore>
     </Container>
   );
 }

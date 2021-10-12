@@ -10,6 +10,7 @@ export const Container = styled.div`
 export const FilterOptions = styled.ul`
   display: flex;
   gap: 20px;
+  margin-bottom: 80px;
 `;
 
 export const Option = styled.button`
@@ -31,20 +32,38 @@ export const Option = styled.button`
   }
 `;
 
-export const GridContainer = styled.div`
+export const MasonryContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 20px;
 `;
 
-export const Grid = styled.div`
+export const TopHeadline = styled.div`
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+export const Masonry = styled.div`
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 `;
 
 export const PostCard = styled.div`
-  height: 500px;
+  height: ${({ height }) => (height ? `${height}px` : `300px`)};
   background: red;
 `;
 
-export const LearnMore = styled.button``;
+export const LoadMore = styled.button`
+  margin-top: 80px;
+  border: none;
+  background: none;
+  color: ${({ theme }) => theme.colors.blue};
+
+  font-family: ${(props) => props.theme.fonts.inter};
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+`;
