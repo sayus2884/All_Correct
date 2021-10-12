@@ -7,6 +7,7 @@ import Games from "../components/Games/Games.js";
 import GameModal from "../components/GameModal/GameModal.js";
 import Reviews from "../components/Reviews/Reviews.js";
 import Companies from "../components/Companies/Companies";
+import Pricing from "../components/Pricing/Pricing";
 import Footer from "../components/Footer/Footer.js";
 
 import GameModalContext from "../context/GameModalContext.js";
@@ -20,6 +21,7 @@ export default function Home() {
       <GameCarousel games={carouselGames} />
       <Services />
       <Companies />
+        <Pricing />
       <Active />
       <Reviews />
       <GameModal />
