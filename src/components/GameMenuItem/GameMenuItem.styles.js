@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Text } from "../Games/Games.styles";
+// import { Text } from "../Games/Games.styles";
 
 export const Wrapper = styled.div`
   position: relative;
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   gap: 10px;
 `;
 
-export const Item = styled(Text)`
+export const Item = styled.p`
   line-height: 30px;
 
   &.black {

@@ -1,9 +1,8 @@
-
 import { useContext } from "react";
 import { Container, MenuList, GamesGrid, Img, Text } from "./Games.styles";
 
-import GameMenuItem from "../GameMenuItem/GameMenuItem.js";
-import GameCard from "../GameCard/GameCard.js";
+import GameMenuItem from "../../components/GameMenuItem/GameMenuItem.js";
+import GameCard from "../../components/GameCard/GameCard.js";
 import Image from "next/image";
 import { useState } from "react";
 

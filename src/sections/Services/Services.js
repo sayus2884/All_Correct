@@ -6,9 +6,9 @@ import {
   GamesContainer,
   Link,
 } from "./Services.styles";
-import Collapsibles from "../Collapsibles/Collapsibles.js";
-import CollapsibleItem from "../CollapsibleItem/CollapsibleItem.js";
-import GameCard from "../GameCard/GameCard.js";
+import Collapsibles from "../../components/Collapsibles/Collapsibles.js";
+import CollapsibleItem from "../../components/CollapsibleItem/CollapsibleItem.js";
+import GameCard from "../../components/GameCard/GameCard.js";
 
 const allGames = [
   {

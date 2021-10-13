@@ -9,7 +9,7 @@ import {
   EmailInput,
   FormButton,
 } from "./Pricing.styles";
-import Checkbox from "../Checkbox/Checkbox";
+import Checkbox from "../../components/Checkbox/Checkbox";
 
 function Pricing() {
   return (

@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { createPortal } from "react-dom";
 import { Overlay, Container, CloseButton } from "./GameModal.styles";
 
-import GameInfo from "../GameInfo/GameInfo.js";
+import GameInfo from "../../components/GameInfo/GameInfo.js";
 
 import GameModalContext from "../../context/GameModalContext";
 

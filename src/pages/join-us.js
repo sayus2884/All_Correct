@@ -1,10 +1,10 @@
-import Nav from "../components/Nav/Nav.js";
+import Nav from "../sections/Nav/Nav.js";
 import Reviews from "../components/Reviews/Reviews.js";
-import JoinUsSection from "../components/JoinUs/JoinUs.js";
-import AboutTeam from "../components/AboutTeam/AboutTeam.js";
-import WhatToExpect from "../components/WhatToExpect/WhatToExpect.js";
-import WhoWeLookingFor from "../components/WhoWeLookingFor/WhoWeLookingFor.js";
-import Footer from "../components/Footer/Footer.js";
+import JoinUsSection from "../sections/JoinUs/JoinUs.js";
+import AboutTeam from "../sections/AboutTeam/AboutTeam.js";
+import WhatToExpect from "../sections/WhatToExpect/WhatToExpect.js";
+import WhoWeLookingFor from "../sections/WhoWeLookingFor/WhoWeLookingFor.js";
+import Footer from "../sections/Footer/Footer.js";
 import { useState } from "react";
 
 export default function JoinUs({ allGames }) {

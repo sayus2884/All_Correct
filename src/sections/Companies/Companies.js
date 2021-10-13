@@ -1,5 +1,5 @@
 import { Container, Title, CompanyList, CompanyItem, Image } from "./Companies.styles";
-import Company from "../Company/Company.js";
+import Company from "../../components/Company/Company.js";
 
 function Companies({ children }) {
   const companies = [

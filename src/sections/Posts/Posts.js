@@ -9,7 +9,7 @@ import {
   Masonry,
   LoadMore,
 } from "./Posts.styles";
-import PostCard from "../PostCard/PostCard.js";
+import PostCard from "../../components/PostCard/PostCard.js";
 
 function Posts() {
   const [posts, setPosts] = useState([]);

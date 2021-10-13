@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Link from "next/link";
-import GetInTouchModal from "../GetInTouchModal/GetInTouchModal";
+import GetInTouchModal from "../../components/GetInTouchModal/GetInTouchModal";
 import { Container, Logo, Menu, Text } from "./Nav.styles";
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
 

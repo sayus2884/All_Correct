@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Nav from "../../components/Nav/Nav.js";
-import GetAdvice from "../../components/GetAdvice/GetAdvice.js";
-import Post from "../../components/Post/Post.js";
-import Footer from "../../components/Footer/Footer.js";
+import Nav from "../../sections/Nav/Nav.js";
+import GetAdvice from "../../sections/GetAdvice/GetAdvice.js";
+import Post from "../../sections/Post/Post.js";
+import Footer from "../../sections/Footer/Footer.js";
 
 export default function Home() {
   const { postId } = useRouter().query;
