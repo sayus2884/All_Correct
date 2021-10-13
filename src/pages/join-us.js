@@ -3,6 +3,7 @@ import Reviews from "../components/Reviews/Reviews.js";
 import JoinUsSection from "../components/JoinUs/JoinUs.js";
 import AboutTeam from "../components/AboutTeam/AboutTeam.js";
 import WhatToExpect from "../components/WhatToExpect/WhatToExpect.js";
+import WhoWeLookingFor from "../components/WhoWeLookingFor/WhoWeLookingFor.js";
 import Footer from "../components/Footer/Footer.js";
 import { useState } from "react";
 
@@ -14,6 +15,8 @@ export default function JoinUs({ allGames }) {
       <Nav lang={true} title={"Join Us"} />
       <JoinUsSection title={"The Allcorrect group is looking for new faces. Join us!"} />
       <AboutTeam />
+
+      <WhoWeLookingFor />
 
       <WhatToExpect />
 
