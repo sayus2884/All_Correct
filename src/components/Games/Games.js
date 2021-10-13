@@ -1,6 +1,9 @@
+
 import { useContext } from "react";
-import { Container, MenuList, GamesGrid, GameCard, Img, Text } from "./Games.styles";
+import { Container, MenuList, GamesGrid, Img, Text } from "./Games.styles";
+
 import GameMenuItem from "../GameMenuItem/GameMenuItem.js";
+import GameCard from "../GameCard/GameCard.js";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -60,26 +63,7 @@ function Games({ games, setGames }) {
           .reduce((a, c) => [...a, ...c], [])
           .slice(0, showAll ? 100 : 6)
           .map((e, i) => (
-            <GameCard key={i} delay={i > 5 ? i - 5 : 0} data-index={i} onClick={openModal}>
-              <Img>
-                <Image
-                  src={e.images[0]}
-                  alt="review Image"
-                  layout="fill"
-                  placeholder="blur"
-                  blurDataURL={e.images[0]}
-                  quality={25}
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </Img>
-              <Text>
-                <Text as="span" className="blue">
-                  {e.title}
-                </Text>{" "}
-                {e.publisher}
-              </Text>
-            </GameCard>
+            <GameCard key={i} game={e} height={300} />
           ))}
       </GamesGrid>
       <Text className="button blue" onClick={() => setShow(!showAll)}>
