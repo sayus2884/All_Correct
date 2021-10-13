@@ -6,7 +6,7 @@ function GameCard({ game, width, height }) {
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
 
-  const { image, caption } = game;
+  const { images, caption } = game;
 
   function toggle(index) {
     openMenu === index ? setOpen(false) : setOpen(index);
@@ -16,11 +16,11 @@ function GameCard({ game, width, height }) {
     <Container delay={5}>
       <Img width={width} height={height}>
         <Image
-          src={image}
+          src={images[0]}
           alt="review Image"
           layout="fill"
           placeholder="blur"
-          blurDataURL={image}
+          blurDataURL={images[0]}
           quality={25}
           objectFit="cover"
           objectPosition="center"
