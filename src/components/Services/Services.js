@@ -12,28 +12,28 @@ import GameCard from "../GameCard/GameCard.js";
 
 const allGames = [
   {
-    image: "/images/games/game-one.png",
+    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
     caption: {
       white: "by Deadalic Entertainment",
       blue: "Gragon Strom",
     },
   },
   {
-    image: "/images/games/game-two.png",
+    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
     caption: {
       white: "by Deadalic Entertainment",
       blue: "Gragon Strom",
     },
   },
   {
-    image: "/images/games/game-three.png",
+    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
     caption: {
       white: "Deadalic Entertainment",
       blue: "Battle Arena Heroes Adventure by",
     },
   },
   {
-    image: "/images/games/game-three.png",
+    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
     caption: {
       white: "Deadalic Entertainment",
       blue: "Battle Arena Heroes Adventure by",
