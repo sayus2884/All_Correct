@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Image from "next/image";
 import {
   Container,
@@ -12,22 +13,15 @@ import {
   Carousel,
 } from "./GameCarousel.styles";
 
-function GameCarousel() {
-  const fakeData = [
-    { game: "Apex Legends", company: "Electronic Arts", url: "/images/carousel/apex.png" },
-    {
-      game: "Star Wars Jedi: Fallen Order",
-      company: "Electronic Arts",
-      url: "/images/carousel/jfo.jpg",
-    },
-    { game: `Lily's Garden`, company: "Electronic Arts", url: "/images/carousel/lilys.jpg" },
-    { game: "Klepto Cats", company: "Tactile Games", url: "/images/carousel/kleptocats_2.jpg" },
-    { game: "Anthem", company: "Electronic Arts", url: "/images/carousel/anthem.jpg" },
-  ];
+import GameModalContext from "../../context/GameModalContext";
+
+function GameCarousel({ games }) {
+  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
 
   const handleTitleClick = (event) => {
     event.preventDefault();
-    alert("Open game modal");
+    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
+    openGameModal(true);
   };
 
   return (
@@ -41,12 +35,12 @@ function GameCarousel() {
         interval={2500}
         transitionTime={700}
         infiniteLoop={true}>
-        {fakeData.map((item, key) => (
-          <Item key={key}>
+        {games.slice(0, 5).map((game, index) => (
+          <Item key={index}>
             <ImageWrapper>
               <Image
-                alt={item.game}
-                src={item.url}
+                alt={game.title}
+                src={game.images[0]}
                 priority={true}
                 objectFit="cover"
                 objectPosition="center"
@@ -55,12 +49,12 @@ function GameCarousel() {
             </ImageWrapper>
 
             <Info className="info">
-              <TitleContainer onClick={handleTitleClick}>
+              <TitleContainer onClick={handleTitleClick} data-index={index}>
                 <Title>We've localized</Title>
                 <Title>
-                  <Highlight> {item.game}</Highlight> game
+                  <Highlight> {game.title}</Highlight> game
                 </Title>
-                <Title>by {item.company}</Title>
+                <Title>by {game.publisher}</Title>
               </TitleContainer>
             </Info>
           </Item>
