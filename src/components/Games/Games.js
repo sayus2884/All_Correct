@@ -1,12 +1,25 @@
+
+import { useContext } from "react";
 import { Container, MenuList, GamesGrid, Img, Text } from "./Games.styles";
+
 import GameMenuItem from "../GameMenuItem/GameMenuItem.js";
 import GameCard from "../GameCard/GameCard.js";
 import Image from "next/image";
 import { useState } from "react";
 
+import GameModalContext from "../../context/GameModalContext";
+
 function Games({ games, setGames }) {
+  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
+
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
+
+  function openModal(event) {
+    event.preventDefault();
+    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
+    openGameModal(true);
+  }
 
   function toggle(index) {
     openMenu === index ? setOpen(false) : setOpen(index);
