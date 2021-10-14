@@ -2,10 +2,11 @@ import { useState } from "react";
 import {
   Container,
   HeaderContainer,
-  Title,
+  // Title,
   DropdownButton,
   Content,
 } from "./CollapsibleItem.styles";
+import SubTitle from "../SubTitle/SubTitle";
 
 function CollapsibleItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ function CollapsibleItem({ title, children }) {
   return (
     <Container>
       <HeaderContainer>
-        <Title>{title}</Title>
+        <SubTitle>{title}</SubTitle>
         <DropdownButton onClick={handleClick} isOpen={isOpen}>
           &#10230;
         </DropdownButton>
