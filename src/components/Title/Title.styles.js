@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
+export const Header = styled.h2`
   background-color: ${(props) => props.theme.fonts.inter};
   font-style: normal;
   font-weight: bold;
