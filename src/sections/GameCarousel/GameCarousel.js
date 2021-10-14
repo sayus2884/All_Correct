@@ -1,14 +1,15 @@
 import { useContext } from "react";
+
 import Image from "next/image";
+import Highlight from "../../components/Highlight/Highlight";
+import SubText from "../../components/SubText/SubText";
 import {
-  Container,
+  Section,
   Item,
   Info,
   ImageWrapper,
   TitleContainer,
   Title,
-  Highlight,
-  LinkContainer,
   Link,
   Carousel,
 } from "./GameCarousel.styles";
@@ -25,7 +26,7 @@ function GameCarousel({ games }) {
   };
 
   return (
-    <Container>
+    <Section>
       <Carousel
         showStatus={false}
         showArrows={false}
@@ -61,10 +62,10 @@ function GameCarousel({ games }) {
         ))}
       </Carousel>
 
-      <LinkContainer>
-        <Link href="/all-projects">All projects &#10230;</Link>
-      </LinkContainer>
-    </Container>
+      <Link href="/portfolio">
+        <SubText className="header">All projects &#10230;</SubText>
+      </Link>
+    </Section>
   );
 }
 
