@@ -46,6 +46,8 @@ export const ImageWrapper = styled.div`
 
 export const Content = styled.div`
   margin-top: 120px;
+  line-height: 30px;
+  letter-spacing: -0.01em;
 
   max-width: 783px;
 `;
