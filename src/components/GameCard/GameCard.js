@@ -1,4 +1,5 @@
-import { Container, Img, Text } from "./GameCard.styles";
+import Highlight from "../Highlight/Highlight";
+import { Container, Img, Link } from "./GameCard.styles";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -6,7 +7,7 @@ function GameCard({ game, width, height }) {
   const [showAll, setShow] = useState(false);
   const [openMenu, setOpen] = useState(false);
 
-  const { images, caption } = game;
+  const { title, publisher, images } = game;
 
   function toggle(index) {
     openMenu === index ? setOpen(false) : setOpen(index);
@@ -26,12 +27,9 @@ function GameCard({ game, width, height }) {
           objectPosition="center"
         />
       </Img>
-      <Text>
-        <Text as="span" className="blue">
-          Game Title
-        </Text>{" "}
-        by Publisher
-      </Text>
+      <Link>
+        <Highlight>{title}</Highlight> by {publisher}
+      </Link>
     </Container>
   );
 }

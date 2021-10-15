@@ -1,11 +1,5 @@
 import { useState } from "react";
-import {
-  Container,
-  HeaderContainer,
-  // Title,
-  DropdownButton,
-  Content,
-} from "./CollapsibleItem.styles";
+import { Container, HeaderContainer, DropdownButton, Content } from "./CollapsibleItem.styles";
 import SubTitle from "../SubTitle/SubTitle";
 
 function CollapsibleItem({ title, children }) {

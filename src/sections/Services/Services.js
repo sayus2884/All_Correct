@@ -1,132 +1,83 @@
-import {
-  Container,
-  Title,
-  OrderedList,
-  OrderedItem,
-  GamesContainer,
-  Link,
-} from "./Services.styles";
+import { useContext } from "react";
+
+import Section from "../../components/Section/Section";
+import { Title, OrderedList, OrderedItem, SubText, GamesContainer, Link } from "./Services.styles";
+
 import Collapsibles from "../../components/Collapsibles/Collapsibles.js";
 import CollapsibleItem from "../../components/CollapsibleItem/CollapsibleItem.js";
 import GameCard from "../../components/GameCard/GameCard.js";
 
-const allGames = [
-  {
-    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
-    caption: {
-      white: "by Deadalic Entertainment",
-      blue: "Gragon Strom",
-    },
-  },
-  {
-    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
-    caption: {
-      white: "by Deadalic Entertainment",
-      blue: "Gragon Strom",
-    },
-  },
-  {
-    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
-    caption: {
-      white: "Deadalic Entertainment",
-      blue: "Battle Arena Heroes Adventure by",
-    },
-  },
-  {
-    images: ["/images/games/apex.jpg", "/images/games/apex.jpg"],
-    caption: {
-      white: "Deadalic Entertainment",
-      blue: "Battle Arena Heroes Adventure by",
-    },
-  },
-];
+import GameModalContext from "../../context/GameModalContext";
 
-function Localization() {
-  return (
-    <>
-      <div>Localization</div>
-    </>
-  );
-}
-
-function GameTesting() {
+function GameTesting({ games }) {
   return (
     <>
       <OrderedList>
         <OrderedItem>
-          <p>1.</p>
-          <p>
+          <SubText>1.</SubText>
+          <SubText>
             Initial cosmetic testing, which involves checking the game to ensure that its text
             displays correctly. Our experts use the results of the cosmetic test to send the
             customer a detailed report which includes information about all errors and defects
             present.
-          </p>
+          </SubText>
         </OrderedItem>
         <OrderedItem>
-          <p>2.</p>
-          <p>
+          <SubText>2.</SubText>
+          <SubText>
             Full localization testing: checking the game for semantic, grammatical, orthographic and
             punctuation errors, typos and incorrectly displayed text. After the customer introduces
             corrections based on the report, our testers go through the game again using a set
             script to check whether all the changes were correctly introduced to the game. This
             stage is called regression testing. 
-          </p>
+          </SubText>
         </OrderedItem>
         <OrderedItem>
-          <p>3.</p>
-          <p>
+          <SubText>3.</SubText>
+          <SubText>
             Functional testing, which determine the stability of the game or software product by
             checking the crucial functionality of the application. 
-          </p>
+          </SubText>
         </OrderedItem>
         <OrderedItem>
-          <p>4.</p>
-          <p>
+          <SubText>4.</SubText>
+          <SubText>
             Compliance and compatibility testing. Quality assurance across multiple supported
             platforms – PC, Android, iOS. We cover more than 22 languages and more than 200
             platforms at once for you to pass any featuring tests!
-          </p>
+          </SubText>
         </OrderedItem>
       </OrderedList>
       <GamesContainer>
-        {allGames.map((game, i) => (
+        {games.slice(0, 4).map((game, i) => (
           <li key={i}>
             <GameCard game={game} width={325} height={221} />
           </li>
         ))}
       </GamesContainer>
 
-      <Link>All localization and functional game testing projects &#10230;</Link>
-    </>
-  );
-}
-
-function Voiceovers() {
-  return (
-    <>
-      <div>Voiceovers</div>
-    </>
-  );
-}
-
-function Art() {
-  return (
-    <>
-      <div>GameTesting</div>
+      <Link href="#" scroll={false}>
+        All localization and functional game testing projects &#10230;
+      </Link>
     </>
   );
 }
 
 function Services() {
+  const { allGames } = useContext(GameModalContext);
+
   const fakedata = [
-    { title: "Learn game localization", content: <GameTesting /> },
-    { title: "Localization and functional game testing", content: <GameTesting /> },
-    { title: "Voiceovers", content: <GameTesting /> },
-    { title: "Game art", content: <GameTesting /> },
+    { title: "Learn game localization", content: <GameTesting games={allGames} /> },
+    {
+      title: "Localization and functional game testing",
+      content: <GameTesting games={allGames} />,
+    },
+    { title: "Voiceovers", content: <GameTesting games={allGames} /> },
+    { title: "Game art", content: <GameTesting games={allGames} /> },
   ];
 
   return (
-    <Container>
+    <Section>
       <Title>Our Services</Title>
 
       <Collapsibles>
@@ -136,7 +87,7 @@ function Services() {
           </CollapsibleItem>
         ))}
       </Collapsibles>
-    </Container>
+    </Section>
   );
 }
 
