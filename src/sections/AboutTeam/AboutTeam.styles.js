@@ -1,19 +1,10 @@
 import styled from "styled-components";
 
-export const AboutWrapper = styled.section`
-  font-family: ${({ theme }) => theme.fonts.inter};
-  width: 786px;
-  letter-spacing: -0.01;
-  color: ${({ theme }) => theme.colors.white};
-  margin-left: 40px;
-  padding-top: 250px;
-`;
-
-export const AboutTitle = styled.h3`
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.9;
-  margin-bottom: 30px;
+export const AboutWrapper = styled.div`
+  max-width: 786px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;
 
 export const TextContainer = styled.div`
