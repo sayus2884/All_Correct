@@ -1,4 +1,5 @@
-import { ExpectWrapper, ExpectTitle, ExpectList } from "./WhatToExpect.styles";
+import { ExpectTitle, ExpectList, Text } from "./WhatToExpect.styles";
+import Section from "../../components/Section/Section";
 
 function WhatToExpect() {
   const listData = [
@@ -22,14 +23,16 @@ function WhatToExpect() {
     },
   ];
   return (
-    <ExpectWrapper>
+    <Section>
       <ExpectTitle>What you can expect</ExpectTitle>
       <ExpectList>
         {listData.map((item, i) => (
-          <li key={i}> {item.text}</li>
+          <li key={i}>
+            <Text>{item.text}</Text>
+          </li>
         ))}
       </ExpectList>
-    </ExpectWrapper>
+    </Section>
   );
 }
 

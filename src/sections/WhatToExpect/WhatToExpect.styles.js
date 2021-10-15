@@ -1,13 +1,5 @@
 import styled from "styled-components";
-
-export const ExpectWrapper = styled.section`
-  font-family: ${({ theme }) => theme.fonts.inter};
-  width: 1245px;
-  letter-spacing: -0.01;
-  color: ${({ theme }) => theme.colors.white};
-  margin-left: 40px;
-  margin-top: 250px;
-`;
+import OGText from "../../components/Text/Text";
 
 export const ExpectTitle = styled.h3`
   font-size: 32px;
@@ -17,30 +9,31 @@ export const ExpectTitle = styled.h3`
 `;
 
 export const ExpectList = styled.ol`
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  display: grid;
-  grid-gap: 60px;
   counter-reset: orderedlist;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 60px 0;
+
   font-size: 20px;
   line-height: 1.5;
   font-weight: 400;
 
+  & > * {
+    flex: 1 1 50%;
+  }
+
   li {
-    display: grid;
-    grid-template-columns: 0 1fr;
-    grid-gap: 52px;
+    display: flex;
+    gap: 20px;
     align-items: start;
-    width: 565px;
   }
 
   li::before {
     counter-increment: orderedlist;
     content: counter(orderedlist);
-    width: 32px;
-    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     text-align: center;
     background-color: ${({ theme }) => theme.colors.blue};
     border-radius: 50%;
@@ -49,4 +42,8 @@ export const ExpectList = styled.ol`
     justify-content: center;
     align-items: center;
   }
+`;
+export const Text = styled(OGText)`
+  max-width: 503px;
+  font-weight: 400;
 `;
