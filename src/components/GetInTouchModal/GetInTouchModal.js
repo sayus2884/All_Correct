@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState, useCallback, useContext } from "react";
+import React, { useEffect, useRef, useState, useCallback, useContext } from "react";
 import ReactDOM from "react-dom";
 import GetInTouchConfirm from "./GetInTouchConfirm/GetInTouchConfirm";
 import GetInTouchModalInfo from "./GetInTouchModalInfo/GetInTouchModalInfo";
 import { Background, ModalWrapper } from "./GetInTouchModal.styles";
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
+import { isEmail } from "../../utils/validator";
 
 const GetInTouchModal = () => {
   const { showModal, closeModal } = useContext(GetInTouchModalContext);
@@ -11,6 +12,8 @@ const GetInTouchModal = () => {
   const modalRef = useRef();
   const [submitted, setSubmitted] = useState(false);
   const [step, setStep] = useState(0);
+
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   // form fields
   const [formFields, setFormFields] = useState({
@@ -27,6 +30,15 @@ const GetInTouchModal = () => {
   useEffect(() => {
     setIsBrowser(true);
   }, []);
+
+
+  useEffect(() => {
+    if (name && isEmail(email) && message) {
+      setButtonDisabled(false);
+    } else {
+      setButtonDisabled(true);
+    }
+  }, [name, email, message, formFields]);
 
   const handleOutsideClick = (e) => {
     if (modalRef.current === e.target) {
@@ -70,11 +82,10 @@ const GetInTouchModal = () => {
   };
 
   const handleSubmit = (event) => {
-    if (name && email && message) {
-      event.preventDefault();
-      nextStep();
-      setSubmitted(true);
-    }
+    event.preventDefault();
+    nextStep();
+    setSubmitted(true);
+
   };
 
   const modalContent = showModal && (
@@ -85,6 +96,7 @@ const GetInTouchModal = () => {
             <GetInTouchConfirm closeModal={closeModal} />
           ) : (
             <GetInTouchModalInfo
+              buttonDisabled={buttonDisabled}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
               formFields={formFields}
