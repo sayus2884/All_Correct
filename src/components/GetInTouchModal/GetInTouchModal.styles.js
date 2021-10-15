@@ -133,7 +133,7 @@ export const Button = styled.button`
   letter-spacing: -0.02em;
   margin-left: 40px;
   margin-bottom: 40px;
-  color: ${(props) => props.handleDisabledStyled ? 'grey' : '#4a8eff'};
+  color: ${(props) => props.handleDisabledStyled ? props.theme.colors.grey : props.theme.colors.blue};
   background-color: ${(props) => props.theme.colors.white};
   outline: none;
   border: none;

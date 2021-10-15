@@ -6,24 +6,14 @@ import { Button, CheckboxWrapper, Info, Text, Title } from "../GetInTouchModal.s
 const GetInTouchModalInfo = ({ handleSubmit, handleChange, formFields, buttonDisabled }) => {
   const [checked, setChecked] = useState(false);
   const [buttonStyle, setButtonStyle] = useState(true);
-  // const [buttonDisabled, setButtonDisabled] = React.useState(true);
-
-  // React.useEffect(() => {
-  //   if (formFields.name && formFields.message && formFields.email && checked) {
-  //     setButtonDisabled(false);
-  //   }
-  // }, [formFields.name, formFields.message, formFields.email, checked]);
 
   React.useEffect(() => {
-    console.log(checked);
-    console.log(buttonDisabled);
     if (checked === true && buttonDisabled === false) {
       setButtonStyle(false);
     } else {
       setButtonStyle(true);
     }
   }, [checked, buttonDisabled]);
-
 
   return (
     <>
@@ -81,7 +71,7 @@ const GetInTouchModalInfo = ({ handleSubmit, handleChange, formFields, buttonDis
           handleDisabledStyled={buttonStyle}
           onClick={handleSubmit}
           disabled={buttonDisabled}
-        >Send the form –></Button>
+        >Send the form &#10230;</Button>
       </ErrorBoundary>
     </>
   );

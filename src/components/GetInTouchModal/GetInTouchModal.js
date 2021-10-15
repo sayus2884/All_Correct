@@ -4,6 +4,7 @@ import GetInTouchConfirm from "./GetInTouchConfirm/GetInTouchConfirm";
 import GetInTouchModalInfo from "./GetInTouchModalInfo/GetInTouchModalInfo";
 import { Background, ModalWrapper } from "./GetInTouchModal.styles";
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
+import { isEmail } from "../../utils/validator";
 
 const GetInTouchModal = () => {
   const { showModal, closeModal } = useContext(GetInTouchModalContext);
@@ -12,7 +13,7 @@ const GetInTouchModal = () => {
   const [submitted, setSubmitted] = useState(false);
   const [step, setStep] = useState(0);
 
-  const [buttonDisabled, setButtonDisabled] = React.useState(true);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   // form fields
   const [formFields, setFormFields] = useState({
@@ -32,13 +33,11 @@ const GetInTouchModal = () => {
 
 
   useEffect(() => {
-    const regex = /\S+@\S+\.\S+/;
-    if (name && regex.test(email) && message) {
+    if (name && isEmail(email) && message) {
       setButtonDisabled(false);
     } else {
       setButtonDisabled(true);
     }
-
   }, [name, email, message, formFields]);
 
   const handleOutsideClick = (e) => {
