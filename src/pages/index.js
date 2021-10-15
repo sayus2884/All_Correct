@@ -10,15 +10,11 @@ import Companies from "../sections/Companies/Companies";
 import Pricing from "../sections/Pricing/Pricing";
 import Footer from "../sections/Footer/Footer.js";
 
-import GameModalContext from "../context/GameModalContext.js";
-
 export default function Home() {
-  const { carouselGames } = useContext(GameModalContext);
-
   return (
     <>
       <Nav lang={true} />
-      <GameCarousel games={carouselGames} />
+      <GameCarousel />
       <Services />
       <Companies />
       <Pricing />

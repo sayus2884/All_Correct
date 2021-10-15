@@ -16,12 +16,12 @@ import {
 
 import GameModalContext from "../../context/GameModalContext";
 
-function GameCarousel({ games }) {
-  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
+function GameCarousel() {
+  const { openGameModal, setSelectedGame, carouselGames } = useContext(GameModalContext);
 
   const handleTitleClick = (event) => {
     event.preventDefault();
-    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
+    setSelectedGame(carouselGames[parseInt(event.currentTarget.dataset.index)]);
     openGameModal(true);
   };
 
@@ -36,7 +36,7 @@ function GameCarousel({ games }) {
         interval={2500}
         transitionTime={700}
         infiniteLoop={true}>
-        {games.slice(0, 5).map((game, index) => (
+        {carouselGames.slice(0, 5).map((game, index) => (
           <Item key={index}>
             <ImageWrapper>
               <Image
