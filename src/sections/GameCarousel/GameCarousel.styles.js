@@ -4,7 +4,7 @@ import { Carousel as Slider } from "react-responsive-carousel";
 
 import OGSection from "../../components/Section/Section";
 import OGLink from "../../components/Link/Link";
-import SubText from "../../components/SubText/SubText";
+import OGSubTitle from "../../components/SubTitle/SubTitle";
 
 export const Section = styled(OGSection)`
   margin: 100px 0 160px;
@@ -51,12 +51,7 @@ export const TitleContainer = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 39px;
-  letter-spacing: -0.01em;
+export const SubTitle = styled(OGSubTitle)`
   text-align: left;
 `;
 

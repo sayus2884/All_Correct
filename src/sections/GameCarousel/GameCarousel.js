@@ -9,7 +9,7 @@ import {
   Info,
   ImageWrapper,
   TitleContainer,
-  Title,
+  SubTitle,
   Link,
   Carousel,
 } from "./GameCarousel.styles";
@@ -51,11 +51,11 @@ function GameCarousel() {
 
             <Info className="info">
               <TitleContainer onClick={handleTitleClick} data-index={index}>
-                <Title>We've localized</Title>
-                <Title>
+                <SubTitle>We've localized</SubTitle>
+                <SubTitle>
                   <Highlight> {game.title}</Highlight> game
-                </Title>
-                <Title>by {game.publisher}</Title>
+                </SubTitle>
+                <SubTitle>by {game.publisher}</SubTitle>
               </TitleContainer>
             </Info>
           </Item>
