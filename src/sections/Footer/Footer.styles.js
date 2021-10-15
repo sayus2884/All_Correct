@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
+  border-top: 1px solid #c4c4c4;
+
   padding: ${(props) => props.theme.padding.lg};
   padding-top: 20px;
   padding-bottom: 60px;
