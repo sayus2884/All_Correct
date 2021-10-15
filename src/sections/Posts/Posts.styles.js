@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import OGSection from "../../components/Section/Section.js";
+import OGText from "../../components/Text/Text.js";
 
-export const Container = styled.div`
-  padding: ${(props) => props.theme.padding.lg};
-  margin-top: 250px;
-  color: ${({ theme }) => theme.colors.white};
-  font-family: ${(props) => props.theme.fonts.inter};
+export const Section = styled(OGSection)`
+  margin-top: 100px;
 `;
 
 export const FilterOptions = styled.ul`
@@ -19,13 +18,6 @@ export const Option = styled.button`
   border: none;
   border-radius: 10px;
   padding: 5px 20px;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 30px;
-
-  letter-spacing: -0.01em;
 
   &:hover {
     cursor: pointer;
@@ -55,15 +47,13 @@ export const PostCard = styled.div`
   background: red;
 `;
 
-export const LoadMore = styled.button`
+export const LoadMoreButton = styled.button`
   margin-top: 80px;
   border: none;
   background: none;
   color: ${({ theme }) => theme.colors.blue};
 
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: -0.01em;
+  &:hover {
+    cursor: pointer;
+  }
 `;
