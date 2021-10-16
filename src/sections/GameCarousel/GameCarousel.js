@@ -1,31 +1,32 @@
 import { useContext } from "react";
+
 import Image from "next/image";
+import Highlight from "../../components/Highlight/Highlight";
+import SubText from "../../components/SubText/SubText";
 import {
-  Container,
+  Section,
   Item,
   Info,
   ImageWrapper,
   TitleContainer,
-  Title,
-  Highlight,
-  LinkContainer,
+  SubTitle,
   Link,
   Carousel,
 } from "./GameCarousel.styles";
 
 import GameModalContext from "../../context/GameModalContext";
 
-function GameCarousel({ games }) {
-  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
+function GameCarousel() {
+  const { openGameModal, setSelectedGame, carouselGames } = useContext(GameModalContext);
 
   const handleTitleClick = (event) => {
     event.preventDefault();
-    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
+    setSelectedGame(carouselGames[parseInt(event.currentTarget.dataset.index)]);
     openGameModal(true);
   };
 
   return (
-    <Container>
+    <Section>
       <Carousel
         showStatus={false}
         showArrows={false}
@@ -35,7 +36,7 @@ function GameCarousel({ games }) {
         interval={2500}
         transitionTime={700}
         infiniteLoop={true}>
-        {games.slice(0, 5).map((game, index) => (
+        {carouselGames.slice(0, 5).map((game, index) => (
           <Item key={index}>
             <ImageWrapper>
               <Image
@@ -50,21 +51,21 @@ function GameCarousel({ games }) {
 
             <Info className="info">
               <TitleContainer onClick={handleTitleClick} data-index={index}>
-                <Title>We've localized</Title>
-                <Title>
+                <SubTitle>We've localized</SubTitle>
+                <SubTitle>
                   <Highlight> {game.title}</Highlight> game
-                </Title>
-                <Title>by {game.publisher}</Title>
+                </SubTitle>
+                <SubTitle>by {game.publisher}</SubTitle>
               </TitleContainer>
             </Info>
           </Item>
         ))}
       </Carousel>
 
-      <LinkContainer>
-        <Link href="/all-projects">All projects &#10230;</Link>
-      </LinkContainer>
-    </Container>
+      <Link href="/portfolio">
+        <SubText className="header">All projects &#10230;</SubText>
+      </Link>
+    </Section>
   );
 }
 

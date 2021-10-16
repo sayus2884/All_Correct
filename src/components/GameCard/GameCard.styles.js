@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import OGLink from "../Link/Link";
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,22 +25,14 @@ export const Img = styled.div`
   min-height: ${({ height }) => (height ? `${height}px` : "100%")};
 `;
 
-export const Text = styled.p`
-  all: unset;
-  font-family: ${(props) => props.theme.fonts.inter};
+export const Link = styled.h3`
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: ${(props) => props.theme.colors.white};
 
-  &.blue {
-    color: ${(props) => props.theme.colors.blue};
-  }
-
-  &.button {
-    line-height: 36px;
+  &:hover {
     cursor: pointer;
   }
 `;

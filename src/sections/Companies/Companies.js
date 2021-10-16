@@ -1,5 +1,7 @@
 import { Container, Title, CompanyList, CompanyItem, Image } from "./Companies.styles";
 import Company from "../../components/Company/Company.js";
+import Section from "../../components/Section/Section.js";
+import SubTitle from "../../components/SubTitle/SubTitle.js";
 
 function Companies({ children }) {
   const companies = [
@@ -18,17 +20,17 @@ function Companies({ children }) {
   ];
 
   return (
-    <Container>
+    <Section>
       <CompanyList>
         <CompanyItem>
-          <Title>These companies work with us</Title>
+          <SubTitle>These companies work with us</SubTitle>
         </CompanyItem>
 
         {companies.map(({ url, src, alt }, i) => (
           <Company key={i} url={url} src={src} alt={alt} />
         ))}
       </CompanyList>
-    </Container>
+    </Section>
   );
 }
 

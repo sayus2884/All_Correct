@@ -1,19 +1,25 @@
 import { useContext } from "react";
+import { Section, Wrapper } from "./GetInTouchText.styles";
+
+import GetInTouchModal from "../../components/GetInTouchModal/GetInTouchModal";
+import Title from "../../components/Title/Title.js";
+import Highlight from "../../components/Highlight/Highlight.js";
+
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
-import GetInTouchModal from "../GetInTouchModal/GetInTouchModal";
-import { Text, Container, Wrapper } from "./GetInTouchText.styles";
 
 const GetInTouchForm = ({ inherit }) => {
   const { showModal, openModal, closeModal } = useContext(GetInTouchModalContext);
 
   return (
-    <Container inherit={inherit}>
+    <Section>
       <Wrapper onClick={openModal}>
-        <Text color="blue">Get in touch</Text>
-        <Text>to start your project &#10230;</Text>
+        <Title>
+          <Highlight>Get in touch </Highlight>
+          to start your project &#10230;
+        </Title>
       </Wrapper>
       <GetInTouchModal closeModal={closeModal} showModal={showModal} />
-    </Container>
+    </Section>
   );
 };
 

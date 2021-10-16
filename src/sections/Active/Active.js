@@ -1,32 +1,36 @@
-import { ActiveWrapper, BoxWrapper, BoxItem, TextWrapper } from "./Active.styles";
+import { Section, BoxWrapper, BoxItem, TextWrapper } from "./Active.styles";
+
+import SubTitle from "../../components/SubTitle/SubTitle.js";
+import SubText from "../../components/SubText/SubText.js";
+import Highlight from "../../components/Highlight/Highlight.js";
 
 function Active() {
   return (
-    <ActiveWrapper>
+    <Section>
       <BoxWrapper>
         <BoxItem>
-          <p>
-            Active since <span>2008</span>
-          </p>
+          <SubTitle className="box-title">
+            Active since <Highlight>2008</Highlight>
+          </SubTitle>
         </BoxItem>
         <BoxItem>
-          <p>
-            <span>968 </span>games projects
-          </p>
+          <SubTitle className="box-title">
+            <Highlight>968 </Highlight>games projects
+          </SubTitle>
         </BoxItem>
         <BoxItem>
-          <p>
-            <span>9 </span>
+          <SubTitle className="box-title">
+            <Highlight>9 </Highlight>
             top video game <br />
             companies work with us
-          </p>
+          </SubTitle>
         </BoxItem>
       </BoxWrapper>
       <TextWrapper>
-        <p>99.44% of projects delivered by or before deadline</p>
-        <p>(More than 1500 tasks delivered on time every month)</p>
+        <SubTitle>99.44% of projects delivered by or before deadline</SubTitle>
+        <SubText>(More than 1500 tasks delivered on time every month)</SubText>
       </TextWrapper>
-    </ActiveWrapper>
+    </Section>
   );
 }
 

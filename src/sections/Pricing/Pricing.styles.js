@@ -1,27 +1,17 @@
 import styled from "styled-components";
+import OGTitle from "../../components/Title/Title";
 
-export const FormWrapper = styled.form`
-  font-family: ${({ theme }) => theme.fonts.inter};
-  color: ${({ theme }) => theme.colors.white};
-  letter-spacing: -0.02em;
-  margin: 250px 40px 0 40px;
-`;
-
-export const PricingTitle = styled.h2`
-  font-weight: 700;
-  font-size: 52px;
-  line-height: 1.21;
-  margin-bottom: 40px;
-  letter-spacing: -0.01em;
+export const Title = styled(OGTitle)`
+  &.section-title {
+    margin-bottom: 40px;
+  }
 `;
 
 export const TextWrapper = styled.div`
   display: flex;
-  font-size: 20px;
-  line-height: 1.5;
-  font-weight: 500;
   margin-bottom: 84px;
-  p {
+
+  & .price-text {
     width: 551px;
     margin-bottom: 16px;
   }
@@ -68,7 +58,6 @@ export const EmailInput = styled.input.attrs({ type: "email" })`
 
 export const FormButton = styled.button.attrs({ type: "submit" })`
   color: ${({ theme }) => theme.colors.blue};
-  background-color: transparent;
+  background: none;
   border: none;
-  font-weight: 700;
 `;

@@ -1,27 +1,20 @@
 import styled from "styled-components";
+import OGSection from "../../components/Section/Section.js";
 
-export const ActiveWrapper = styled.section`
+export const Section = styled(OGSection)`
   display: flex;
   justify-content: space-between;
-  padding: ${(props) => props.theme.padding.lg};
-  padding-top: 250px;
-  padding-bottom: 150px;
+  margin: 0;
+  padding-bottom: 250px;
   align-items: center;
-  letter-spacing: -0.01em;
 `;
 
 export const BoxWrapper = styled.ul`
-  padding: 0;
-  margin: 0;
   list-style-type: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 378px;
-  font-size: 32px;
-  font-weight: 700;
-  font-family: ${({ theme }) => theme.fonts.inter};
-  line-height: 1.125;
 `;
 
 export const BoxItem = styled.li`
@@ -34,12 +27,9 @@ export const BoxItem = styled.li`
   display: flex;
   justify-content: center;
 
-  p {
+  & .box-title {
     align-self: center;
-  }
-
-  span {
-    color: ${({ theme }) => theme.colors.blue};
+    color: black;
   }
 `;
 
@@ -47,19 +37,9 @@ export const TextWrapper = styled.div`
   width: 541px;
   font-family: ${({ theme }) => theme.fonts.inter};
   padding-right: 14px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 
-  p {
-    color: ${({ theme }) => theme.colors.white};
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.25;
-
-    &:first-of-type {
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1.125;
-    }
   }
 `;

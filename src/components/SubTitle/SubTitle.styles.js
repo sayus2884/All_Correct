@@ -5,6 +5,6 @@ export const Header = styled.h3`
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
-  line-height: 30px;
+  line-height: 39px;
   letter-spacing: -0.01em;
 `;

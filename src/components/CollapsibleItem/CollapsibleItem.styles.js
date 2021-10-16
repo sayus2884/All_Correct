@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.li`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   border-bottom: 1px solid ${(props) => props.theme.colors.white};
 `;
 
@@ -51,4 +49,7 @@ export const Content = styled.div`
       : "all 0.1s ease-out, height 0s, opacity 0s"};
   line-height: 19px;
   font-size: 16px;
+
+  display: flex;
+  flex-direction: column;
 `;
