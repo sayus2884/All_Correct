@@ -1,26 +1,12 @@
 import styled from "styled-components";
-// import { Text } from "../Games/Games.styles";
+import OGText from "../Text/Text";
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
   position: relative;
   display: flex;
   gap: 10px;
-`;
-
-export const Item = styled.p`
-  line-height: 30px;
-
-  &.black {
-    color: ${(props) => props.theme.colors.black};
-    padding-bottom: 5px;
-    padding-left: 11px;
-  }
-
-  &.menu {
-    background: #eaeaea;
-    border-radius: 4px;
-    padding: 5px 11px;
-  }
+  cursor: pointer;
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const Icon = styled.div`
@@ -30,10 +16,9 @@ export const Icon = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  cursor: pointer;
   margin-top: 2px;
   align-self: center;
-  transform: ${(props) => (props.open ? "rotate(0deg)" : "rotate(-90deg)")};
+  transform: ${(props) => (props.isOpen ? "rotate(0deg)" : "rotate(-90deg)")};
   transition: all 0.2s;
 `;
 

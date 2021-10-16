@@ -13,6 +13,7 @@ function theme() {
       blue: "#4A8EFF",
       dark: "#191919",
       grey: "#C4C4C4",
+      lightGrey: "#EAEAEA",
     },
     padding: {
       lg: "0 min(2.8vw, 40px)",

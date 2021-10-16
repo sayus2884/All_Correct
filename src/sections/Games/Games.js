@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Container, MenuList, GamesGrid, Img, Text } from "./Games.styles";
 
-import GameMenuItem from "../../components/GameMenuItem/GameMenuItem.js";
+import DropDown from "../../components/DropDown/DropDown.js";
+import DropDownItem from "../../components/DropDownItem/DropDownItem.js";
 import GameCard from "../../components/GameCard/GameCard.js";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,49 +13,41 @@ function Games({ games, setGames }) {
   const { openGameModal, setSelectedGame } = useContext(GameModalContext);
 
   const [showAll, setShow] = useState(false);
-  const [openMenu, setOpen] = useState(false);
-
-  function openModal(event) {
-    event.preventDefault();
-    setSelectedGame(games[parseInt(event.currentTarget.dataset.index)]);
-    openGameModal(true);
-  }
+  const [isOpen, setIsOpen] = useState(false);
 
   function toggle(index) {
-    openMenu === index ? setOpen(false) : setOpen(index);
+    isOpen === index ? setIsOpen(false) : setIsOpen(index);
   }
 
   return (
     <Container>
       <MenuList>
-        <GameMenuItem
-          openMenu={openMenu === 0}
-          setOpen={() => toggle(0)}
-          items={["All", "Mobile", "PC", "Cross-platform"]}>
-          Platform
-        </GameMenuItem>
-        <GameMenuItem
-          openMenu={openMenu === 1}
-          setOpen={() => toggle(1)}
-          items={[
-            "All",
-            "Match 3",
-            "Strategy",
-            "Racing",
-            "Action",
-            "Survivor Horror",
-            "Arcade",
-            "Sports game",
-            "RPG",
-            "MMORPG",
-            "City builder",
-            "Puzzle",
-          ]}>
-          Genre
-        </GameMenuItem>
-        <GameMenuItem openMenu={openMenu === 2} setOpen={() => toggle(2)}>
-          Type of project
-        </GameMenuItem>
+        <DropDown title="Platform">
+          <DropDownItem value={"All"} />
+          <DropDownItem value={"Mobile"} />
+          <DropDownItem value={"PC"} />
+          <DropDownItem value={"Cross-platform"} />
+        </DropDown>
+        <DropDown title="Genre">
+          <DropDownItem value={"All"} />
+          <DropDownItem value={"Match 3"} />
+          <DropDownItem value={"Strategy"} />
+          <DropDownItem value={"Racing"} />
+          <DropDownItem value={"Action"} />
+          <DropDownItem value={"Survivor Horror"} />
+          <DropDownItem value={"Arcade"} />
+          <DropDownItem value={"Sports game"} />
+          <DropDownItem value={"RPG"} />
+          <DropDownItem value={"MMORPG"} />
+          <DropDownItem value={"City"} />
+          <DropDownItem value={"Puzzle"} />
+        </DropDown>
+        <DropDown title="Type of project">
+          <DropDownItem value={"RPG"} />
+          <DropDownItem value={"MMORPG"} />
+          <DropDownItem value={"City builder"} />
+          <DropDownItem value={"Puzzle"} />
+        </DropDown>
       </MenuList>
       <GamesGrid show={showAll}>
         {Array(5)
