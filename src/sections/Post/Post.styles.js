@@ -1,26 +1,19 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  font-family: ${({ theme }) => theme.fonts.inter};
-  padding: ${(props) => props.theme.padding.lg};
-  color: ${({ theme }) => theme.colors.white};
-  padding-top: 100px;
+import OGSection from "../../components/Section/Section.js";
+import OGLink from "../../components/Link/Link.js";
+import OGTitle from "../../components/Title/Title.js";
+import OGSubText from "../../components/SubText/SubText.js";
 
+export const Section = styled(OGSection)`
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-export const GoBack = styled.a`
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-
-  letter-spacing: -0.01em;
-
-  &:hover {
-    cursor: pointer;
-  }
+export const GoBack = styled(OGLink)`
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const Columns = styled.div`
@@ -34,23 +27,15 @@ export const Column = styled.div`
   }
 `;
 
-export const Title = styled.h2`
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
-
+export const Title = styled(OGTitle)`
   margin-top: 30px;
   max-width: 670px;
 `;
 
-export const Date = styled.p`
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.01em;
-
-  margin-top: 20px;
+export const SubText = styled(OGSubText)`
+  &.date {
+    margin-top: 20px;
+  }
 `;
 
 export const ImageWrapper = styled.div`

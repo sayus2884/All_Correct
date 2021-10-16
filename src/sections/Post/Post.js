@@ -1,10 +1,11 @@
 import Image from "next/image";
 import {
-  Container,
+  Section,
   GoBack,
   Columns,
   Column,
   Title,
+  SubText,
   Date,
   ImageWrapper,
   Content,
@@ -19,15 +20,17 @@ function Post({ post }) {
     year: "numeric",
   };
 
-  console.log(image);
-
   return (
-    <Container>
+    <Section>
       <Columns>
         <Column className={!image && "header-container"}>
-          <GoBack>Go Back</GoBack>
+          <GoBack href="/blog" scroll={false}>
+            <SubText>Go Back</SubText>
+          </GoBack>
           <Title>{title}</Title>
-          <Date>{new Intl.DateTimeFormat("en", dateOptions).format(date)}</Date>
+          <SubText className="date">
+            {new Intl.DateTimeFormat("en", dateOptions).format(date)}
+          </SubText>
         </Column>
 
         {image && (
@@ -48,7 +51,7 @@ function Post({ post }) {
         )}
       </Columns>
       <Content>{content}</Content>
-    </Container>
+    </Section>
   );
 }
 
