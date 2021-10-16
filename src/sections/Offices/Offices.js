@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {
-  OfficesWrapper,
+  Section,
   OfficesTitle,
   OfficesCircle,
   OfficesImageContainer,
@@ -10,12 +10,14 @@ import {
   OfficesSamaraContainer,
   OfficesHongKongContainer,
 } from "./Offices.styles";
+import Title from "../../components/Title/Title.js";
+
 import map from "../../../public/images/offices/offices.png";
 
 function Offices() {
   return (
-    <OfficesWrapper>
-      <OfficesTitle>Our offices</OfficesTitle>
+    <Section>
+      <Title>Our offices</Title>
       <OfficesImageContainer>
         <Image src={map} />
 
@@ -39,7 +41,7 @@ function Offices() {
           <OfficesCircle />
         </OfficesHongKongContainer>
       </OfficesImageContainer>
-    </OfficesWrapper>
+    </Section>
   );
 }
 

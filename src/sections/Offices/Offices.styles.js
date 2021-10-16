@@ -1,11 +1,8 @@
 import styled from "styled-components";
+import OGSection from "../../components/Section/Section.js";
 
-export const OfficesWrapper = styled.section`
-  font-family: ${({ theme }) => theme.fonts.inter};
-  letter-spacing: -0.01;
-  color: ${({ theme }) => theme.colors.white};
-  margin-left: 40px;
-  padding-top: 310px;
+export const Section = styled(OGSection)`
+  margin-bottom: 200px;
 
   img {
     z-index: 1;

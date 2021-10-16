@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.dark};
-  padding: ${(props) => props.theme.padding.lg};
-  color: ${(props) => props.theme.colors.white};
-  font-family: ${(props) => props.theme.fonts.inter};
+import OGText from "../../components/Text/Text.js";
+import OGSection from "../../components/Section/Section.js";
 
+export const Section = styled(OGSection)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-top: 100px;
+  margin: 100px 0 310px;
   gap: 100px 20px;
 `;
 
@@ -23,27 +21,13 @@ export const Column = styled.div`
   }
 `;
 
-export const Description = styled.div`
+export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
 `;
 
-export const Text = styled.p`
+export const Text = styled(OGText)`
   font-size: 24px;
   line-height: 32px;
-
-  letter-spacing: -0.01em;
-`;
-
-export const Link = styled.a`
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
-  color: ${(props) => props.theme.colors.blue};
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
