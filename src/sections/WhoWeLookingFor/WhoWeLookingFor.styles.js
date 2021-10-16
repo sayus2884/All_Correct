@@ -1,39 +1,32 @@
 import styled from "styled-components";
 
-export const LookingForWrapper = styled.section`
-  font-family: ${({ theme }) => theme.fonts.inter};
-  width: 787px;
-  letter-spacing: -0.01;
-  color: ${({ theme }) => theme.colors.white};
-  margin-left: 500px;
-  margin-top: 250px;
+import OGSection from "../../components/Section/Section.js";
+import OGLink from "../../components/Link/Link.js";
+import OGText from "../../components/Text/Text.js";
+
+export const Section = styled(OGSection)`
+  display: flex;
+  justify-content: end;
 `;
 
-export const LookingForTitle = styled.h3`
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.9;
-  margin-bottom: 30px;
+export const LookingForWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 783px;
 `;
 
 export const LookingForList = styled.ul`
-  font-size: 20px;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`;
+
+export const Text = styled(OGText)`
   font-weight: 400;
 `;
 
-export const LookingForListItem = styled.li`
-  a {
-    color: ${({ theme }) => theme.colors.blue};
-    font-weight: 700;
-  }
-`;
-
-export const LookingForListTitle = styled.h5`
-  margin-top: 40px;
-  font-size: 20px;
-`;
-
-export const LookingForListText = styled.p`
-  margin-bottom: 20px;
+export const Link = styled(OGLink)`
+  margin-top: 20px;
+  font-weight: bold;
 `;

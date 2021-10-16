@@ -15,11 +15,8 @@ export default function JoinUs({ allGames }) {
       <Nav lang={true} title={"Join Us"} />
       <JoinUsSection title={"The Allcorrect group is looking for new faces. Join us!"} />
       <AboutTeam />
-
       <WhoWeLookingFor />
-
       <WhatToExpect />
-
       <JoinUsSection
         title={"Join us! Send your CV"}
         description={`Introduce yourself, tell us about your specialty, and don't forget about links to your portfolio or CV so we can get to know you better :)`}

@@ -1,12 +1,5 @@
-import Link from "next/link";
-import {
-  LookingForWrapper,
-  LookingForTitle,
-  LookingForList,
-  LookingForListItem,
-  LookingForListTitle,
-  LookingForListText,
-} from "./WhoWeLookingFor.styles";
+import { Section, LookingForWrapper, LookingForList, Text, Link } from "./WhoWeLookingFor.styles";
+import SubTitle from "../../components/SubTitle/SubTitle.js";
 
 function WhoWeLookingFor() {
   const listData = [
@@ -21,19 +14,21 @@ function WhoWeLookingFor() {
   ];
 
   return (
-    <LookingForWrapper>
-      <LookingForTitle>Who we're looking for</LookingForTitle>
+    <Section>
+      <LookingForWrapper>
+        <SubTitle>Who we're looking for</SubTitle>
 
-      <LookingForList>
-        {listData.map((item, i) => (
-          <LookingForListItem key={i}>
-            <LookingForListTitle>{item.title}</LookingForListTitle>
-            <LookingForListText>{item.text}</LookingForListText>
-            <Link href="#">Apply &#10230;</Link>
-          </LookingForListItem>
-        ))}
-      </LookingForList>
-    </LookingForWrapper>
+        <LookingForList>
+          {listData.map((item, i) => (
+            <li key={i}>
+              <Text className="header">{item.title}</Text>
+              <Text>{item.text}</Text>
+              <Link href="#">Apply &#10230;</Link>
+            </li>
+          ))}
+        </LookingForList>
+      </LookingForWrapper>
+    </Section>
   );
 }
 
