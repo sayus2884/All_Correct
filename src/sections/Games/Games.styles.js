@@ -1,11 +1,10 @@
 import styled from "styled-components";
+import OGSection from "../../components/Section/Section.js";
 
-export const Container = styled.section`
+export const Section = styled(OGSection)`
   display: grid;
   gap: 60px;
-  padding: ${(props) => props.theme.padding.lg};
   padding-top: 100px;
-  padding-bottom: 150px;
 `;
 
 export const MenuList = styled.ul`
@@ -19,7 +18,7 @@ export const GamesGrid = styled.div`
   column-gap: 20px;
   row-gap: 60px;
   margin-bottom: 20px;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   overflow: hidden;
   animation: ${(props) => (props.show ? "" : "shrink .5s ease-out forwards")};

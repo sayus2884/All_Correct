@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Container, MenuList, GamesGrid, Img, Text } from "./Games.styles";
+import { Section, MenuList, GamesGrid, Img, Text } from "./Games.styles";
 
 import DropDown from "../../components/DropDown/DropDown.js";
 import DropDownItem from "../../components/DropDownItem/DropDownItem.js";
@@ -9,8 +9,8 @@ import { useState } from "react";
 
 import GameModalContext from "../../context/GameModalContext";
 
-function Games({ games, setGames }) {
-  const { openGameModal, setSelectedGame } = useContext(GameModalContext);
+function Games() {
+  const { allGames, openGameModal, setSelectedGame } = useContext(GameModalContext);
 
   const [showAll, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ function Games({ games, setGames }) {
   }
 
   return (
-    <Container>
+    <Section>
       <MenuList>
         <DropDown title="Platform">
           <DropDownItem value={"All"} />
@@ -50,18 +50,14 @@ function Games({ games, setGames }) {
         </DropDown>
       </MenuList>
       <GamesGrid show={showAll}>
-        {Array(5)
-          .fill(games)
-          .reduce((a, c) => [...a, ...c], [])
-          .slice(0, showAll ? 100 : 6)
-          .map((e, i) => (
-            <GameCard key={i} game={e} height={300} />
-          ))}
+        {allGames.map((e, i) => (
+          <GameCard key={i} game={e} height={300} />
+        ))}
       </GamesGrid>
       <Text className="button blue" onClick={() => setShow(!showAll)}>
         {showAll ? <span>Load less &#8593;</span> : "Load more ↓"}
       </Text>
-    </Container>
+    </Section>
   );
 }
 

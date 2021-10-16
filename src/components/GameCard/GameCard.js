@@ -4,14 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 function GameCard({ game, width, height }) {
-  const [showAll, setShow] = useState(false);
-  const [openMenu, setOpen] = useState(false);
-
   const { title, publisher, images } = game;
-
-  function toggle(index) {
-    openMenu === index ? setOpen(false) : setOpen(index);
-  }
 
   return (
     <Container delay={5}>
