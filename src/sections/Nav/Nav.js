@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import GetInTouchModal from "../../components/GetInTouchModal/GetInTouchModal";
-import { Container, Logo, Menu, Link } from "./Nav.styles";
+import { Container, Title, Menu, Link } from "./Nav.styles";
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
 
-import Title from "../../components/Title/Title";
 import SubText from "../../components/SubText/SubText";
 import Highlight from "../../components/Highlight/Highlight";
 

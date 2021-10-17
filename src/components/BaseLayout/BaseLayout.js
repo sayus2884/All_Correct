@@ -1,7 +1,11 @@
-import { GlobalWrapper } from "./BaseLayout.styles";
+import { Page, GlobalWrapper } from "./BaseLayout.styles";
 
 function BaseLayout({ children }) {
-  return <GlobalWrapper>{children}</GlobalWrapper>;
+  return (
+    <Page>
+      <GlobalWrapper>{children}</GlobalWrapper>
+    </Page>
+  );
 }
 
 export default BaseLayout;

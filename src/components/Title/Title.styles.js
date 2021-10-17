@@ -7,4 +7,9 @@ export const Header = styled.h2`
   font-size: 52px;
   line-height: 63px;
   letter-spacing: -0.01em;
+
+  @media screen and (max-width: 376px) {
+    font-size: 32px;
+    line-height: 39px;
+  }
 `;

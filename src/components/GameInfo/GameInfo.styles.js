@@ -3,11 +3,6 @@ import styled from "styled-components";
 import OGTitle from "../../components/Title/Title.js";
 import OGSubText from "../../components/SubText/SubText.js";
 
-export const Container = styled.div`
-  display: flex;
-  padding: 40px;
-`;
-
 export const Title = styled(OGTitle)`
   margin-bottom: 40px;
 `;
@@ -24,7 +19,7 @@ export const CarouselContainer = styled.div`
 
 export const ImageWrapper = styled.div`
   position: relative;
-  height: 407px;
+  max-height: 407px;
 `;
 
 export const Controller = styled.div`

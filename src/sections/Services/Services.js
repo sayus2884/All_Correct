@@ -67,7 +67,7 @@ function Services(props) {
   const { allGames } = useContext(GameModalContext);
 
   const fakedata = [
-    { title: "Learn game localization", content: <GameTesting games={allGames} /> },
+    { title: "Lean game localization", content: <GameTesting games={allGames} /> },
     {
       title: "Localization and functional game testing",
       content: <GameTesting games={allGames} />,

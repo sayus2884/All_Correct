@@ -1,4 +1,4 @@
-import { Container, Text, ReviewsContainer, Review, Body, Logo, Img } from "./Reviews.styles";
+import { Container, Title, ReviewsContainer, Review, Body, Logo, Img } from "./Reviews.styles";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -121,7 +121,7 @@ function Reviews({ reviews = [], title = "Reviews" }) {
 
   return (
     <Container>
-      <Text className="title">{title}</Text>
+      <Title className="section-title">{title}</Title>
       <ReviewsContainer
         ref={carousel}
         onMouseDown={handleMouseDown}
