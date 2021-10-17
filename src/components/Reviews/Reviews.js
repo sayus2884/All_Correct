@@ -2,7 +2,9 @@ import { Container, Text, ReviewsContainer, Review, Body, Logo, Img } from "./Re
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-function Reviews() {
+import ReviewCard from "../ReviewCard/ReviewCard";
+
+function Reviews({ reviews = [] }) {
   const carousel = useRef();
   const [startX, setX] = useState(false);
   const [carouselScrollLeft, setScrollLeft] = useState(0);
@@ -131,27 +133,8 @@ function Reviews() {
         onKeyDown={handlePress}
         onTouchStart={() => clearInterval(interval)}
         tabIndex={0}>
-        {[...Array(6).keys()].map((e) => (
-          <Review key={e} onClick={handleClick}>
-            <Body>
-              <Text className="medium">
-                {`"Thank you and the entire team so, so much – just from the delivered files alone, I can see the amount of hard work, care and love that went into this project from your side.
-It’s been a real pleasure working together so far, and I hope there are many more collaborations to come! It’s been a real pleasure working together so far, and I hope there are many more collaborations en a real pleasure working together so far, and I hope there are many more en a real`}
-              </Text>
-            </Body>
-            <Logo>
-              <Text className="sm">EA Games</Text>
-              <Img>
-                <Image
-                  src="/images/review/review.png"
-                  alt="review Image"
-                  layout="fill"
-                  priority="true"
-                  quality={25}
-                />
-              </Img>
-            </Logo>
-          </Review>
+        {reviews.map((review, i) => (
+          <ReviewCard onClick={handleClick} key={i} />
         ))}
       </ReviewsContainer>
     </Container>

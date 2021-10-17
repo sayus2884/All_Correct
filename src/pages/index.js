@@ -10,7 +10,11 @@ import GameModal from "../sections/GameModal/GameModal.js";
 import GetInTouchText from "../sections/GetInTouchText/GetInTouchText.js";
 import Footer from "../sections/Footer/Footer.js";
 
+import ReviewsContext from "../context/ReviewsContext";
+
 export default function Home() {
+  const { publisherReviews } = useContext(ReviewsContext);
+
   return (
     <>
       <Nav lang={true} />
@@ -19,7 +23,7 @@ export default function Home() {
       <Companies />
       <Pricing />
       <Active />
-      <Reviews />
+      <Reviews reviews={publisherReviews} />
       <GameModal />
       <GetInTouchText />
       <Footer />
