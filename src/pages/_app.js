@@ -30,7 +30,6 @@ export default function MyApp({ Component, pageProps }) {
     fetch("http://localhost:3000/api/reviews")
       .then((res) => res.json())
       .then((reviews) => {
-        console.log(reviews);
         setReviews(reviews);
       });
   }, []);

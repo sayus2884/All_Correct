@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+import OGSection from "../Section/Section";
+
+export const Container = styled(OGSection)`
   display: grid;
-  padding: ${(props) => props.theme.padding.lg};
-  padding-top: 100px;
   padding-right: 0;
-  box-shadow: ${(props) => `0px -2px 0px ${props.theme.colors.grey} inset`};
 `;
 
 export const Text = styled.p`
@@ -55,7 +54,6 @@ export const ReviewsContainer = styled.div`
   grid-template-rows: 304px;
   gap: 20px;
   padding-bottom: 40px;
-  margin-bottom: 250px;
   cursor: pointer;
   &::-webkit-scrollbar {
     display: block;

@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
-export const Review = styled.div`
+import OGText from "../Text/Text";
+
+export const Container = styled.div`
+  background: ${(props) => props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.white};
+  max-height: 304px;
   width: 100%;
   height: 100%;
-  background: ${(props) => props.theme.colors.blue};
-  border-radius: 8px;
   padding: 30px 28px 24px 40px;
-  display: grid;
-  gap: 20px;
+  border-radius: 8px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   scroll-snap-align: center;
 `;
@@ -17,25 +22,18 @@ export const Body = styled.div`
 `;
 
 export const Logo = styled.div`
-  width: auto;
-  justify-self: end;
   display: flex;
-  align-items: center;
   gap: 20px;
+  align-items: center;
+  align-self: end;
 `;
 
-export const Text = styled.p`
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-style: normal;
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
-  color: ${(props) => props.theme.colors.white};
-
-  &.sm {
-    font-size: 16px;
-    line-height: 20px;
+export const Text = styled(OGText)`
+  &.description {
+    max-width: 935px;
+    max-height: 150px;
+    line-height: 31px;
+    overflow: hidden;
   }
 `;
 

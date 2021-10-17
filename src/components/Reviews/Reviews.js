@@ -134,7 +134,7 @@ function Reviews({ reviews = [] }) {
         onTouchStart={() => clearInterval(interval)}
         tabIndex={0}>
         {reviews.map((review, i) => (
-          <ReviewCard onClick={handleClick} key={i} />
+          <ReviewCard review={review} onClick={handleClick} key={i} />
         ))}
       </ReviewsContainer>
     </Container>
