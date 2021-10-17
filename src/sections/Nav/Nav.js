@@ -19,29 +19,29 @@ function Nav({ lang, title = "Game outsourcing studio", inherit }) {
       </Link>
       <Menu>
         <Link href="/portfolio" rel="noreferrer noopener">
-          <SubText>Portfolio</SubText>
+          <SubText className="header">Portfolio</SubText>
         </Link>
         <Link href="/about-us">
-          <SubText>About us</SubText>
+          <SubText className="header">About us</SubText>
         </Link>
         <Link href="/#services">
-          <SubText>Services</SubText>
+          <SubText className="header">Services</SubText>
         </Link>
         <Link href="/#pricing">
-          <SubText>Pricing</SubText>
+          <SubText className="header">Pricing</SubText>
         </Link>
         <Link href="/blog">
-          <SubText>Blog</SubText>
+          <SubText className="header">Blog</SubText>
         </Link>
         <Link href="/join-us">
-          <SubText>Join us</SubText>
+          <SubText className="header">Join us</SubText>
         </Link>
-        <SubText className="normal" color="blue" onClick={openModal}>
+        <SubText className="header" onClick={openModal}>
           <Highlight>Get in touch</Highlight>
         </SubText>
         <GetInTouchModal onClose={closeModal} showModal={showModal} />
 
-        {lang && <SubText className="block">Ru</SubText>}
+        {lang && <SubText className="header block">Ru</SubText>}
       </Menu>
     </Container>
   );
