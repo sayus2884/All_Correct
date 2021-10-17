@@ -40,7 +40,6 @@ function Games() {
     if (platform === 'All' && genre === 'All' && type === 'All') {
       return allGames;
     } else if (platform !== 'All' || genre !== 'All' || type !== 'All') {
-      console.log(platform, genre, type);
       const newElement = allGames.filter(
         element =>
           element.platforms.includes(platform) ||

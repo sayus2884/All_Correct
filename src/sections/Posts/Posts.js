@@ -14,8 +14,11 @@ import Text from "../../components/Text/Text.js";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
-  const [getWidth, setGetWidth] = React.useState();
-  const [indexShow, setIndexShow] = React.useState(6);
+  const [getWidth, setGetWidth] = useState();
+  const [indexShow, setIndexShow] = useState(6);
+  const [category, setCategory] = useState('All');
+
+  console.log(category);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/posts")
@@ -29,11 +32,21 @@ function Posts() {
     setGetWidth(window.innerWidth);
   };
 
-  console.log(posts.length);
   const handleLoadMore = () => {
     if (indexShow < posts.length) {
       setIndexShow(indexShow + 3);
     }
+  }
+
+  const filteredPosts = () => {
+    const filteredPosts = posts.slice(2, posts.length);
+    if (category === 'All') {
+      return filteredPosts;
+    } else {
+      const filteredByCategory = filteredPosts.filter(element => element.category === category);
+      return filteredByCategory;
+    }
+
   }
 
   React.useEffect(() => {
@@ -51,28 +64,28 @@ function Posts() {
     <Section>
       <FilterOptions>
         <li>
-          <Option active={true}>
+          <Option active={true} onClick={() => setCategory('All')}>
             <Text className="header">All</Text>
           </Option>
         </li>
         <li>
           <Option>
-            <Text className="header">Game Markets</Text>
+            <Text className="header" onClick={() => setCategory('game markets')}>Game Markets</Text>
           </Option>
         </li>
         <li>
           <Option>
-            <Text className="header">Localization</Text>
+            <Text className="header" onClick={() => setCategory('localization')}>Localization</Text>
           </Option>
         </li>
         <li>
           <Option>
-            <Text className="header">LQA</Text>
+            <Text className="header" onClick={() => setCategory('LQA')}>LQA</Text>
           </Option>
         </li>
         <li>
           <Option>
-            <Text className="header">Project Managements</Text>
+            <Text className="header" onClick={() => setCategory('project managements')}>Project Managements</Text>
           </Option>
         </li>
       </FilterOptions>
@@ -87,7 +100,7 @@ function Posts() {
           columnWidth={getWidth <= 768 ? "100%" : "33.33%"}
           gutterWidth={20}
           gutterHeight={20}>
-          {posts.filter((element, i) => i < indexShow).slice(2, posts.length).map((post, key) => (
+          {filteredPosts().slice(2, posts.length).filter((element, i) => i < indexShow).map((post, key) => (
             <PostCard key={key} post={post} />
           ))}
         </StackGrid>
