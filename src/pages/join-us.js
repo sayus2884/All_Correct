@@ -24,7 +24,7 @@ export default function JoinUs({ allGames }) {
         title={"Join us! Send your CV"}
         description={`Introduce yourself, tell us about your specialty, and don't forget about links to your portfolio or CV so we can get to know you better :)`}
       />
-      <Reviews reviews={colleagueReviews} />
+      <Reviews reviews={colleagueReviews} title="What our colleagues say about us" />
       <Footer />
     </>
   );

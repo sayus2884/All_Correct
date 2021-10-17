@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 import ReviewCard from "../ReviewCard/ReviewCard";
 
-function Reviews({ reviews = [] }) {
+function Reviews({ reviews = [], title = "Reviews" }) {
   const carousel = useRef();
   const [startX, setX] = useState(false);
   const [carouselScrollLeft, setScrollLeft] = useState(0);
@@ -121,7 +121,7 @@ function Reviews({ reviews = [] }) {
 
   return (
     <Container>
-      <Text className="title">Reviews</Text>
+      <Text className="title">{title}</Text>
       <ReviewsContainer
         ref={carousel}
         onMouseDown={handleMouseDown}
