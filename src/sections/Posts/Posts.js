@@ -15,6 +15,7 @@ import Text from "../../components/Text/Text.js";
 function Posts() {
   const [posts, setPosts] = useState([]);
   const [getWidth, setGetWidth] = React.useState();
+  const [indexShow, setIndexShow] = React.useState(6);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/posts")
@@ -27,6 +28,13 @@ function Posts() {
   const updateDimensions = () => {
     setGetWidth(window.innerWidth);
   };
+
+  console.log(posts.length);
+  const handleLoadMore = () => {
+    if (indexShow < posts.length) {
+      setIndexShow(indexShow + 3);
+    }
+  }
 
   React.useEffect(() => {
     updateDimensions();
@@ -79,14 +87,14 @@ function Posts() {
           columnWidth={getWidth <= 768 ? "100%" : "33.33%"}
           gutterWidth={20}
           gutterHeight={20}>
-          {posts.slice(2, posts.length).map((post, key) => (
+          {posts.filter((element, i) => i < indexShow).slice(2, posts.length).map((post, key) => (
             <PostCard key={key} post={post} />
           ))}
         </StackGrid>
       </MasonryContainer>
 
       <LoadMoreButton>
-        <Text className="header">Load More ↓</Text>
+        <Text className="header" onClick={() => handleLoadMore()}>Load More ↓</Text>
       </LoadMoreButton>
     </Section>
   );
