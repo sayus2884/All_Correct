@@ -62,6 +62,7 @@ export const InfoContainer = styled.ul`
   flex-direction: column;
   gap: 32px;
 `;
+
 export const Info = styled.li`
   display: flex;
   flex-direction: column;

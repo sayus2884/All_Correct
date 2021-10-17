@@ -5,7 +5,7 @@ import OGLink from "../../components/Link/Link";
 export const Container = styled.nav`
   color: ${(props) => props.theme.colors.white};
   position: relative;
-  height: 166px;
+  min-height: 166px;
   padding: ${(props) => (props.inherit ? "" : props.theme.padding.lg)};
   padding-top: 40px;
   width: 100%;
@@ -34,13 +34,5 @@ export const Menu = styled.div`
     grid-column: 1/-1;
     width: max-content;
     justify-self: end;
-  }
-`;
-
-export const SubText = styled(OGSubText)`
-  &.normal {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
   }
 `;
