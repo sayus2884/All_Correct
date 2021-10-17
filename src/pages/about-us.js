@@ -13,7 +13,9 @@ export default function JoinUs(props) {
 
   return (
     <>
-      <Nav lang={true} />
+      <header>
+        <Nav lang={true} />
+      </header>
       <OurCompany />
       <Offices />
       <Reviews reviews={publisherReviews} />

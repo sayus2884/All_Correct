@@ -15,7 +15,9 @@ export default function JoinUs({ allGames }) {
 
   return (
     <>
-      <Nav lang={true} title={"Join Us"} />
+      <header>
+        <Nav lang={true} title={"Join Us"} />
+      </header>
       <JoinUsSection title={"The Allcorrect group is looking for new faces. Join us!"} />
       <AboutTeam />
       <WhoWeLookingFor />

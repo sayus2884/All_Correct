@@ -17,11 +17,13 @@ export default function Home() {
 
   return (
     <>
-      <Nav lang={true} />
+      <header>
+        <Nav lang={true} />
+      </header>
       <GameCarousel />
-      <Services />
+      <Services id="services" />
       <Companies />
-      <Pricing />
+      <Pricing id="pricing" />
       <Active />
       <Reviews reviews={publisherReviews} />
       <GameModal />
