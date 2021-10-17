@@ -1,51 +1,47 @@
 import { useContext } from "react";
-import Link from "next/link";
 import GetInTouchModal from "../../components/GetInTouchModal/GetInTouchModal";
-import { Container, Logo, Menu, Text } from "./Nav.styles";
+import { Container, Logo, Menu, Link } from "./Nav.styles";
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
+
+import Title from "../../components/Title/Title";
+import SubText from "../../components/SubText/SubText";
+import Highlight from "../../components/Highlight/Highlight";
 
 function Nav({ lang, title = "Game outsourcing studio", inherit }) {
   const { showModal, openModal, closeModal } = useContext(GetInTouchModalContext);
   return (
     <Container inherit={inherit}>
       <Link href="/">
-        <Logo as="a">
-          <Text color="blue">Allcorrect</Text>
-          <Text>{title}</Text>
-        </Logo>
+        <Title>
+          <Highlight>Allcorrect</Highlight>
+        </Title>
+        <Title>{title}</Title>
       </Link>
       <Menu>
         <Link href="/portfolio" rel="noreferrer noopener">
-          <Text as="a" className="normal">
-            Portfolio
-          </Text>
+          <SubText>Portfolio</SubText>
         </Link>
         <Link href="/about-us">
-          <Text as="a" href="#" rel="noreferrer noopener" className="normal">
-            About us
-          </Text>
+          <SubText>About us</SubText>
         </Link>
-        <Text as="a" href="#" rel="noreferrer noopener" className="normal">
-          Services
-        </Text>
-        <Text as="a" href="#" rel="noreferrer noopener" className="normal">
-          Pricing
-        </Text>
+        <Link href="/#services">
+          <SubText>Services</SubText>
+        </Link>
+        <Link href="/#pricing">
+          <SubText>Pricing</SubText>
+        </Link>
         <Link href="/blog">
-          <Text as="a" href="#" rel="noreferrer noopener" className="normal">
-            Blog
-          </Text>
+          <SubText>Blog</SubText>
         </Link>
         <Link href="/join-us">
-          <Text as="a" href="#" rel="noreferrer noopener" className="normal">
-            Join us
-          </Text>
+          <SubText>Join us</SubText>
         </Link>
-        <Text className="normal" color="blue" onClick={openModal}>
-          Get in touch
-        </Text>
+        <SubText className="normal" color="blue" onClick={openModal}>
+          <Highlight>Get in touch</Highlight>
+        </SubText>
         <GetInTouchModal onClose={closeModal} showModal={showModal} />
-        {lang && <Text className="normal block">Ru</Text>}
+
+        {lang && <SubText className="block">Ru</SubText>}
       </Menu>
     </Container>
   );

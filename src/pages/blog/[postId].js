@@ -23,7 +23,9 @@ export default function Home() {
 
   return (
     <>
-      <Nav lang={true} title={"Blog"} />
+      <header>
+        <Nav lang={true} title={"Blog"} />
+      </header>
       {post && <Post post={post} />}
       <GetAdvice />
       <Footer />

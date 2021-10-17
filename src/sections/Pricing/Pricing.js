@@ -12,9 +12,9 @@ import Checkbox from "../../components/Checkbox/Checkbox";
 import Section from "../../components/Section/Section";
 import Text from "../../components/Text/Text";
 
-function Pricing() {
+function Pricing(props) {
   return (
-    <Section action="#">
+    <Section {...props}>
       <Title className="section-title">Pricing</Title>
       <TextWrapper>
         <Text className="price-text">

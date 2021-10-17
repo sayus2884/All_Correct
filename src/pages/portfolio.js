@@ -15,7 +15,9 @@ export default function Portfolio() {
 
   return (
     <>
-      <Nav lang={true} title="Portfolio" />
+      <header>
+        <Nav lang={true} title="Portfolio" />
+      </header>
       <Games games={allGames} />
       <GameModal />
       <Reviews reviews={publisherReviews} />

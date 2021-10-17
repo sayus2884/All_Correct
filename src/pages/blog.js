@@ -6,7 +6,9 @@ import { useState } from "react";
 export default function JoinUs(props) {
   return (
     <>
-      <Nav lang={true} title={"Blog"} />
+      <header>
+        <Nav lang={true} title={"Blog"} />
+      </header>
       <Posts />
       <Footer />
     </>

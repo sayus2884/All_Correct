@@ -63,7 +63,7 @@ function GameTesting({ games }) {
   );
 }
 
-function Services() {
+function Services(props) {
   const { allGames } = useContext(GameModalContext);
 
   const fakedata = [
@@ -77,7 +77,7 @@ function Services() {
   ];
 
   return (
-    <Section>
+    <Section {...props}>
       <Title>Our Services</Title>
 
       <Collapsibles>

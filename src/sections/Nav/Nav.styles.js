@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
+import OGLink from "../../components/Link/Link";
+
 export const Container = styled.nav`
+  color: ${(props) => props.theme.colors.white};
   position: relative;
   height: 166px;
   padding: ${(props) => (props.inherit ? "" : props.theme.padding.lg)};
@@ -10,9 +13,8 @@ export const Container = styled.nav`
   justify-content: space-between;
 `;
 
-export const Logo = styled.div`
-  display: grid;
-  cursor: pointer;
+export const Link = styled(OGLink)`
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const Menu = styled.div`
@@ -35,15 +37,7 @@ export const Menu = styled.div`
   }
 `;
 
-export const Text = styled.p`
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-style: normal;
-  font-weight: 900;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
-  color: ${(props) => props.theme.colors[props.color] || props.theme.colors.white};
-
+export const SubText = styled(OGSubText)`
   &.normal {
     font-weight: bold;
     font-size: 16px;
