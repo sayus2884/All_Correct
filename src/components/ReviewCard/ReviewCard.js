@@ -22,7 +22,17 @@ function ReviewCard({ review, onClick }) {
       <Logo>
         <SubText className="header">{reviewer}</SubText>
         <Img>
-          <Image src={image} alt="review Image" layout="fill" priority="true" quality={25} />
+          <Image
+            src={image}
+            alt="review Image"
+            layout="fill"
+            placeholder="blur"
+            blurDataURL={image}
+            priority="true"
+            quality={25}
+            objectFit="cover"
+            objectPosition="center"
+          />
         </Img>
       </Logo>
     </Container>
