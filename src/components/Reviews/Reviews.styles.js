@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+import OGSection from "../Section/Section";
+
+export const Container = styled(OGSection)`
   display: grid;
-  padding: ${(props) => props.theme.padding.lg};
-  padding-top: 100px;
   padding-right: 0;
-  box-shadow: ${(props) => `0px -2px 0px ${props.theme.colors.grey} inset`};
 `;
 
 export const Text = styled.p`
@@ -55,7 +54,6 @@ export const ReviewsContainer = styled.div`
   grid-template-rows: 304px;
   gap: 20px;
   padding-bottom: 40px;
-  margin-bottom: 250px;
   cursor: pointer;
   &::-webkit-scrollbar {
     display: block;
@@ -75,36 +73,4 @@ export const ReviewsContainer = styled.div`
   &:hover::-webkit-scrollbar-thumb {
     background: ${(props) => props.theme.colors.blue};
   }
-`;
-
-export const Review = styled.div`
-  width: 100%;
-  height: 100%;
-  background: ${(props) => props.theme.colors.blue};
-  border-radius: 8px;
-  padding: 30px 28px 24px 40px;
-  display: grid;
-  gap: 20px;
-  overflow: hidden;
-  scroll-snap-align: center;
-`;
-
-export const Body = styled.div`
-  padding-right: 12px;
-`;
-
-export const Logo = styled.div`
-  width: auto;
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-`;
-
-export const Img = styled.div`
-  position: relative;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  overflow: hidden;
 `;
