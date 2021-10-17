@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
+import OGTitle from "../../components/Title/Title.js";
+import OGSubText from "../../components/SubText/SubText.js";
+
 export const Container = styled.div`
   display: flex;
   padding: 40px;
 `;
 
-export const Title = styled.h2`
-  font-style: normal;
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
+export const Title = styled(OGTitle)`
   margin-bottom: 40px;
 `;
 
@@ -69,26 +67,15 @@ export const Info = styled.li`
   flex-direction: column;
   gap: 8px;
 `;
-export const Type = styled.h3`
-  color: #9d9d9d;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
 
-  letter-spacing: -0.01em;
-`;
-export const Data = styled.p`
+export const SubText = styled(OGSubText)`
   font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.01em;
-`;
 
-export const DateText = styled.p`
-  margin-top: 77px;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
+  &.header {
+    color: ${(props) => props.theme.colors.grey};
+  }
 
-  letter-spacing: -0.01em;
+  &.date {
+    margin-top: 77px;
+  }
 `;

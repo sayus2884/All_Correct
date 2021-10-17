@@ -9,20 +9,19 @@ import {
   Controller,
   ArrowButton,
   Counter,
-  DateText,
+  Date,
   TwoColumns,
   ImageWrapper,
   InfoContainer,
   Info,
-  Type,
-  Data,
+  SubText,
 } from "./GameInfo.styles";
 
 function InfoItem({ type, data }) {
   return (
     <Info>
-      <Type>{type}:</Type>
-      <Data>{data}</Data>
+      <SubText className="header">{type}:</SubText>
+      <SubText>{data}</SubText>
     </Info>
   );
 }
@@ -98,7 +97,7 @@ function GameInfo({ game }) {
               &#10230;
             </ArrowButton>
           </Controller>
-          <DateText>{date}</DateText>
+          <SubText className="date">{date}</SubText>
         </CarouselContainer>
 
         <InfoContainer>
