@@ -3,11 +3,16 @@ import { Container, Img, Link } from "./GameCard.styles";
 import Image from "next/image";
 import { useState } from "react";
 
-function GameCard({ game, width, height }) {
+function GameCard({ game, width, height, onClick }) {
   const { title, publisher, images } = game;
 
+  const handleOnClick = (event) => {
+    event.preventDefault();
+    onClick(event, game);
+  };
+
   return (
-    <Container delay={5}>
+    <Container delay={5} onClick={handleOnClick}>
       <Img width={width} height={height}>
         <Image
           src={images[0]}
