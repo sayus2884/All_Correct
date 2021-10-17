@@ -6,7 +6,7 @@ import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
 import GameModalContext from "../context/GameModalContext.js";
 import ReviewsContext from "../context/ReviewsContext.js";
 
-import useModal from "../hooks/useModal.js";
+import useModal from "../hooks/UseModal.js";
 import useReviews from "../hooks/UseReviews.js";
 import useGames from "../hooks/UseGames.js";
 import useGameModal from "../hooks/UseGameModal.js";
