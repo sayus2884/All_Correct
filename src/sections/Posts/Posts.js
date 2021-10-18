@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import StackGrid from "react-stack-grid";
 import {
   Section,
@@ -55,7 +55,7 @@ function Posts() {
     setSelectedCategory(selectedCategory);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     updateDimensions();
     if (typeof window !== "undefined") {
       window.addEventListener("resize", updateDimensions);
