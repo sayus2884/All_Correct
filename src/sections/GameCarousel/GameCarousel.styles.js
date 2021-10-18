@@ -15,6 +15,11 @@ export const Section = styled(OGSection)`
     flex-direction: column;
     padding: 0 0;
   }
+
+  @media screen and (min-width: 1025px) {
+    margin-top: 38px;
+    margin-bottom: 160px;
+  }
 `;
 
 export const Carousel = styled(Slider)`
@@ -33,24 +38,26 @@ export const Carousel = styled(Slider)`
   }
 
   @media screen and (max-width: 376px) {
-    & .carousel{
+    & .carousel {
       position: unset;
     }
 
     & .carousel .control-dots {
-      margin: 0;
-      width: max-content;
-      gap: 12px;
-
       position: absolute;
       bottom: 0;
       left: 16px;
 
       & .dot {
-        margin: 0;
         width: 8px;
         height: 8px;
       }
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    & .carousel .control-dots {
+      left: 670px;
+    }
   }
 `;
 
@@ -73,6 +80,11 @@ export const ImageWrapper = styled.div`
   @media screen and (max-width: 376px) {
     height: 211px;
     width: 100%;
+  }
+
+  @media screen and (min-width: 1025px) {
+    height: 366px;
+    width: 650px;
   }
 `;
 

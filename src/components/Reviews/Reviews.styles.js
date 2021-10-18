@@ -53,7 +53,12 @@ export const ReviewsContainer = styled.div`
   @media screen and (max-width: 376px) {
     grid-auto-columns: 309px;
     grid-template-rows: 638px;
+    gap: 12px;
+  }
 
+  @media screen and (min-width: 1025px) {
+    grid-auto-columns: 733px;
+    grid-template-rows: 733px;
     gap: 12px;
   }
 `;

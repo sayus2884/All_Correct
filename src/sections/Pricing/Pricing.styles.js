@@ -70,8 +70,12 @@ export const EmailWrapper = styled.div`
     margin-top: 32px;
     font-size: 32px;
     line-height: 39px;
-    flex-direction: column;
     gap: 40px;
+  }
+
+  @media screen and (min-width: 1025px) {
+    flex-direction: column;
+    gap: 60px;
   }
 `;
 
@@ -93,6 +97,10 @@ export const EmailInput = styled.input.attrs({ type: "email" })`
     width: 100%;
     padding-bottom: 4px;
   }
+
+  @media screen and (min-width: 1025px) {
+    width: 100%;
+  }
 `;
 
 export const FormButton = styled.button.attrs({ type: "submit" })`
@@ -102,5 +110,9 @@ export const FormButton = styled.button.attrs({ type: "submit" })`
 
   @media screen and (max-width: 376px) {
     text-align: left;
+  }
+
+  @media screen and (min-width: 1025px) {
+    text-align: right;
   }
 `;

@@ -24,7 +24,7 @@ function Companies({ children }) {
 
       <CompanyList>
         <CompanyItem className="mobile">
-          <SubTitle>These companies work with us</SubTitle>
+          <SubTitle className="tablet">These companies work with us</SubTitle>
         </CompanyItem>
 
         {companies.map(({ url, src, alt }, i) => (

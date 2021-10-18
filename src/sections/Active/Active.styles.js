@@ -6,6 +6,7 @@ export const Section = styled(OGSection)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
 
   @media screen and (max-width: 376px) {
     flex-direction: column;
@@ -19,6 +20,7 @@ export const BoxWrapper = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   min-width: 555px;
+  gap: 30px;
 
   @media screen and (max-width: 376px) {
     min-width: 100%;
@@ -44,10 +46,15 @@ export const BoxItem = styled.li`
   @media screen and (max-width: 376px) {
     height: 100px;
   }
+
+  @media screen and (min-width: 1025px) {
+    max-width: 482px;
+  }
 `;
 
 export const TextWrapper = styled.div`
-  width: 541px;
+  max-width: 541px;
+  width: 100%;
   font-family: ${({ theme }) => theme.fonts.inter};
   padding-right: 14px;
   display: flex;
@@ -58,5 +65,9 @@ export const TextWrapper = styled.div`
     width: 100%;
     padding-right: 0;
     gap: 16px;
+  }
+
+  @media screen and (min-width: 1025px) {
+    max-width: 398px;
   }
 `;

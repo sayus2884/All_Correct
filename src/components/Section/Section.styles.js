@@ -13,4 +13,8 @@ export const Section = styled.section`
     margin-bottom: 160px;
     padding: 0 16px;
   }
+
+  @media screen and (min-width: 1025px) {
+    padding: 0 20px;
+  }
 `;
