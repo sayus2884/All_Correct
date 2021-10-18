@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
-import { Button, CheckboxWrapper, Info, Text, Title } from "../GetInTouchModal.styles";
+import { Button, CheckboxWrapper, Info, Text, Title, CheckboxInput } from "../GetInTouchModal.styles";
 
 const GetInTouchModalInfo = ({ handleSubmit, handleChange, formFields, buttonDisabled }) => {
   const [checked, setChecked] = useState(false);

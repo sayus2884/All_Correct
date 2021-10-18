@@ -13,7 +13,6 @@ function PostCard({ post }) {
             <Image
               src={image}
               alt={title}
-              height={280}
               layout="fill"
               blurDataURL={image}
               objectFit="cover"

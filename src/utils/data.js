@@ -186,7 +186,7 @@ export const games = [
     publisher: "Electronic Arts",
     date: "2018 - Present",
     services: ["Game localization"],
-    platforms: ["PC", "PS4", "Xbox One"],
+    platforms: ["PC", "PS4", "Xbox One", "Cross-platform"],
     genre: ["City Builder"],
     languages: ["Norwegian"],
     description:
@@ -198,7 +198,7 @@ export const games = [
     publisher: "Graffitti Games",
     date: "2018 - Present",
     services: ["Game localization"],
-    platforms: ["PC", "Nintendo Switch"],
+    platforms: ["PC", "Nintendo Switch", "Cross-platform"],
     genre: ["Top-down", "Action", "Adventure"],
     languages: [
       "Italian",
@@ -236,7 +236,7 @@ export const games = [
     publisher: "Efun",
     date: "2018 - Present",
     services: ["Game localization"],
-    platforms: ["Android", "IOS"],
+    platforms: ["Android", "IOS", "Mobile"],
     genre: ["MMORPG", "Action"],
     languages: ["Russian"],
     description:
