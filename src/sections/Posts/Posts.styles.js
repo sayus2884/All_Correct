@@ -5,12 +5,23 @@ import OGButton from "../../components/Button/Button.js";
 
 export const Section = styled(OGSection)`
   margin-top: 100px;
+
+  @media screen and (max-width: 376px) {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const FilterOptions = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 80px;
+
+  @media screen and (max-width: 376px) {
+    gap: 16px 10px;
+  }
 `;
 
 export const Option = styled(OGButton)`
@@ -28,6 +39,10 @@ export const TopHeadline = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 376px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Masonry = styled.div`

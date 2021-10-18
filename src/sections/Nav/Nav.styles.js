@@ -15,6 +15,7 @@ export const Container = styled.nav`
 
   @media screen and (max-width: 376px) {
     padding: 20px 16px 0;
+    min-height: unset;
   }
 `;
 
@@ -48,5 +49,9 @@ export const Menu = styled.div`
     grid-column: 1/-1;
     width: max-content;
     justify-self: end;
+  }
+
+  @media screen and (max-width: 376px) {
+    display: none;
   }
 `;
