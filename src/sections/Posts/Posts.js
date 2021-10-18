@@ -47,9 +47,6 @@ function Posts() {
 
   const handleLoadMore = () => {
     setIndexShow(indexShow + 3);
-
-    console.log("currentIndex", indexShow);
-    console.log("filtered post length", filteredPosts.length);
   };
 
   const filterPosts = (event) => {
