@@ -19,7 +19,10 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 40px;
+
+  @media screen and (max-width: 1025px) {
+    margin: 40px 20px;
+  }
 
   @media screen and (max-width: 376px) {
     margin: 35px 0 40px;
@@ -38,6 +41,11 @@ export const CloseButton = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 1025px) {
+    top: 1rem;
+    right: 20px;
   }
 
   @media screen and (max-width: 376px) {

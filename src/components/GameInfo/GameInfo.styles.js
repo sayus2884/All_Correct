@@ -16,6 +16,10 @@ export const TwoColumns = styled.div`
   display: flex;
   gap: 40px;
 
+  @media screen and (max-width: 1024px) {
+    gap: 20px;
+  }
+
   @media screen and (max-width: 376px) {
     flex-direction: column;
     gap: 44px;
@@ -25,6 +29,11 @@ export const TwoColumns = styled.div`
 export const CarouselContainer = styled.div`
   max-width: 901px;
   min-width: 901px;
+
+  @media screen and (max-width: 1025px) {
+    max-width: 733px;
+    min-width: 733px;
+  }
 
   @media screen and (max-width: 376px) {
     max-width: unset;

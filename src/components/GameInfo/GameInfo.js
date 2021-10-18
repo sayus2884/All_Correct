@@ -59,8 +59,6 @@ function GameInfo({ game }) {
     setIndex(index + 1);
   };
 
-  console.log(images);
-
   return (
     <>
       <Title>{title}</Title>
