@@ -59,6 +59,8 @@ function GameInfo({ game }) {
     setIndex(index + 1);
   };
 
+  console.log(images);
+
   return (
     <>
       <Title>{title}</Title>
@@ -107,6 +109,7 @@ function GameInfo({ game }) {
           <InfoItem type="Description" data={description} />
         </InfoContainer>
       </TwoColumns>
+      <SubText className="date mobile">{date}</SubText>
     </>
   );
 }

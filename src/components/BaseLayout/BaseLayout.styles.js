@@ -11,9 +11,7 @@ export const GlobalWrapper = styled.div`
   margin: auto;
   min-height: 100vh;
 
-  @media screen and (max-width: 375px) {
-     {
-      max-width: 375px;
-    }
+  @media screen and (max-width: 376px) {
+    max-width: 375px;
   }
 `;

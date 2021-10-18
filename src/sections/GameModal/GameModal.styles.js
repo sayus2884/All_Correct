@@ -20,6 +20,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 40px;
+
+  @media screen and (max-width: 376px) {
+    margin: 35px 0 40px;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -34,5 +38,10 @@ export const CloseButton = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 376px) {
+    top: 0.5rem;
+    right: 16px;
   }
 `;

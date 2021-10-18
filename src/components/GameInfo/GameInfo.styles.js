@@ -5,21 +5,37 @@ import OGSubText from "../../components/SubText/SubText.js";
 
 export const Title = styled(OGTitle)`
   margin-bottom: 40px;
+
+  @media screen and (max-width: 376px) {
+    margin-left: 16px;
+    max-width: 299px;
+  }
 `;
 
 export const TwoColumns = styled.div`
   display: flex;
   gap: 40px;
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+    gap: 44px;
+  }
 `;
 
 export const CarouselContainer = styled.div`
   max-width: 901px;
   min-width: 901px;
+
+  @media screen and (max-width: 376px) {
+    max-width: unset;
+    min-width: unset;
+    width: 100%;
+  }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
-  max-height: 407px;
+  min-height: 407px;
 `;
 
 export const Controller = styled.div`
@@ -27,6 +43,10 @@ export const Controller = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 20px;
+
+  @media screen and (max-width: 376px) {
+    margin: 20px 16px 0;
+  }
 `;
 
 export const Counter = styled.p`
@@ -56,6 +76,10 @@ export const InfoContainer = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 32px;
+
+  @media screen and (max-width: 376px) {
+    margin: 0 16px;
+  }
 `;
 
 export const Info = styled.li`
@@ -73,5 +97,17 @@ export const SubText = styled(OGSubText)`
 
   &.date {
     margin-top: 77px;
+  }
+
+  @media screen and (max-width: 376px) {
+    &.date {
+      display: none;
+    }
+
+    &.date.mobile {
+      display: block;
+      margin: 100px 16px 0;
+      text-align: right;
+    }
   }
 `;
