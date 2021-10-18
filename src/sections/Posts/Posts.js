@@ -47,6 +47,9 @@ function Posts() {
 
   const handleLoadMore = () => {
     setIndexShow(indexShow + 3);
+
+    console.log("currentIndex", indexShow);
+    console.log("filtered post length", filteredPosts.length);
   };
 
   const filterPosts = (event) => {
@@ -64,7 +67,7 @@ function Posts() {
   };
 
   const showStackGrid = filteredPosts.length <= 2 ? false : true;
-  const showLoadButton = indexShow >= filteredPosts.length ? false : true;
+  const showLoadMore = indexShow >= filteredPosts.length - 2 ? false : true;
 
   return (
     <Section>
@@ -113,7 +116,7 @@ function Posts() {
             gutterHeight={20}>
             {filteredPosts
               .slice(2, posts.length)
-              // initially show posts based on current indexShow
+              // show posts based on current indexShow
               .filter((element, i) => i < indexShow)
               .map((post, key) => (
                 <PostCard key={key} post={post} />
@@ -122,7 +125,7 @@ function Posts() {
         )}
       </MasonryContainer>
 
-      {showStackGrid && showLoadButton && (
+      {showStackGrid && showLoadMore && (
         <LoadMoreButton>
           <Text className="header" onClick={() => handleLoadMore()}>
             Load More ↓
