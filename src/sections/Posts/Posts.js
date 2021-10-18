@@ -14,17 +14,17 @@ import Text from "../../components/Text/Text.js";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [getWidth, setGetWidth] = useState();
   const [indexShow, setIndexShow] = useState(6);
-  const [category, setCategory] = useState('All');
-
-  console.log(category);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/posts")
       .then((res) => res.json())
       .then((posts) => {
         setPosts(posts);
+        setFilteredPosts(posts);
       });
   }, []);
 
@@ -32,22 +32,28 @@ function Posts() {
     setGetWidth(window.innerWidth);
   };
 
+  const isActive = (category) => {
+    return category === selectedCategory;
+  };
+
   const handleLoadMore = () => {
     if (indexShow < posts.length) {
       setIndexShow(indexShow + 3);
     }
-  }
+  };
 
-  const filteredPosts = () => {
-    const filteredPosts = posts.slice(2, posts.length);
-    if (category === 'All') {
-      return filteredPosts;
+  const filterPosts = (event) => {
+    const selectedCategory = event.currentTarget.dataset.value;
+
+    if (selectedCategory === "all") {
+      setFilteredPosts(posts);
     } else {
-      const filteredByCategory = filteredPosts.filter(element => element.category === category);
-      return filteredByCategory;
+      const filteredPosts = posts.filter((post) => post.category === selectedCategory);
+      setFilteredPosts(filteredPosts);
     }
 
-  }
+    setSelectedCategory(selectedCategory);
+  };
 
   React.useEffect(() => {
     updateDimensions();
@@ -64,35 +70,38 @@ function Posts() {
     <Section>
       <FilterOptions>
         <li>
-          <Option active={true} onClick={() => setCategory('All')}>
+          <Option active={isActive("all")} onClick={filterPosts} data-value="all">
             <Text className="header">All</Text>
           </Option>
         </li>
         <li>
-          <Option>
-            <Text className="header" onClick={() => setCategory('game markets')}>Game Markets</Text>
+          <Option active={isActive("game markets")} onClick={filterPosts} data-value="game markets">
+            <Text className="header">Game Markets</Text>
           </Option>
         </li>
         <li>
-          <Option>
-            <Text className="header" onClick={() => setCategory('localization')}>Localization</Text>
+          <Option active={isActive("localization")} onClick={filterPosts} data-value="localization">
+            <Text className="header">Localization</Text>
           </Option>
         </li>
         <li>
-          <Option>
-            <Text className="header" onClick={() => setCategory('LQA')}>LQA</Text>
+          <Option active={isActive("lqa")} onClick={filterPosts} data-value="lqa">
+            <Text className="header">LQA</Text>
           </Option>
         </li>
         <li>
-          <Option>
-            <Text className="header" onClick={() => setCategory('project managements')}>Project Managements</Text>
+          <Option
+            active={isActive("project managements")}
+            onClick={filterPosts}
+            data-value="project managements">
+            <Text className="header">Project Managements</Text>
           </Option>
         </li>
       </FilterOptions>
 
       <MasonryContainer>
         <TopHeadline>
-          {posts.slice(0, 2).map((post, key) => (
+          {filteredPosts.slice(0, 2).map((post, key) => (
             <PostCard key={key} post={post} />
           ))}
         </TopHeadline>
@@ -100,14 +109,20 @@ function Posts() {
           columnWidth={getWidth <= 768 ? "100%" : "33.33%"}
           gutterWidth={20}
           gutterHeight={20}>
-          {filteredPosts().slice(2, posts.length).filter((element, i) => i < indexShow).map((post, key) => (
-            <PostCard key={key} post={post} />
-          ))}
+          {filteredPosts
+            .slice(2, posts.length)
+            // initially show posts based on current indexShow
+            .filter((element, i) => i < indexShow)
+            .map((post, key) => (
+              <PostCard key={key} post={post} />
+            ))}
         </StackGrid>
       </MasonryContainer>
 
       <LoadMoreButton>
-        <Text className="header" onClick={() => handleLoadMore()}>Load More ↓</Text>
+        <Text className="header" onClick={() => handleLoadMore()}>
+          Load More ↓
+        </Text>
       </LoadMoreButton>
     </Section>
   );
