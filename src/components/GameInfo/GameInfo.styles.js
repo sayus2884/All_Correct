@@ -108,6 +108,10 @@ export const SubText = styled(OGSubText)`
     margin-top: 77px;
   }
 
+  &.date.mobile {
+    display: none;
+  }
+
   @media screen and (max-width: 376px) {
     &.date {
       display: none;
