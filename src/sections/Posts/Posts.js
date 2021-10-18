@@ -46,9 +46,7 @@ function Posts() {
   };
 
   const handleLoadMore = () => {
-    if (indexShow < posts.length) {
-      setIndexShow(indexShow + 3);
-    }
+    setIndexShow(indexShow + 3);
   };
 
   const filterPosts = (event) => {
@@ -62,7 +60,11 @@ function Posts() {
     }
 
     setSelectedCategory(selectedCategory);
+    setIndexShow(6);
   };
+
+  const showStackGrid = filteredPosts.length <= 2 ? false : true;
+  const showLoadButton = indexShow >= filteredPosts.length ? false : true;
 
   return (
     <Section>
@@ -103,25 +105,30 @@ function Posts() {
             <PostCard key={key} post={post} />
           ))}
         </TopHeadline>
-        <StackGrid
-          columnWidth={getWidth <= 768 ? "100%" : "33.33%"}
-          gutterWidth={20}
-          gutterHeight={20}>
-          {filteredPosts
-            .slice(2, posts.length)
-            // initially show posts based on current indexShow
-            .filter((element, i) => i < indexShow)
-            .map((post, key) => (
-              <PostCard key={key} post={post} />
-            ))}
-        </StackGrid>
+
+        {showStackGrid && (
+          <StackGrid
+            columnWidth={getWidth <= 768 ? "100%" : "33.33%"}
+            gutterWidth={20}
+            gutterHeight={20}>
+            {filteredPosts
+              .slice(2, posts.length)
+              // initially show posts based on current indexShow
+              .filter((element, i) => i < indexShow)
+              .map((post, key) => (
+                <PostCard key={key} post={post} />
+              ))}
+          </StackGrid>
+        )}
       </MasonryContainer>
 
-      <LoadMoreButton>
-        <Text className="header" onClick={() => handleLoadMore()}>
-          Load More ↓
-        </Text>
-      </LoadMoreButton>
+      {showStackGrid && showLoadButton && (
+        <LoadMoreButton>
+          <Text className="header" onClick={() => handleLoadMore()}>
+            Load More ↓
+          </Text>
+        </LoadMoreButton>
+      )}
     </Section>
   );
 }
