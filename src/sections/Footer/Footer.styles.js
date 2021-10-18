@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
 
   &.grid {
     display: grid;
+    padding: 0;
     gap: 80px;
   }
 
@@ -74,6 +75,7 @@ export const Copyright = styled.div`
     padding-right: 70px;
     padding-top: 0;
     padding-bottom: 0;
+    display: flex;
   }
 
   @media screen and (max-width: 376px) {
@@ -82,6 +84,11 @@ export const Copyright = styled.div`
 
     p {
       padding-right: 0;
+      display: inline;
+    }
+
+    a {
+      display: inline;
     }
   }
 `;

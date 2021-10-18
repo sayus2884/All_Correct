@@ -31,7 +31,7 @@ const Footer = () => {
 
           <Copyright>
             <p>
-              © Allcorrect Group 2006—2021,{" "}
+              © Allcorrect Group 2006—2021,&nbsp;
               <Link
                 href="https://allcorrectgames.com/legal-information/"
                 target="_blank"

@@ -36,17 +36,16 @@ export const CompanyList = styled.ul`
   justify-items: end;
   justify-content: space-between;
 
+  @media screen and (max-width: 1025px) {
+    row-gap: 44px;
+    grid-template-columns: calc(231px + 104px - 44px) repeat(4, 130px);
+  }
+
   @media screen and (max-width: 376px) {
     margin-top: 50px;
     row-gap: 32px;
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (max-width: 1025px) {
-    row-gap: 44px;
-    grid-template-columns: calc(231px + 104px - 44px) repeat(4, 130px);
-    }
   }
 `;
 
