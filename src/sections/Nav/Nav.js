@@ -6,7 +6,7 @@ import GetInTouchModalContext from "../../context/GetInTouchModalContext";
 import SubText from "../../components/SubText/SubText";
 import Highlight from "../../components/Highlight/Highlight";
 
-function Nav({ lang, title = "Game outsourcing studio", inherit }) {
+function Nav({ lang, title = "Game outsourcing studio", footer = false, inherit }) {
   const { showModal, openModal, closeModal } = useContext(GetInTouchModalContext);
   return (
     <Container inherit={inherit}>
@@ -16,7 +16,7 @@ function Nav({ lang, title = "Game outsourcing studio", inherit }) {
         </Title>
         <Title>{title}</Title>
       </Link>
-      <Menu>
+      <Menu className={footer && "footer"}>
         <Link href="/portfolio" rel="noreferrer noopener">
           <SubText className="header">Portfolio</SubText>
         </Link>

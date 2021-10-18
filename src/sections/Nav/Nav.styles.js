@@ -16,6 +16,7 @@ export const Container = styled.nav`
   @media screen and (max-width: 376px) {
     padding: 20px 16px 0;
     min-height: unset;
+    flex-direction: column;
   }
 `;
 
@@ -30,6 +31,10 @@ export const Title = styled(OGTitle)`
 
 export const Link = styled(OGLink)`
   color: ${(props) => props.theme.colors.white};
+
+  @media screen and (max-width: 376px) {
+    max-width: 222px;
+  }
 `;
 
 export const Menu = styled.div`
@@ -53,5 +58,12 @@ export const Menu = styled.div`
 
   @media screen and (max-width: 376px) {
     display: none;
+
+    &.footer {
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 20px;
+    }
   }
 `;
