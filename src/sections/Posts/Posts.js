@@ -26,6 +26,15 @@ function Posts() {
         setPosts(posts);
         setFilteredPosts(posts);
       });
+
+    updateDimensions();
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateDimensions);
+      return () => {
+        window.removeEventListener("resize", updateDimensions);
+      };
+    }
+    return undefined;
   }, []);
 
   const updateDimensions = () => {
@@ -54,17 +63,6 @@ function Posts() {
 
     setSelectedCategory(selectedCategory);
   };
-
-  useEffect(() => {
-    updateDimensions();
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", updateDimensions);
-      return () => {
-        window.removeEventListener("resize", updateDimensions);
-      };
-    }
-    return undefined;
-  }, []);
 
   return (
     <Section>
