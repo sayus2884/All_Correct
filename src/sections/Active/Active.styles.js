@@ -43,12 +43,12 @@ export const BoxItem = styled.li`
     color: black;
   }
 
-  @media screen and (max-width: 376px) {
-    height: 100px;
+  @media screen and (max-width: 1025px) {
+    max-width: 482px;
   }
 
-  @media screen and (min-width: 1025px) {
-    max-width: 482px;
+  @media screen and (max-width: 376px) {
+    height: 100px;
   }
 `;
 
@@ -67,7 +67,7 @@ export const TextWrapper = styled.div`
     gap: 16px;
   }
 
-  @media screen and (min-width: 1025px) {
+  @media screen and (max-width: 1025px) {
     max-width: 398px;
   }
 `;

@@ -32,6 +32,10 @@ export const Title = styled(OGTitle)`
 export const Link = styled(OGLink)`
   color: ${(props) => props.theme.colors.white};
 
+  @media screen and (max-width: 1025px) {
+    max-width: 378px;
+  }
+
   @media screen and (max-width: 376px) {
     max-width: 222px;
   }

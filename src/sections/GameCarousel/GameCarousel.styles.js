@@ -9,16 +9,16 @@ import OGSubTitle from "../../components/SubTitle/SubTitle";
 export const Section = styled(OGSection)`
   margin: 100px 0 160px;
 
+  @media screen and (max-width: 1025px) {
+    margin-top: 38px;
+    margin-bottom: 160px;
+  }
+
   @media screen and (max-width: 376px) {
     margin: 60px 0 100px;
     display: flex;
     flex-direction: column;
     padding: 0 0;
-  }
-
-  @media screen and (min-width: 1025px) {
-    margin-top: 38px;
-    margin-bottom: 160px;
   }
 `;
 
@@ -37,6 +37,12 @@ export const Carousel = styled(Slider)`
     }
   }
 
+  @media screen and (max-width: 1025px) {
+    & .carousel .control-dots {
+      left: 670px;
+    }
+  }
+
   @media screen and (max-width: 376px) {
     & .carousel {
       position: unset;
@@ -51,12 +57,6 @@ export const Carousel = styled(Slider)`
         width: 8px;
         height: 8px;
       }
-    }
-  }
-
-  @media screen and (min-width: 1025px) {
-    & .carousel .control-dots {
-      left: 670px;
     }
   }
 `;
@@ -77,14 +77,14 @@ export const ImageWrapper = styled.div`
   height: 507px;
   width: 901px;
 
+  @media screen and (max-width: 1025px) {
+    height: 366px;
+    width: 650px;
+  }
+
   @media screen and (max-width: 376px) {
     height: 211px;
     width: 100%;
-  }
-
-  @media screen and (min-width: 1025px) {
-    height: 366px;
-    width: 650px;
   }
 `;
 

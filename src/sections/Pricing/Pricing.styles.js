@@ -66,16 +66,16 @@ export const EmailWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media screen and (max-width: 1025px) {
+    flex-direction: column;
+    gap: 60px;
+  }
+
   @media screen and (max-width: 376px) {
     margin-top: 32px;
     font-size: 32px;
     line-height: 39px;
     gap: 40px;
-  }
-
-  @media screen and (min-width: 1025px) {
-    flex-direction: column;
-    gap: 60px;
   }
 `;
 
@@ -92,14 +92,14 @@ export const EmailInput = styled.input.attrs({ type: "email" })`
     color: #c4c4c4;
   }
 
+  @media screen and (max-width: 1025px) {
+    width: 100%;
+  }
+
   @media screen and (max-width: 376px) {
     height: 100%;
     width: 100%;
     padding-bottom: 4px;
-  }
-
-  @media screen and (min-width: 1025px) {
-    width: 100%;
   }
 `;
 
@@ -108,11 +108,11 @@ export const FormButton = styled.button.attrs({ type: "submit" })`
   background: none;
   border: none;
 
-  @media screen and (max-width: 376px) {
-    text-align: left;
+  @media screen and (max-width: 1025px) {
+    text-align: right;
   }
 
-  @media screen and (min-width: 1025px) {
-    text-align: right;
+  @media screen and (max-width: 376px) {
+    text-align: left;
   }
 `;

@@ -17,6 +17,10 @@ export const Container = styled.div`
   overflow: hidden;
   scroll-snap-align: center;
 
+  @media screen and (max-width: 1025px) {
+    max-height: 364px;
+  }
+
   @media screen and (max-width: 376px) {
     max-height: unset;
     padding: 24px 12px 22px;

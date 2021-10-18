@@ -9,12 +9,12 @@ export const Section = styled.section`
   overflow: hidden;
   position: relative;
 
+  @media screen and (max-width: 1025px) {
+    padding: 0 20px;
+  }
+
   @media screen and (max-width: 376px) {
     margin-bottom: 160px;
     padding: 0 16px;
-  }
-
-  @media screen and (min-width: 1025px) {
-    padding: 0 20px;
   }
 `;

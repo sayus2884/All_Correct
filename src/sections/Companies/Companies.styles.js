@@ -12,18 +12,18 @@ export const SubTitle = styled(OGSubTitle)`
     display: none;
   }
 
+  @media screen and (max-width: 1025px) {
+    &.tablet {
+      max-width: 231px;
+    }
+  }
+
   @media screen and (max-width: 376px) {
     font-size: 32px;
     line-height: 39px;
 
     &.mobile {
       display: block;
-    }
-  }
-
-  @media screen and (min-width: 1025px) {
-    &.tablet {
-      max-width: 231px;
     }
   }
 `;
@@ -43,7 +43,7 @@ export const CompanyList = styled.ul`
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and (min-width: 1025px) {
+  @media screen and (max-width: 1025px) {
     row-gap: 44px;
     grid-template-columns: calc(231px + 104px - 44px) repeat(4, 130px);
     }
