@@ -25,7 +25,6 @@ export const ModalWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid ${(props) => props.theme.colors.dark};
   -webkit-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
   -o-transform: translate3d(0%, 0, 0);
@@ -58,6 +57,11 @@ export const ModalWrapper = styled.div`
     width: 20px;
     height: 20px;
     margin-right: 16px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #000;
   }
 
   .custom-file-upload {
@@ -104,12 +108,10 @@ export const Text = styled.p`
   letter-spacing: -0.02em;
 `;
 
-export const CheckboxWrapper = styled.div`
+export const CheckItem = styled.label`
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  width: 80%;
-  margin-right: 40px;
+  margin-left: 40px;
   margin-bottom: 60px;
 `;
 
@@ -131,14 +133,14 @@ export const Button = styled.button`
   font-size: 32px;
   line-height: 39px;
   letter-spacing: -0.02em;
-  margin-left: 40px;
-  margin-bottom: 40px;
-  color: ${(props) => props.handleDisabledStyled ? props.theme.colors.grey : props.theme.colors.blue};
+  margin: 200px 0 0 40px;
+  color: ${(props) =>
+    props.handleDisabledStyled ? props.theme.colors.grey : props.theme.colors.blue};
   background-color: ${(props) => props.theme.colors.white};
   outline: none;
   border: none;
 
   &:hover {
-  cursor: ${(props) => props.handleDisabledStyled ? 'not-allowed' : 'pointer'};
-}
+    cursor: ${(props) => (props.handleDisabledStyled ? "not-allowed" : "pointer")};
+  }
 `;
