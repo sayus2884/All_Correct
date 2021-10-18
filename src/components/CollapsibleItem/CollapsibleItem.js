@@ -1,6 +1,11 @@
 import { useState } from "react";
-import { Container, HeaderContainer, DropdownButton, Content } from "./CollapsibleItem.styles";
-import SubTitle from "../SubTitle/SubTitle";
+import {
+  Container,
+  HeaderContainer,
+  SubTitle,
+  DropdownButton,
+  Content,
+} from "./CollapsibleItem.styles";
 
 function CollapsibleItem({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +20,7 @@ function CollapsibleItem({ title, children }) {
       <HeaderContainer>
         <SubTitle>{title}</SubTitle>
         <DropdownButton onClick={handleClick} isOpen={isOpen}>
-          &#10230;
+          <SubTitle>&#10230;</SubTitle>
         </DropdownButton>
       </HeaderContainer>
 

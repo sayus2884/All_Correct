@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import OGSubTitle from "../SubTitle/SubTitle";
 
 export const Container = styled.li`
   position: relative;
@@ -11,12 +12,18 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   padding-bottom: 30px;
   align-items: center;
+
+  @media screen and (max-width: 376px) {
+    padding-bottom: 20px;
+  }
 `;
 
-export const Title = styled.h2`
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 30px;
+export const SubTitle = styled(OGSubTitle)`
+  @media screen and (max-width: 376px) {
+    font-size: 24px;
+    line-height: 30px;
+    max-width: 290px;
+  }
 `;
 
 export const DropdownButton = styled.button`
@@ -52,4 +59,9 @@ export const Content = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+    gap: 30px;
+  }
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import OGText from "../Text/Text";
+import OGSubText from "../SubText/SubText";
 
 export const Container = styled.div`
   background: ${(props) => props.theme.colors.blue};
@@ -15,6 +16,15 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   scroll-snap-align: center;
+
+  @media screen and (max-width: 1025px) {
+    max-height: 364px;
+  }
+
+  @media screen and (max-width: 376px) {
+    max-height: unset;
+    padding: 24px 12px 22px;
+  }
 `;
 
 export const Body = styled.div`
@@ -34,6 +44,18 @@ export const Text = styled(OGText)`
     max-height: 150px;
     line-height: 31px;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 376px) {
+    &.description {
+      max-width: 309px;
+    }
+  }
+`;
+
+export const SubText = styled(OGSubText)`
+  @media screen and (max-width: 376px) {
+    text-align: right;
   }
 `;
 
