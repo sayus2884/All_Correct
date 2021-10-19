@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import facebookLogo from "../../../public/images/logos/facebook.svg";
 import linkedinLogo from "../../../public/images/logos/linkedin.svg";
@@ -12,12 +11,13 @@ import {
   SocialWrapper,
   Wrapper,
 } from "./Footer.styles";
+import Link from "../../components/Link/Link.js";
 import Nav from "../Nav/Nav.js";
 
 const Footer = () => {
   return (
     <FooterWrapper>
-      <Nav inherit={true} />
+      <Nav inherit={true} footer={true} />
       <Wrapper>
         <Wrapper className="grid">
           <AddressWrapper>
@@ -31,49 +31,50 @@ const Footer = () => {
 
           <Copyright>
             <p>
-              © Allcorrect Group 2006—2021,
+              © Allcorrect Group 2006—2021,&nbsp;
               <Link
                 href="https://allcorrectgames.com/legal-information/"
                 target="_blank"
                 rel="noopener">
-                <a>«Legal information»</a>
+                «Legal information»
               </Link>
             </p>
             <p>site@allcorrectgames.com</p>
           </Copyright>
         </Wrapper>
+
         <SocialWrapper>
           <SocialItem>
-            <Image src={facebookLogo} width={18} height={20} />
+            <Image src={facebookLogo} layout="fixed" width={18} height={20} />
             <Link
               href="https://www.facebook.com/allcorrectgames?ref=aymt_homepage_panel"
               target="_blank"
               rel="noopener">
-              <a>Facebook</a>
+              Facebook
             </Link>
           </SocialItem>
           <SocialItem>
-            <Image src={linkedinLogo} width={18} height={20} />
+            <Image src={linkedinLogo} layout="fixed" width={18} height={20} />
             <Link href="https://medium.com/@allcorrect" target="_blank" rel="noopener">
-              <a>Medium</a>
+              Linkedin
             </Link>
           </SocialItem>
           <SocialItem>
-            <Image src={mediumLogo} width={18} height={20} />
+            <Image src={mediumLogo} layout="fixed" width={18} height={20} />
             <Link
               href="https://www.linkedin.com/company/allcorrectgames/"
               target="_blank"
               rel="noopener">
-              <a>Linkedin</a>
+              Medium
             </Link>
           </SocialItem>
           <SocialItem>
-            <Image src={rssLogo} width={18} height={20} />
+            <Image src={rssLogo} layout="fixed" width={18} height={20} />
             <Link
               href="http://feeds.feedburner.com/allcorrectgamescominsights"
               target="_blank"
               rel="noopener">
-              <a>RSS</a>
+              RSS
             </Link>
           </SocialItem>
         </SocialWrapper>

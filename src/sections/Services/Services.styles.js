@@ -34,6 +34,11 @@ export const GamesContainer = styled.ul`
   display: flex;
   gap: 20px;
   margin-top: 60px;
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+    gap: 50px;
+  }
 `;
 
 export const Link = styled(OGLink)`
@@ -44,4 +49,8 @@ export const Link = styled(OGLink)`
   line-height: 24px;
   letter-spacing: -0.01em;
   max-width: 482px;
+
+  @media screen and (max-width: 376px) {
+    margin-top: 60px;
+  }
 `;

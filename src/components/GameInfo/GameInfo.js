@@ -3,7 +3,6 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import {
-  Container,
   Title,
   CarouselContainer,
   Controller,
@@ -108,6 +107,7 @@ function GameInfo({ game }) {
           <InfoItem type="Description" data={description} />
         </InfoContainer>
       </TwoColumns>
+      <SubText className="date mobile">{date}</SubText>
     </>
   );
 }

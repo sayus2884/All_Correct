@@ -78,17 +78,17 @@ const posts = [
     category: "game markets",
   },
   {
-    date: getDate(5),
-    title: "Localization, Seven Steps To Succcess",
-    category: "localization",
-  },
-  {
     date: getDate(8),
     title: "Localization: When Robots Foget Their Umbrellas",
     description:
       "Who even said that localization has to be successful in the first place? There exists an opinion that certain products require a minimal level of localization — a machine translation should suffice for the target audience to decide whether the game is worth downloading, and once they’ve played it for a while, they will inevitably become sucked in. Let’s take a few steps back and analyze this issue from a critical perspective. Suppose we have a game with its own potentially great niche — it’s fun to play, well balanced, and has a suitable monetization model, for instance. Finally, it hits the virtual store shelves. Needless to say, it requires marketing. You seek the services of an ASO expert, who, after analyzing the conversion, tells you: “We must expand into new segments!” OK, then. Expansion is your next move. How do you do it though? There are two methods, which are by no means mutually exclusive — in fact, it’s quite the opposite! They complement each other extremely well.",
     category: "localization",
     image: "/images/posts/controller.png",
+  },
+  {
+    date: getDate(5),
+    title: "Localization, Seven Steps To Succcess",
+    category: "localization",
   },
   {
     date: getDate(10),
@@ -103,6 +103,34 @@ const posts = [
     description:
       "Who even said that localization has to be successful in the first place? There exists an opinion that certain products require a minimal level of localization — a machine translation should suffice for the target audience to decide whether the game is worth downloading, and once they’ve played it for a while, they will inevitably become sucked in. Let’s take a few steps back and analyze this issue from a critical perspective. Suppose we have a game with its own potentially great niche — it’s fun to play, well balanced, and has a suitable monetization model, for instance. Finally, it hits the virtual store shelves. Needless to say, it requires marketing. You seek the services of an ASO expert, who, after analyzing the conversion, tells you: “We must expand into new segments!” OK, then. Expansion is your next move. How do you do it though? There are two methods, which are by no means mutually exclusive — in fact, it’s quite the opposite! They complement each other extremely well.",
     category: "localization",
+  },
+  {
+    date: getDate(15),
+    title: "Outstaffing Project Management In Localization",
+    description:
+      "Who even said that localization has to be successful in the first place? There exists an opinion that certain products require a minimal level of localization — a machine translation should suffice for the target audience to decide whether the game is worth downloading, and once they’ve played it for a while, they will inevitably become sucked in. Let’s take a few steps back and analyze this issue from a critical perspective. Suppose we have a game with its own potentially great niche — it’s fun to play, well balanced, and has a suitable monetization model, for instance. Finally, it hits the virtual store shelves. Needless to say, it requires marketing. You seek the services of an ASO expert, who, after analyzing the conversion, tells you: “We must expand into new segments!” OK, then. Expansion is your next move. How do you do it though? There are two methods, which are by no means mutually exclusive — in fact, it’s quite the opposite! They complement each other extremely well.",
+    category: "lqa",
+    image: "/images/posts/controller.png",
+  },
+  {
+    date: getDate(15),
+    title: "Outstaffing Project Management In Localization",
+    category: "lqa",
+  },
+  {
+    date: getDate(20),
+    title: "Outstaffing Project Management In Localization",
+    description:
+      "Who even said that localization has to be successful in the first place? There exists an opinion that certain products require a minimal level of localization — a machine translation should suffice for the target audience to decide whether the game is worth downloading, and once they’ve played it for a while, they will inevitably become sucked in. Let’s take a few steps back and analyze this issue from a critical perspective. Suppose we have a game with its own potentially great niche — it’s fun to play, well balanced, and has a suitable monetization model, for instance. Finally, it hits the virtual store shelves. Needless to say, it requires marketing. You seek the services of an ASO expert, who, after analyzing the conversion, tells you: “We must expand into new segments!” OK, then. Expansion is your next move. How do you do it though? There are two methods, which are by no means mutually exclusive — in fact, it’s quite the opposite! They complement each other extremely well.",
+    category: "project managements",
+    image: "/images/posts/controller.png",
+  },
+  {
+    date: getDate(20),
+    title: "Outstaffing Project Management In Localization",
+    description:
+      "Who even said that localization has to be successful in the first place? There exists an opinion that certain products require a minimal level of localization — a machine translation should suffice for the target audience to decide whether the game is worth downloading, and once they’ve played it for a while, they will inevitably become sucked in. Let’s take a few steps back and analyze this issue from a critical perspective. Suppose we have a game with its own potentially great niche — it’s fun to play, well balanced, and has a suitable monetization model, for instance. Finally, it hits the virtual store shelves. Needless to say, it requires marketing. You seek the services of an ASO expert, who, after analyzing the conversion, tells you: “We must expand into new segments!” OK, then. Expansion is your next move. How do you do it though? There are two methods, which are by no means mutually exclusive — in fact, it’s quite the opposite! They complement each other extremely well.",
+    category: "project managements",
   },
 ];
 

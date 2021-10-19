@@ -7,4 +7,9 @@ export const Header = styled.h3`
   font-size: 32px;
   line-height: 39px;
   letter-spacing: -0.01em;
+
+  @media screen and (max-width: 376px) {
+    font-size: 24px;
+    line-height: 30px;
+  }
 `;

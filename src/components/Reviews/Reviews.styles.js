@@ -1,46 +1,22 @@
 import styled from "styled-components";
 
 import OGSection from "../Section/Section";
+import OGTitle from "../Title/Title";
 
 export const Container = styled(OGSection)`
   display: grid;
   padding-right: 0;
 `;
 
-export const Text = styled.p`
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-style: normal;
-  font-weight: bold;
-  font-size: 52px;
-  line-height: 63px;
-  letter-spacing: -0.01em;
-  color: ${(props) => props.theme.colors.white};
-
-  &.title {
+export const Title = styled(OGTitle)`
+  &.section-title {
     margin-bottom: 60px;
   }
 
-  &.blue {
-    color: ${(props) => props.theme.colors.blue};
-    display: inline-block;
-  }
-
-  &.right {
-    text-align: right;
-    padding-right: min(2.8vw, 40px);
-    cursor: pointer;
-  }
-
-  &.medium {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    white-space: break-spaces;
-  }
-
-  &.sm {
-    font-size: 16px;
-    line-height: 20px;
+  @media screen and (max-width: 376px) {
+    &.section-title {
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -72,5 +48,17 @@ export const ReviewsContainer = styled.div`
   }
   &:hover::-webkit-scrollbar-thumb {
     background: ${(props) => props.theme.colors.blue};
+  }
+
+  @media screen and (max-width: 1025px) {
+    grid-auto-columns: 733px;
+    grid-template-rows: 364px;
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 376px) {
+    grid-auto-columns: 309px;
+    grid-template-rows: 638px;
+    gap: 12px;
   }
 `;

@@ -10,4 +10,8 @@ export const Btn = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 376px) {
+    padding: 5px 16px;
+  }
 `;
