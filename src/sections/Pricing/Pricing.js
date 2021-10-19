@@ -19,7 +19,7 @@ function Pricing(props) {
       <TextWrapper>
         <Text className="price-text">
           Our pricing depends on the type of services we provide. We have detailed PDFs with the
-          pricing breakdown. Leave your eamil and we will send them back to you!{" "}
+          pricing breakdown. Leave your eamil and we will send them back to you!
         </Text>
         <CheckWrapper>
           <Text className="price-text">Please, select which services you are interested in:</Text>
