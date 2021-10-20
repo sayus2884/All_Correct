@@ -28,14 +28,16 @@ function Nav({
   return (
     <>
       <SideNav isOpen={isOpen} onClose={handleCloseSideNav} />
-      <Container inherit={inherit}>
+      <Container className={footer && "footer"} inherit={inherit}>
         <Link href="/">
           <Title>
             <Highlight>Allcorrect</Highlight>
           </Title>
           <Title>{title}</Title>
         </Link>
-        <HamburgerButton className="mobile" onClick={openNav} />
+
+        {!footer && <HamburgerButton className="mobile" onClick={openNav} />}
+
         <Menu className={footer && "footer"}>
           <Link href="/portfolio" rel="noreferrer noopener">
             <SubText className="header">Portfolio</SubText>

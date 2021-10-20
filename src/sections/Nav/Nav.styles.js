@@ -17,6 +17,10 @@ export const Container = styled.nav`
   @media screen and (max-width: 376px) {
     padding: 20px 16px 0;
     min-height: unset;
+
+    &.footer {
+      flex-direction: column;
+    }
   }
 `;
 
