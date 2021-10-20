@@ -5,6 +5,7 @@ export const Section = styled(OGSection)`
   display: grid;
   gap: 60px;
   padding-top: 100px;
+  overflow: visible;
 `;
 
 export const MenuList = styled.ul`

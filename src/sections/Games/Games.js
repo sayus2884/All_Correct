@@ -39,34 +39,48 @@ function Games() {
   const data = () => {
     if (platform === 'All' && genre === 'All' && type === 'All') {
       return allGames;
-    } else if (platform !== 'All' || genre !== 'All' || type !== 'All') {
-      console.log(platform, genre, type);
+    } else if (platform !== 'All') {
       const newElement = allGames.filter(
         element =>
-          element.platforms.includes(platform) ||
-          element.genre.includes(genre) ||
+          element.platforms.includes(platform));
+      return newElement;
+    } else if (genre !== 'All') {
+      const newElement = allGames.filter(
+        element =>
+          element.genre.includes(genre));
+      return newElement;
+    } else if (type !== 'All') {
+      const newElement = allGames.filter(
+        element =>
           element.services.includes(type));
       return newElement;
     }
   }
 
+  console.log(platform, genre, type);
+
   // const data = (platform === 'All' && genre === 'All' || type === 'All') && allGames;
 
-
-
-  console.log(allGames);
 
   return (
     <Section>
       <MenuList>
-        <DropDown title="Platform" id='platform' onItemSelected={(e) => setPlatform(e)}>
+        <DropDown title="Platform" id='platform' onItemSelected={(e) => {
+          setPlatform(e);
+          setType('All');
+          setGenre('All');
+        }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
           <DropDownItem value={"PC"} />
           <DropDownItem value={"Nintendo Switch"} />
           <DropDownItem value={"Cross-platform"} />
         </DropDown>
-        <DropDown title="Genre" id='genre' onItemSelected={(e) => setGenre(e)}>
+        <DropDown title="Genre" id='genre' onItemSelected={(e) => {
+          setGenre(e)
+          setPlatform('All');
+          setType('All');
+        }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Match 3"} />
           <DropDownItem value={"Strategy"} />
@@ -80,7 +94,11 @@ function Games() {
           <DropDownItem value={"City"} />
           <DropDownItem value={"Puzzle"} />
         </DropDown>
-        <DropDown title="Type of project" id='type' onItemSelected={(e) => setType(e)}>
+        <DropDown title="Type of project" id='type' onItemSelected={(e) => {
+          setType(e);
+          setGenre('All');
+          setPlatform('All');
+        }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
           <DropDownItem value={"Localization testing"} />
