@@ -60,8 +60,8 @@ function SideNav({ isOpen = false, onClose }) {
       </TitleContainer>
 
       <Menu>
-        {routes.slice(1).map(({ name, route }) => (
-          <Link onClick={handleRoute} data-route={route}>
+        {routes.slice(1).map(({ name, route }, i) => (
+          <Link onClick={handleRoute} data-route={route} key={i}>
             <SubText className="header">{name}</SubText>
           </Link>
         ))}
