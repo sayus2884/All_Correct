@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import StackGrid from "react-stack-grid";
 import {
   Section,
@@ -12,20 +12,18 @@ import {
 import PostCard from "../../components/PostCard/PostCard.js";
 import Text from "../../components/Text/Text.js";
 
+import PostsContext from "../../context/PostsContext";
+
 function Posts() {
-  const [posts, setPosts] = useState([]);
+  const { posts } = useContext(PostsContext);
+
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [getWidth, setGetWidth] = useState();
   const [indexShow, setIndexShow] = useState(6);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/posts")
-      .then((res) => res.json())
-      .then((posts) => {
-        setPosts(posts);
-        setFilteredPosts(posts);
-      });
+    setFilteredPosts(posts);
 
     updateDimensions();
     if (typeof window !== "undefined") {
