@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Container, Content, ImageWrapper, Title, Description } from "./PostCard.styles";
 
 function PostCard({ post }) {
-  const { title, description, image } = post;
+  const { title, description, image, _id } = post;
 
   return (
-    <Link href="/blog/test">
+    <Link href={`/blog/${_id}`}>
       <Container image={image}>
         {image && (
           <ImageWrapper>

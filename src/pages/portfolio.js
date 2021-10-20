@@ -10,7 +10,7 @@ import GameModalContext from "../context/GameModalContext.js";
 import ReviewsContext from "../context/ReviewsContext";
 
 export default function Portfolio() {
-  const { allGames } = useContext(GameModalContext);
+  const { games } = useContext(GameModalContext);
   const { publisherReviews } = useContext(ReviewsContext);
 
   return (
@@ -18,7 +18,7 @@ export default function Portfolio() {
       <header>
         <Nav lang={true} title="Portfolio" />
       </header>
-      <Games games={allGames} />
+      <Games games={games} />
       <GameModal />
       <Reviews reviews={publisherReviews} />
       <GetInTouchText />

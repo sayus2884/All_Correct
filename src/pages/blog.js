@@ -3,7 +3,7 @@ import Posts from "../sections/Posts/Posts.js";
 import Footer from "../sections/Footer/Footer.js";
 import { useState } from "react";
 
-export default function JoinUs(props) {
+export default function Blog(props) {
   return (
     <>
       <header>

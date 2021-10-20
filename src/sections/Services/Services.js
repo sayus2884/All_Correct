@@ -64,16 +64,16 @@ function GameTesting({ games }) {
 }
 
 function Services(props) {
-  const { allGames } = useContext(GameModalContext);
+  const { games } = useContext(GameModalContext);
 
   const fakedata = [
-    { title: "Lean game localization", content: <GameTesting games={allGames} /> },
+    { title: "Lean game localization", content: <GameTesting games={games} /> },
     {
       title: "Localization and functional game testing",
-      content: <GameTesting games={allGames} />,
+      content: <GameTesting games={games} />,
     },
-    { title: "Voiceovers", content: <GameTesting games={allGames} /> },
-    { title: "Game art", content: <GameTesting games={allGames} /> },
+    { title: "Voiceovers", content: <GameTesting games={games} /> },
+    { title: "Game art", content: <GameTesting games={games} /> },
   ];
 
   return (
