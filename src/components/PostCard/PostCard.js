@@ -2,14 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container, Content, ImageWrapper, Title, Description } from "./PostCard.styles";
 
-function PostCard({ post }) {
+function PostCard({ post, isHeadline = false }) {
   const { title, description, image, _id } = post;
 
   return (
     <Link href={`/blog/${_id}`}>
-      <Container image={image}>
+      <Container hasImage={image}>
         {image && (
-          <ImageWrapper>
+          <ImageWrapper className={isHeadline && "headline"}>
             <Image
               src={image}
               alt={title}
@@ -20,7 +20,7 @@ function PostCard({ post }) {
             />
           </ImageWrapper>
         )}
-        <Content image={image}>
+        <Content className={isHeadline && "headline"} hasImage={image}>
           <Title>{title}</Title>
           <Description>{description}</Description>
         </Content>

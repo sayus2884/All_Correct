@@ -33,6 +33,10 @@ export const MasonryContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media screen and (max-width: 375px) {
+    gap: 40px;
+  }
 `;
 
 export const TopHeadline = styled.div`
@@ -49,11 +53,6 @@ export const Masonry = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-`;
-
-export const PostCard = styled.div`
-  height: ${({ height }) => (height ? `${height}px` : `300px`)};
-  background: red;
 `;
 
 export const LoadMoreButton = styled(OGButton)`
