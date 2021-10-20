@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import OGLink from "../../components/Link/Link";
 import OGTitle from "../../components/Title/Title";
+import OGButton from "../../components/Button/Button";
 
 export const Container = styled.nav`
   color: ${(props) => props.theme.colors.white};
@@ -16,7 +17,6 @@ export const Container = styled.nav`
   @media screen and (max-width: 376px) {
     padding: 20px 16px 0;
     min-height: unset;
-    flex-direction: column;
   }
 `;
 
@@ -38,6 +38,21 @@ export const Link = styled(OGLink)`
 
   @media screen and (max-width: 376px) {
     max-width: 222px;
+  }
+`;
+
+export const HamburgerButton = styled(OGButton)`
+  display: none;
+  background: none;
+  background-image: url("/images/icons/burger.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: unset;
+  height: 44px;
+  width: 44px;
+
+  @media screen and (max-width: 376px) {
+    display: block;
   }
 `;
 
