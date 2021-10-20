@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import GetInTouchModal from "../../components/GetInTouchModal/GetInTouchModal";
 import {
   Container,
   TitleContainer,
@@ -19,6 +18,12 @@ function SideNav({ isOpen = false, onClose }) {
 
   const handleClose = (event) => {
     event.preventDefault();
+    onClose();
+  };
+
+  const handleShowModal = (event) => {
+    event.preventDefault();
+    openModal();
     onClose();
   };
 
@@ -52,10 +57,9 @@ function SideNav({ isOpen = false, onClose }) {
         <Link href="/join-us">
           <SubText className="header">Join us</SubText>
         </Link>
-        <SubText className="header" onClick={openModal}>
+        <SubText className="header" onClick={handleShowModal}>
           <Highlight>Get in touch</Highlight>
         </SubText>
-        <GetInTouchModal onClose={closeModal} showModal={showModal} />
       </Menu>
     </Container>
   );
