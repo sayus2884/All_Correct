@@ -59,9 +59,6 @@ function Games() {
 
   console.log(platform, genre, type);
 
-  // const data = (platform === 'All' && genre === 'All' || type === 'All') && allGames;
-
-
   return (
     <Section>
       <MenuList>
