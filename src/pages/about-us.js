@@ -8,7 +8,7 @@ import Footer from "../sections/Footer/Footer.js";
 
 import ReviewsContext from "../context/ReviewsContext";
 
-export default function JoinUs(props) {
+export default function AboutUs(props) {
   const { publisherReviews } = useContext(ReviewsContext);
 
   return (

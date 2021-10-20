@@ -7,7 +7,7 @@ import Footer from "../../sections/Footer/Footer.js";
 
 import PostsContext from "../../context/PostsContext";
 
-export default function Home() {
+export default function BlogPost() {
   const { postId } = useRouter().query;
   const { getPostById } = useContext(PostsContext);
 

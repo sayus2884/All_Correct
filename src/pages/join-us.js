@@ -9,8 +9,7 @@ import Footer from "../sections/Footer/Footer.js";
 
 import ReviewsContext from "../context/ReviewsContext";
 
-export default function JoinUs({ games }) {
-  const [games, setGames] = useState(games);
+export default function JoinUs() {
   const { colleagueReviews } = useContext(ReviewsContext);
 
   return (
