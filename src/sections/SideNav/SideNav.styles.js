@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import OGLink from "../../components/Link/Link";
 import OGTitle from "../../components/Title/Title";
 import OGButton from "../../components/Button/Button";
 
@@ -45,8 +44,8 @@ export const Title = styled(OGTitle)`
   line-height: 44px;
 `;
 
-export const Link = styled(OGLink)`
-  color: ${(props) => props.theme.colors.white};
+export const Link = styled.a`
+  cursor: pointer;
 `;
 
 export const Menu = styled.div`

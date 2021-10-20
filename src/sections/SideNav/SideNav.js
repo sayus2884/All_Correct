@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useRouter } from "next/router";
 import {
   Container,
   TitleContainer,
@@ -15,11 +16,23 @@ import Highlight from "../../components/Highlight/Highlight";
 
 function SideNav({ isOpen = false, onClose }) {
   const { showModal, openModal, closeModal } = useContext(GetInTouchModalContext);
+  const router = useRouter();
+  const routes = [
+    { name: "", route: "/" },
+    { name: "Portfolio", route: "/portfolio" },
+    { name: "About Us", route: "/about-us" },
+    { name: "Services", route: "/#services" },
+    { name: "Pricing", route: "/#pricing" },
+    { name: "Blog", route: "/blog" },
+    { name: "Join Us", route: "/join-us" },
+  ];
 
-  const handleClose = (event) => {
-    event.preventDefault();
-    onClose();
-  };
+  // prefetch pages for faster page transitions
+  useEffect(() => {
+    routes.forEach(({ route }) => {
+      router.prefetch(route);
+    });
+  }, []);
 
   const handleShowModal = (event) => {
     event.preventDefault();
@@ -27,39 +40,37 @@ function SideNav({ isOpen = false, onClose }) {
     onClose();
   };
 
+  const handleRoute = (event) => {
+    event.preventDefault();
+    const route = event.currentTarget.dataset.route;
+
+    onClose();
+    router.push(route);
+  };
+
   return (
     <Container isOpen={isOpen}>
       <TitleContainer>
-        <Link href="/">
+        <Link onClick={handleRoute} data-route="/">
           <Title>
             <Highlight>Allcorrect</Highlight>
           </Title>
         </Link>
-        <CloseButton onClick={handleClose} />
+        <CloseButton onClick={onClose} />
       </TitleContainer>
 
       <Menu>
-        <Link href="/portfolio" rel="noreferrer noopener">
-          <SubText className="header">Portfolio</SubText>
+        {routes.slice(1).map(({ name, route }) => (
+          <Link onClick={handleRoute} data-route={route}>
+            <SubText className="header">{name}</SubText>
+          </Link>
+        ))}
+
+        <Link onClick={handleShowModal}>
+          <SubText className="header">
+            <Highlight>Get in touch</Highlight>
+          </SubText>
         </Link>
-        <Link href="/about-us">
-          <SubText className="header">About us</SubText>
-        </Link>
-        <Link href="/#services">
-          <SubText className="header">Services</SubText>
-        </Link>
-        <Link href="/#pricing">
-          <SubText className="header">Pricing</SubText>
-        </Link>
-        <Link href="/blog">
-          <SubText className="header">Blog</SubText>
-        </Link>
-        <Link href="/join-us">
-          <SubText className="header">Join us</SubText>
-        </Link>
-        <SubText className="header" onClick={handleShowModal}>
-          <Highlight>Get in touch</Highlight>
-        </SubText>
       </Menu>
     </Container>
   );
