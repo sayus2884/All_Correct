@@ -39,32 +39,43 @@ function Games() {
   const data = () => {
     if (platform === "All" && genre === "All" && type === "All") {
       return games;
-    } else if (platform !== "All" || genre !== "All" || type !== "All") {
-      const newElement = games.filter(
-        (element) =>
-          element.platforms.includes(platform) ||
-          element.genre.includes(genre) ||
-          element.services.includes(type),
-      );
+    } else if (platform !== "All") {
+      const newElement = games.filter((element) => element.platforms.includes(platform));
+      return newElement;
+    } else if (genre !== "All") {
+      const newElement = games.filter((element) => element.genre.includes(genre));
+      return newElement;
+    } else if (type !== "All") {
+      const newElement = games.filter((element) => element.services.includes(type));
       return newElement;
     }
   };
 
-  // const data = (platform === 'All' && genre === 'All' || type === 'All') && games;
-
-  console.log(games);
-
   return (
     <Section>
       <MenuList>
-        <DropDown title="Platform" id="platform" onItemSelected={(e) => setPlatform(e)}>
+        <DropDown
+          title="Platform"
+          id="platform"
+          onItemSelected={(e) => {
+            setPlatform(e);
+            setType("All");
+            setGenre("All");
+          }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
           <DropDownItem value={"PC"} />
           <DropDownItem value={"Nintendo Switch"} />
           <DropDownItem value={"Cross-platform"} />
         </DropDown>
-        <DropDown title="Genre" id="genre" onItemSelected={(e) => setGenre(e)}>
+        <DropDown
+          title="Genre"
+          id="genre"
+          onItemSelected={(e) => {
+            setGenre(e);
+            setPlatform("All");
+            setType("All");
+          }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Match 3"} />
           <DropDownItem value={"Strategy"} />
@@ -78,7 +89,14 @@ function Games() {
           <DropDownItem value={"City"} />
           <DropDownItem value={"Puzzle"} />
         </DropDown>
-        <DropDown title="Type of project" id="type" onItemSelected={(e) => setType(e)}>
+        <DropDown
+          title="Type of project"
+          id="type"
+          onItemSelected={(e) => {
+            setType(e);
+            setGenre("All");
+            setPlatform("All");
+          }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
           <DropDownItem value={"Localization testing"} />
@@ -89,7 +107,15 @@ function Games() {
         {data()
           .filter((element, i) => i < indexShow)
           .map((e, i) => (
-            <GameCard key={i} game={e} height={300} />
+            <GameCard
+              key={i}
+              game={e}
+              height={300}
+              onClick={() => {
+                setSelectedGame(e);
+                openGameModal();
+              }}
+            />
           ))}
       </GamesGrid>
       <Text className="button blue" onClick={loadMore}>
