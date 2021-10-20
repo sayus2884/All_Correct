@@ -37,13 +37,10 @@ export const Content = styled.div`
   }
 
   @media screen and (max-width: 375px) {
-    padding: ${({ hasImage }) => (hasImage ? "16px 0 0" : "34px 14px")};
+    padding: ${({ hasImage }) => (hasImage ? "16px 0 0" : "16px 14px")};
 
     &.headline {
-      max-height: ${({ hasImage }) => (hasImage ? "280px" : "unset")};
-      height: ${({ hasImage }) => (hasImage ? "100%" : "280px")};
-      max-width: ${({ hasImage }) => (hasImage ? "311px" : "100%")};
-      padding-bottom: ${({ hasImage }) => (hasImage ? "34px" : "43px")};
+      padding: ${({ hasImage }) => (hasImage ? "16px 0 0" : "16px 14px")};
     }
   }
 `;
