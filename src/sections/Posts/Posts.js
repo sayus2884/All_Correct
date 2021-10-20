@@ -100,7 +100,7 @@ function Posts() {
       <MasonryContainer>
         <TopHeadline>
           {filteredPosts.slice(0, 2).map((post, key) => (
-            <PostCard key={key} post={post} />
+            <PostCard key={key} post={post} isHeadline={true} />
           ))}
         </TopHeadline>
 
@@ -108,7 +108,7 @@ function Posts() {
           <StackGrid
             columnWidth={getWidth <= 768 ? "100%" : "33.33%"}
             gutterWidth={20}
-            gutterHeight={20}>
+            gutterHeight={getWidth <= 375 ? 40 : 20}>
             {filteredPosts
               .slice(2, posts.length)
               // show posts based on current indexShow
