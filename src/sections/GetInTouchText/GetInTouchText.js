@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { Section, Wrapper } from "./GetInTouchText.styles";
+import { Section, Title, Wrapper } from "./GetInTouchText.styles";
 
 import GetInTouchModal from "../../components/GetInTouchModal/GetInTouchModal";
-import Title from "../../components/Title/Title.js";
+// import Title from "../../components/Title/Title.js";
 import Highlight from "../../components/Highlight/Highlight.js";
 
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";

@@ -11,7 +11,7 @@ const UseReviews = (data = []) => {
   const publisherReviews = reviews.filter((review) => review.type === types.PUBLISHER);
   const colleagueReviews = reviews.filter((review) => review.type === types.COLLEAGUE);
 
-  return { reviews, publisherReviews, colleagueReviews, setReviews };
+  return { publisherReviews, colleagueReviews };
 };
 
 export default UseReviews;

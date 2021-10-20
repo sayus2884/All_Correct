@@ -32,7 +32,7 @@ function GameCarousel() {
         showArrows={false}
         showThumbs={false}
         emulateTouch={true}
-        autoPlay={true}
+        autoPlay={false}
         interval={2500}
         transitionTime={700}
         infiniteLoop={true}>
@@ -51,11 +51,11 @@ function GameCarousel() {
 
             <Info className="info">
               <TitleContainer onClick={handleTitleClick} data-index={index}>
-                <SubTitle>We've localized</SubTitle>
                 <SubTitle>
-                  <Highlight> {game.title}</Highlight> game
+                  We've localized <br />
+                  <Highlight> {game.title}</Highlight> game <br />
+                  by {game.publisher}
                 </SubTitle>
-                <SubTitle>by {game.publisher}</SubTitle>
               </TitleContainer>
             </Info>
           </Item>

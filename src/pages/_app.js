@@ -5,55 +5,76 @@ import BaseLayout from "../components/BaseLayout/BaseLayout";
 import GetInTouchModalContext from "../context/GetInTouchModalContext.js";
 import GameModalContext from "../context/GameModalContext.js";
 import ReviewsContext from "../context/ReviewsContext.js";
+import PostsContext from "../context/PostsContext.js";
 
-import useModal from "../hooks/UseModal.js";
-import useReviews from "../hooks/UseReviews.js";
-import useGames from "../hooks/UseGames.js";
-import useGameModal from "../hooks/UseGameModal.js";
+import useModal from "../hooks/use-modal.js";
+import useReviews from "../hooks/use-reviews.js";
+import useGames from "../hooks/use-games.js";
+import usePosts from "../hooks/use-posts.js";
+import useGameModal from "../hooks/use-game-modal.js";
 
-import { games as allGames } from "../utils/data";
+/*
+NOTE: if data is fetched via external API, fetch them under
+      getStaticProps() to benefit from SEO. Otherwise, directly import
+      it from the project file that contains it.
+ref: https://wallis.dev/blog/nextjs-serverside-data-fetching
+ref: https://github.com/vercel/next.js/discussions/16068
+*/
 
-export default function MyApp({ Component, pageProps }) {
+import { games as dummyGames, reviews as dummyReviews, posts as dummyPosts } from "../utils/data";
+
+export default function MyApp({ Component, pageProps, games, reviews, posts }) {
   const { showModal, openModal, closeModal } = useModal();
   const { showGameModal, openGameModal, closeGameModal } = useGameModal();
-  const { selectedGame, carouselGames, setSelectedGame } = useGames(allGames);
-  const { reviews, publisherReviews, colleagueReviews, setReviews } = useReviews([]);
-
-  useEffect(() => {
-    // NOTE: create blog context and add it here
-    // fetch("http://localhost:3000/api/posts")
-    //   .then((res) => res.json())
-    //   .then((posts) => {
-    //     setPosts(posts);
-    //   });
-
-    fetch("http://localhost:3000/api/reviews")
-      .then((res) => res.json())
-      .then((reviews) => {
-        setReviews(reviews);
-      });
-  }, []);
+  const { selectedGame, carouselGames, setSelectedGame } = useGames(games ? games : dummyGames);
+  const { publisherReviews, colleagueReviews } = useReviews(reviews ? reviews : dummyReviews);
+  const { getPostById } = usePosts(posts ? posts : dummyPosts);
 
   return (
     <Theme>
       <BaseLayout>
-        <ReviewsContext.Provider value={{ reviews, publisherReviews, colleagueReviews }}>
-          <GameModalContext.Provider
+        <PostsContext.Provider value={{ posts: posts ? posts : dummyPosts, getPostById }}>
+          <ReviewsContext.Provider
             value={{
-              allGames,
-              selectedGame,
-              carouselGames,
-              setSelectedGame,
-              showGameModal,
-              openGameModal,
-              closeGameModal,
+              reviews: reviews ? reviews : dummyReviews,
+              publisherReviews,
+              colleagueReviews,
             }}>
-            <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
-              <Component {...pageProps} />
-            </GetInTouchModalContext.Provider>
-          </GameModalContext.Provider>
-        </ReviewsContext.Provider>
+            <GameModalContext.Provider
+              value={{
+                games: games ? games : dummyGames,
+                selectedGame,
+                carouselGames,
+                setSelectedGame,
+                showGameModal,
+                openGameModal,
+                closeGameModal,
+              }}>
+              <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
+                <Component {...pageProps} />
+              </GetInTouchModalContext.Provider>
+            </GameModalContext.Provider>
+          </ReviewsContext.Provider>
+        </PostsContext.Provider>
       </BaseLayout>
     </Theme>
   );
+}
+
+export async function getStaticProps(context) {
+  // NOTE: fetch data from external api (ex. blog posts)
+  // and pass it to props for SEO benefits
+
+  /*const res = await fetch(`https://.../data`);
+  const data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }*/
+
+  return {
+    props: {},
+  };
 }

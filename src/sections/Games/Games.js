@@ -10,7 +10,7 @@ import { useState } from "react";
 import GameModalContext from "../../context/GameModalContext";
 
 function Games() {
-  const { allGames, openGameModal, setSelectedGame } = useContext(GameModalContext);
+  const { games, openGameModal, setSelectedGame } = useContext(GameModalContext);
 
   const [showAll, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -22,62 +22,62 @@ function Games() {
   }
 
   function loadMore() {
-    if ((indexShow < allGames.length) && (showAll === false)) {
+    if (indexShow < games.length && showAll === false) {
       setIndexShow(indexShow + 6);
       setShow(false);
-    } else if ((indexShow >= allGames.length) && showAll === false) {
+    } else if (indexShow >= games.length && showAll === false) {
       setShow(true);
     } else {
       setIndexShow(6);
     }
   }
 
-  const [platform, setPlatform] = useState('All');
-  const [genre, setGenre] = useState('All');
-  const [type, setType] = useState('All');
+  const [platform, setPlatform] = useState("All");
+  const [genre, setGenre] = useState("All");
+  const [type, setType] = useState("All");
 
   const data = () => {
-    if (platform === 'All' && genre === 'All' && type === 'All') {
-      return allGames;
-    } else if (platform !== 'All') {
-      const newElement = allGames.filter(
-        element =>
-          element.platforms.includes(platform));
+    if (platform === "All" && genre === "All" && type === "All") {
+      return games;
+    } else if (platform !== "All") {
+      const newElement = games.filter((element) => element.platforms.includes(platform));
       return newElement;
-    } else if (genre !== 'All') {
-      const newElement = allGames.filter(
-        element =>
-          element.genre.includes(genre));
+    } else if (genre !== "All") {
+      const newElement = games.filter((element) => element.genre.includes(genre));
       return newElement;
-    } else if (type !== 'All') {
-      const newElement = allGames.filter(
-        element =>
-          element.services.includes(type));
+    } else if (type !== "All") {
+      const newElement = games.filter((element) => element.services.includes(type));
       return newElement;
     }
-  }
+  };
 
   console.log(platform, genre, type);
 
   return (
     <Section>
       <MenuList>
-        <DropDown title="Platform" id='platform' onItemSelected={(e) => {
-          setPlatform(e);
-          setType('All');
-          setGenre('All');
-        }}>
+        <DropDown
+          title="Platform"
+          id="platform"
+          onItemSelected={(e) => {
+            setPlatform(e);
+            setType("All");
+            setGenre("All");
+          }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
           <DropDownItem value={"PC"} />
           <DropDownItem value={"Nintendo Switch"} />
           <DropDownItem value={"Cross-platform"} />
         </DropDown>
-        <DropDown title="Genre" id='genre' onItemSelected={(e) => {
-          setGenre(e)
-          setPlatform('All');
-          setType('All');
-        }}>
+        <DropDown
+          title="Genre"
+          id="genre"
+          onItemSelected={(e) => {
+            setGenre(e);
+            setPlatform("All");
+            setType("All");
+          }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Match 3"} />
           <DropDownItem value={"Strategy"} />
@@ -91,11 +91,14 @@ function Games() {
           <DropDownItem value={"City"} />
           <DropDownItem value={"Puzzle"} />
         </DropDown>
-        <DropDown title="Type of project" id='type' onItemSelected={(e) => {
-          setType(e);
-          setGenre('All');
-          setPlatform('All');
-        }}>
+        <DropDown
+          title="Type of project"
+          id="type"
+          onItemSelected={(e) => {
+            setType(e);
+            setGenre("All");
+            setPlatform("All");
+          }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
           <DropDownItem value={"Localization testing"} />
@@ -103,9 +106,11 @@ function Games() {
         </DropDown>
       </MenuList>
       <GamesGrid show={showAll}>
-        {data().filter((element, i) => i < indexShow).map((e, i) => (
-          <GameCard key={i} game={e} height={300} />
-        ))}
+        {data()
+          .filter((element, i) => i < indexShow)
+          .map((e, i) => (
+            <GameCard key={i} game={e} height={300} />
+          ))}
       </GamesGrid>
       <Text className="button blue" onClick={loadMore}>
         {showAll ? <span>Load less &#8593;</span> : "Load more ↓"}

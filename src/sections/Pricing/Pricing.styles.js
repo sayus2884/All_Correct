@@ -5,6 +5,14 @@ export const Title = styled(OGTitle)`
   &.section-title {
     margin-bottom: 40px;
   }
+
+  @media screen and (max-width: 376px) {
+    line-height: 39px;
+
+    &.section-title {
+      margin-bottom: 32px;
+    }
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -12,8 +20,18 @@ export const TextWrapper = styled.div`
   margin-bottom: 84px;
 
   & .price-text {
-    width: 551px;
+    max-width: 551px;
     margin-bottom: 16px;
+  }
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+    margin-bottom: 60px;
+
+    & .price-text {
+      max-width: 551px;
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -21,6 +39,11 @@ export const CheckWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 136px;
+
+  @media screen and (max-width: 376px) {
+    margin: 40px 0 0;
+    gap: 24px;
+  }
 `;
 
 export const CheckItem = styled.label`
@@ -37,9 +60,23 @@ export const CheckItem = styled.label`
 export const EmailWrapper = styled.div`
   margin-top: 44px;
   font-size: 52px;
-  line-height: 1.21;
+  line-height: 63px;
+  font-weight: bold;
+  letter-spacing: -0.01em;
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 1025px) {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  @media screen and (max-width: 376px) {
+    margin-top: 32px;
+    font-size: 32px;
+    line-height: 39px;
+    gap: 40px;
+  }
 `;
 
 export const EmailInput = styled.input.attrs({ type: "email" })`
@@ -54,10 +91,28 @@ export const EmailInput = styled.input.attrs({ type: "email" })`
   ::placeholder {
     color: #c4c4c4;
   }
+
+  @media screen and (max-width: 1025px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 376px) {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 4px;
+  }
 `;
 
 export const FormButton = styled.button.attrs({ type: "submit" })`
   color: ${({ theme }) => theme.colors.blue};
   background: none;
   border: none;
+
+  @media screen and (max-width: 1025px) {
+    text-align: right;
+  }
+
+  @media screen and (max-width: 376px) {
+    text-align: left;
+  }
 `;

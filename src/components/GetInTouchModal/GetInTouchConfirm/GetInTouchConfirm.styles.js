@@ -13,6 +13,7 @@ export const TextWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   gap: 80px;
+  padding: 40px 40px 0;
 `;
 
 export const Text = styled.p`
@@ -24,7 +25,6 @@ export const Text = styled.p`
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.fonts.dark};
   text-align: left;
-  padding: 40px 40px 0;
   margin: 0;
 `;
 

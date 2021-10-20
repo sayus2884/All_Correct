@@ -7,11 +7,9 @@ import {
   Img,
   Content,
   ImageWrapper,
-  Title,
+  SubText,
   Description,
 } from "./ReviewCard.styles";
-
-import SubText from "../SubText/SubText";
 
 function ReviewCard({ review, onClick }) {
   const { description, reviewer, image } = review;

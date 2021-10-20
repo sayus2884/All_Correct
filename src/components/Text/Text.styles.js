@@ -10,4 +10,9 @@ export const Paragraph = styled.p`
   &.header {
     font-weight: bold;
   }
+
+  @media screen and (max-width: 376px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 `;

@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import Image from "next/image";
 import {
   Section,
@@ -12,13 +13,15 @@ import {
 } from "./Post.styles";
 
 function Post({ post }) {
-  const { title, date, content, image } = post;
+  // NOTE: currently using dummy data. Replace with correct blog content.
+  const { title, date, content, description, image } = post;
   const dateOptions = {
     hour12: true,
     day: "numeric",
     month: "short",
     year: "numeric",
   };
+  const dateTimeFormat = useMemo(() => new Intl.DateTimeFormat("en", dateOptions), []);
 
   return (
     <Section>
@@ -28,9 +31,7 @@ function Post({ post }) {
             <SubText>Go Back</SubText>
           </GoBack>
           <Title>{title}</Title>
-          <SubText className="date">
-            {new Intl.DateTimeFormat("en", dateOptions).format(date)}
-          </SubText>
+          <SubText className="date">{dateTimeFormat.format(date)}</SubText>
         </Column>
 
         {image && (
@@ -50,7 +51,7 @@ function Post({ post }) {
           </Column>
         )}
       </Columns>
-      <Content>{content}</Content>
+      <Content>{content ? content : description}</Content>
     </Section>
   );
 }

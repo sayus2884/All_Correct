@@ -23,6 +23,14 @@ export const Img = styled.div`
   position: relative;
   min-width: ${({ width }) => (width ? `${width}px` : "100%")};
   min-height: ${({ height }) => (height ? `${height}px` : "100%")};
+
+  @media screen and (max-width: 1025px) {
+    min-height: 214px;
+  }
+
+  @media screen and (max-width: 376px) {
+    min-height: 232px;
+  }
 `;
 
 export const Link = styled.h3`

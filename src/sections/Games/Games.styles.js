@@ -2,16 +2,21 @@ import styled from "styled-components";
 import OGSection from "../../components/Section/Section.js";
 
 export const Section = styled(OGSection)`
-  display: grid;
-  gap: 60px;
   padding-top: 100px;
-  overflow: visible;
+
+  @media screen and (max-width: 376px) {
+    padding-top: 60px;
+  }
 `;
 
 export const MenuList = styled.ul`
-  all: unset;
+  margin-bottom: 60px;
   display: flex;
   gap: 40px;
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+  }
 `;
 
 export const GamesGrid = styled.div`
@@ -36,6 +41,11 @@ export const GamesGrid = styled.div`
       transform: scaleY(1) translateY(0);
       opacity: 1;
     }
+  }
+
+  @media screen and (max-width: 376px) {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
   }
 `;
 
@@ -67,7 +77,6 @@ export const Img = styled.div`
 `;
 
 export const Text = styled.p`
-  all: unset;
   font-family: ${(props) => props.theme.fonts.inter};
   font-style: normal;
   font-weight: bold;
@@ -81,7 +90,14 @@ export const Text = styled.p`
   }
 
   &.button {
+    margin-top: 80px;
     line-height: 36px;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 376px) {
+    &.button {
+      text-align: center;
+    }
   }
 `;

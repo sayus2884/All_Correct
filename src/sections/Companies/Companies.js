@@ -1,7 +1,6 @@
-import { Container, Title, CompanyList, CompanyItem, Image } from "./Companies.styles";
+import { Container, SubTitle, CompanyList, CompanyItem, Image } from "./Companies.styles";
 import Company from "../../components/Company/Company.js";
 import Section from "../../components/Section/Section.js";
-import SubTitle from "../../components/SubTitle/SubTitle.js";
 
 function Companies({ children }) {
   const companies = [
@@ -21,9 +20,11 @@ function Companies({ children }) {
 
   return (
     <Section>
+      <SubTitle className="mobile">These companies work with us</SubTitle>
+
       <CompanyList>
-        <CompanyItem>
-          <SubTitle>These companies work with us</SubTitle>
+        <CompanyItem className="mobile">
+          <SubTitle className="tablet">These companies work with us</SubTitle>
         </CompanyItem>
 
         {companies.map(({ url, src, alt }, i) => (
