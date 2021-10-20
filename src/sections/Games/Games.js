@@ -51,8 +51,6 @@ function Games() {
     }
   };
 
-  console.log(platform, genre, type);
-
   return (
     <Section>
       <MenuList>
@@ -109,7 +107,15 @@ function Games() {
         {data()
           .filter((element, i) => i < indexShow)
           .map((e, i) => (
-            <GameCard key={i} game={e} height={300} />
+            <GameCard
+              key={i}
+              game={e}
+              height={300}
+              onClick={() => {
+                setSelectedGame(e);
+                openGameModal();
+              }}
+            />
           ))}
       </GamesGrid>
       <Text className="button blue" onClick={loadMore}>

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import OGSection from "../../components/Section/Section.js";
 
 export const Section = styled(OGSection)`
+  overflow: visible;
   padding-top: 100px;
 
   @media screen and (max-width: 376px) {

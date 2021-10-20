@@ -3,6 +3,7 @@ import styled from "styled-components";
 import OGLink from "../Link/Link";
 
 export const Container = styled.div`
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 20px;
