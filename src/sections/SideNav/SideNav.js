@@ -28,7 +28,7 @@ function SideNav({ isOpen = false, onClose }) {
   };
 
   return (
-    <Container className={!isOpen && "hidden"}>
+    <Container isOpen={isOpen}>
       <TitleContainer>
         <Link href="/">
           <Title>

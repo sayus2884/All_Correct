@@ -8,16 +8,16 @@ export const Container = styled.nav`
   position: fixed;
   color: ${(props) => props.theme.colors.white};
   background: ${(props) => props.theme.colors.black};
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  padding: 16px;
   overflow: hidden;
+  z-index: 9999;
+  width: ${({ isOpen }) => (isOpen ? "100%" : "0")};
+  height: 100%;
+  padding: ${({ isOpen }) => (isOpen ? "16px" : "16px 0")};
 
-  &.hidden {
-    padding: 0;
-    height: 0;
-  }
+  transition: ${({ isOpen }) =>
+    isOpen
+      ? "all 0.25s ease-out, padding-top 0.3s ease, padding-bottom 0.1s linear, height 0s, opacity .4s .1s"
+      : "all 0.1s ease-out, height 0s, opacity 0s"};
 `;
 
 export const TitleContainer = styled.div`
