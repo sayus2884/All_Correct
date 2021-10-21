@@ -12,9 +12,7 @@ import GameModalContext from "../../context/GameModalContext";
 function Games() {
   const { games, openGameModal, setSelectedGame } = useContext(GameModalContext);
 
-  const [showAll, setShow] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
   const [indexShow, setIndexShow] = useState(6);
 
   function toggle(index) {
@@ -22,11 +20,8 @@ function Games() {
   }
 
   function loadMore() {
-    if (indexShow < games.length && showAll === false) {
+    if (indexShow < games.length) {
       setIndexShow(indexShow + 6);
-      setShow(false);
-    } else if (indexShow >= games.length && showAll === false) {
-      setShow(true);
     } else {
       setIndexShow(6);
     }
@@ -35,8 +30,10 @@ function Games() {
   const [platform, setPlatform] = useState("All");
   const [genre, setGenre] = useState("All");
   const [type, setType] = useState("All");
+  const [filteredGames, setFilteredGames] = useState(games);
 
   const data = () => {
+    console.log("filter");
     if (platform === "All" && genre === "All" && type === "All") {
       return games;
     } else if (platform !== "All") {
@@ -61,6 +58,7 @@ function Games() {
             setPlatform(e);
             setType("All");
             setGenre("All");
+            setFilteredGames(data());
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
@@ -75,9 +73,10 @@ function Games() {
             setGenre(e);
             setPlatform("All");
             setType("All");
+            setFilteredGames(data());
           }}>
           <DropDownItem value={"All"} />
-          <DropDownItem value={"Match 3"} />
+          <DropDownItem value={"Match3"} />
           <DropDownItem value={"Strategy"} />
           <DropDownItem value={"Racing"} />
           <DropDownItem value={"Action"} />
@@ -96,6 +95,7 @@ function Games() {
             setType(e);
             setGenre("All");
             setPlatform("All");
+            setFilteredGames(data());
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
@@ -103,7 +103,7 @@ function Games() {
           <DropDownItem value={"Voiceovers"} />
         </DropDown>
       </MenuList>
-      <GamesGrid show={showAll}>
+      <GamesGrid>
         {data()
           .filter((element, i) => i < indexShow)
           .map((e, i) => (
@@ -118,9 +118,12 @@ function Games() {
             />
           ))}
       </GamesGrid>
-      <Text className="button blue" onClick={loadMore}>
-        {showAll ? <span>Load less &#8593;</span> : "Load more ↓"}
-      </Text>
+
+      {indexShow < data().length && (
+        <Text className="button blue" onClick={loadMore}>
+          {"Load more ↓"}
+        </Text>
+      )}
     </Section>
   );
 }
