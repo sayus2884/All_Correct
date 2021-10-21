@@ -19,6 +19,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 40px;
 
   @media screen and (max-width: 1025px) {
     margin: 40px 20px;
