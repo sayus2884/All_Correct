@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 const UseGames = (gamesData = []) => {
   const [selectedGame, setSelectedGame] = useState({});
 
-  const carouselGames = gamesData.slice(0, 10);
+  const carouselGames = useMemo(() => gamesData.slice(0, 10), [gamesData]);
 
   return {
     selectedGame,

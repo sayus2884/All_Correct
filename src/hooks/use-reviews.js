@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useMemo, useState } from "react";
 
 const types = {
   PUBLISHER: "publisher",
@@ -8,8 +8,14 @@ const types = {
 const UseReviews = (data = []) => {
   const [reviews, setReviews] = useState(data);
 
-  const publisherReviews = reviews.filter((review) => review.type === types.PUBLISHER);
-  const colleagueReviews = reviews.filter((review) => review.type === types.COLLEAGUE);
+  const publisherReviews = useMemo(
+    () => reviews.filter((review) => review.type === types.PUBLISHER),
+    [data],
+  );
+  const colleagueReviews = useMemo(
+    () => reviews.filter((review) => review.type === types.COLLEAGUE),
+    [data],
+  );
 
   return { publisherReviews, colleagueReviews };
 };
