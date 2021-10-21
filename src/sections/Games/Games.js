@@ -33,7 +33,6 @@ function Games() {
   const [filteredGames, setFilteredGames] = useState(games);
 
   const data = () => {
-    console.log("filter");
     if (platform === "All" && genre === "All" && type === "All") {
       return games;
     } else if (platform !== "All") {
