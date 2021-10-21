@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Section = styled.section`
+export const Section = styled(motion.section)`
   padding: ${(props) => props.theme.padding.lg};
   color: ${(props) => props.theme.colors.white};
   font-family: ${(props) => props.theme.fonts.inter};
