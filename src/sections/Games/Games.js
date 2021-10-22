@@ -34,18 +34,27 @@ function Games() {
 
   const data = () => {
     if (platform === "All" && genre === "All" && type === "All") {
+      handleFiltered(games);
       return games;
     } else if (platform !== "All") {
       const newElement = games.filter((element) => element.platforms.includes(platform));
+      handleFiltered(newElement);
       return newElement;
     } else if (genre !== "All") {
       const newElement = games.filter((element) => element.genre.includes(genre));
+      handleFiltered(newElement);
       return newElement;
     } else if (type !== "All") {
       const newElement = games.filter((element) => element.services.includes(type));
+      handleFiltered(newElement);
       return newElement;
     }
   };
+
+  const handleFiltered = (data) => {
+    setFilteredGames(data);
+    console.log(filteredGames);
+  }
 
   return (
     <Section>
@@ -57,7 +66,7 @@ function Games() {
             setPlatform(e);
             setType("All");
             setGenre("All");
-            setFilteredGames(data());
+            data();
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
@@ -72,7 +81,7 @@ function Games() {
             setGenre(e);
             setPlatform("All");
             setType("All");
-            setFilteredGames(data());
+            data();
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Match3"} />
@@ -94,7 +103,7 @@ function Games() {
             setType(e);
             setGenre("All");
             setPlatform("All");
-            setFilteredGames(data());
+            data();
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
@@ -103,7 +112,7 @@ function Games() {
         </DropDown>
       </MenuList>
       <GamesGrid>
-        {data()
+        {filteredGames
           .filter((element, i) => i < indexShow)
           .map((e, i) => (
             <GameCard
@@ -118,7 +127,7 @@ function Games() {
           ))}
       </GamesGrid>
 
-      {indexShow < data().length && (
+      {indexShow < filteredGames.length && (
         <Text className="button blue" onClick={loadMore}>
           {"Load more ↓"}
         </Text>
