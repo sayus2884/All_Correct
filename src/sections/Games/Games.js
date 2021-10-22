@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Section, MenuList, GamesGrid, Img, Text } from "./Games.styles";
 
 import DropDown from "../../components/DropDown/DropDown.js";
@@ -47,6 +47,10 @@ function Games() {
     }
   };
 
+  useEffect(() => {
+    setFilteredGames(data());
+  }, [platform, genre, type])
+
   return (
     <Section>
       <MenuList>
@@ -57,7 +61,6 @@ function Games() {
             setPlatform(e);
             setType("All");
             setGenre("All");
-            setFilteredGames(data());
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
@@ -72,7 +75,6 @@ function Games() {
             setGenre(e);
             setPlatform("All");
             setType("All");
-            setFilteredGames(data());
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Match3"} />
@@ -94,7 +96,6 @@ function Games() {
             setType(e);
             setGenre("All");
             setPlatform("All");
-            setFilteredGames(data());
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
@@ -103,7 +104,7 @@ function Games() {
         </DropDown>
       </MenuList>
       <GamesGrid>
-        {data()
+        {filteredGames
           .filter((element, i) => i < indexShow)
           .map((e, i) => (
             <GameCard
@@ -118,7 +119,7 @@ function Games() {
           ))}
       </GamesGrid>
 
-      {indexShow < data().length && (
+      {indexShow < filteredGames.length && (
         <Text className="button blue" onClick={loadMore}>
           {"Load more ↓"}
         </Text>
