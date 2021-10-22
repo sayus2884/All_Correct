@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Background = styled.div`
   width: 100vw;
@@ -12,11 +13,12 @@ export const Background = styled.div`
   z-index: 1;
 `;
 
-export const ModalWrapper = styled.div`
+export const ModalWrapper = styled(motion.div)`
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 404px;
+  max-width: 404px;
+  width: 100%;
   height: 100vh;
   overflow-y: auto;
   background-color: ${({ theme }) => theme.colors.white};

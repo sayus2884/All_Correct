@@ -4,7 +4,10 @@ import GetInTouchConfirm from "./GetInTouchConfirm/GetInTouchConfirm";
 import GetInTouchModalInfo from "./GetInTouchModalInfo/GetInTouchModalInfo";
 import { Background, ModalWrapper } from "./GetInTouchModal.styles";
 import GetInTouchModalContext from "../../context/GetInTouchModalContext";
+import Portal from "../Portal/Portal";
 import { isEmail } from "../../utils/validator";
+
+import { getInTouchModalAnim } from "../../styles/animations";
 
 const GetInTouchModal = () => {
   const { showModal, closeModal } = useContext(GetInTouchModalContext);
@@ -23,14 +26,6 @@ const GetInTouchModal = () => {
   });
 
   const { name, email, message } = formFields;
-
-  // modal related
-  const [isBrowser, setIsBrowser] = useState(false);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
 
   useEffect(() => {
     if (name && isEmail(email) && message) {
@@ -85,35 +80,32 @@ const GetInTouchModal = () => {
     event.preventDefault();
     nextStep();
     setSubmitted(true);
-
   };
 
-  const modalContent = showModal && (
-    <Background onClick={handleOutsideClick} ref={modalRef}>
-      <ModalWrapper role="Form Inquiry" aria-labelledby="Form Inquiry">
-        <form>
-          {step === 1 && submitted ? (
-            <GetInTouchConfirm closeModal={closeModal} />
-          ) : (
-            <GetInTouchModalInfo
-              buttonDisabled={buttonDisabled}
-              handleChange={handleChange}
-              handleSubmit={handleSubmit}
-              formFields={formFields}
-              submitted={submitted}
-              closeModal={closeModal}
-            />
-          )}
-        </form>
-      </ModalWrapper>
-    </Background>
+  return (
+    <Portal portalId="modal-root">
+      {showModal && (
+        <Background onClick={handleOutsideClick} ref={modalRef}>
+          <ModalWrapper role="Form Inquiry" aria-labelledby="Form Inquiry" {...getInTouchModalAnim}>
+            <form>
+              {step === 1 && submitted ? (
+                <GetInTouchConfirm closeModal={closeModal} />
+              ) : (
+                <GetInTouchModalInfo
+                  buttonDisabled={buttonDisabled}
+                  handleChange={handleChange}
+                  handleSubmit={handleSubmit}
+                  formFields={formFields}
+                  submitted={submitted}
+                  closeModal={closeModal}
+                />
+              )}
+            </form>
+          </ModalWrapper>
+        </Background>
+      )}
+    </Portal>
   );
-
-  if (isBrowser) {
-    return ReactDOM.createPortal(modalContent, document.getElementById("modal-root"));
-  } else {
-    return null;
-  }
 };
 
 export default GetInTouchModal;
