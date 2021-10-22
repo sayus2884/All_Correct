@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Section, MenuList, GamesGrid, Img, Text } from "./Games.styles";
 
 import DropDown from "../../components/DropDown/DropDown.js";
@@ -34,27 +34,22 @@ function Games() {
 
   const data = () => {
     if (platform === "All" && genre === "All" && type === "All") {
-      handleFiltered(games);
       return games;
     } else if (platform !== "All") {
       const newElement = games.filter((element) => element.platforms.includes(platform));
-      handleFiltered(newElement);
       return newElement;
     } else if (genre !== "All") {
       const newElement = games.filter((element) => element.genre.includes(genre));
-      handleFiltered(newElement);
       return newElement;
     } else if (type !== "All") {
       const newElement = games.filter((element) => element.services.includes(type));
-      handleFiltered(newElement);
       return newElement;
     }
   };
 
-  const handleFiltered = (data) => {
-    setFilteredGames(data);
-    console.log(filteredGames);
-  }
+  useEffect(() => {
+    setFilteredGames(data());
+  }, [platform, genre, type])
 
   return (
     <Section>
@@ -66,7 +61,6 @@ function Games() {
             setPlatform(e);
             setType("All");
             setGenre("All");
-            data();
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Mobile"} />
@@ -81,7 +75,6 @@ function Games() {
             setGenre(e);
             setPlatform("All");
             setType("All");
-            data();
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Match3"} />
@@ -103,7 +96,6 @@ function Games() {
             setType(e);
             setGenre("All");
             setPlatform("All");
-            data();
           }}>
           <DropDownItem value={"All"} />
           <DropDownItem value={"Game localization"} />
