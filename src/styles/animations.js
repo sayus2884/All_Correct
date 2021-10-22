@@ -9,3 +9,17 @@ export const sectionAnim = {
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5, type: "tween" },
 };
+
+export const gameModalAnim = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.3, type: "tween" },
+};
+
+export const getInTouchModalAnim = {
+  initial: { opacity: 0, width: 0 },
+  animate: { opacity: 1, width: "100%" },
+  exit: { width: 0 },
+  transition: { duration: 0.4, type: "tween" },
+};

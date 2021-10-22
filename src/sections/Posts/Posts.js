@@ -65,7 +65,7 @@ function Posts() {
   const showLoadMore = indexShow >= filteredPosts.length - 2 ? false : true;
 
   return (
-    <Section>
+    <Section noAnimation>
       <FilterOptions>
         <li>
           <Option active={isActive("all")} onClick={filterPosts} data-value="all">

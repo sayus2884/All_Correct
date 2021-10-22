@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const Overlay = styled.div`
+export const Overlay = styled(motion.div)`
   height: 100vh;
   overflow: auto;
   z-index: 999;
