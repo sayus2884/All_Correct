@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence } from "framer-motion";
 import { Overlay, Container, CloseButton } from "./GameModal.styles";
@@ -13,11 +13,6 @@ import { gameModalAnim } from "../../styles/animations";
 function GameModal(props) {
   const { selectedGame, showGameModal, closeGameModal } = useContext(GameModalContext);
   const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    return () => setMounted(false);
-  }, []);
 
   const handleClose = (event) => {
     event.preventDefault();
