@@ -109,12 +109,14 @@ function Games() {
           .map((e, i) => (
             <GameCard
               key={i}
+              index={i}
               game={e}
               height={300}
               onClick={() => {
                 setSelectedGame(e);
                 openGameModal();
               }}
+
             />
           ))}
       </GamesGrid>
