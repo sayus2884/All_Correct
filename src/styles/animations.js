@@ -4,7 +4,10 @@
 // Integration of animatino on scroll with framer
 // ref: https://dev.to/elvis2280/scroll-reveal-with-framer-motion-224
 
-export const variants = {
+// Page transitions with Framer
+// ref: https://reacttricks.com/animating-next-page-transitions-with-framer-motion/
+
+export const VARIANTS = {
   OPEN: "open",
   CLOSED: "closed",
 };
@@ -31,11 +34,11 @@ export const getInTouchModalAnim = {
 
 export const sideNavAnim = {
   variants: {
-    [variants.OPEN]: {
+    [VARIANTS.OPEN]: {
       width: "100%",
       transition: { duration: 0.4, type: "spring" },
     },
-    [variants.CLOSED]: {
+    [VARIANTS.CLOSED]: {
       width: 0,
       transition: { delay: 0.5, duration: 0.2, type: "tween" },
     },
@@ -43,24 +46,26 @@ export const sideNavAnim = {
 };
 
 export const staggerOptions = {
-  [variants.OPEN]: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  [variants.CLOSED]: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  variants: {
+    [VARIANTS.OPEN]: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    },
+    [VARIANTS.CLOSED]: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
   },
 };
 
 export const easeInBottomAnim = {
   variants: {
-    [variants.OPEN]: {
+    [VARIANTS.OPEN]: {
       y: 0,
       opacity: 1,
       transition: {
         y: { stiffness: 1000, velocity: -100 },
       },
     },
-    [variants.CLOSED]: {
+    [VARIANTS.CLOSED]: {
       opacity: 0,
       transition: {
         y: { stiffness: 1000 },
