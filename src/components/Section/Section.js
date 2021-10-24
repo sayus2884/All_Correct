@@ -1,6 +1,6 @@
 import { Section as Div } from "./Section.styles";
 import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 
 import { sectionAnim } from "../../styles/animations";
 
