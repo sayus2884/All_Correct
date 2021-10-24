@@ -59,6 +59,7 @@ function SideNav({ isOpen = false, onClose }) {
       <Container
         initial={false}
         animate={isOpen ? variants.OPEN : variants.CLOSED}
+        exit={sideNavAnim[variants.CLOSED]}
         {...sideNavAnim}>
         <ContainerWrapper>
           <TitleContainer>
