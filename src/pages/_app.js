@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import Theme from "../styles/theme/theme";
 import BaseLayout from "../components/BaseLayout/BaseLayout";
 
@@ -23,7 +24,7 @@ ref: https://github.com/vercel/next.js/discussions/16068
 
 import { games as dummyGames, reviews as dummyReviews, posts as dummyPosts } from "../utils/data";
 
-export default function MyApp({ Component, pageProps, games, reviews, posts }) {
+export default function MyApp({ Component, pageProps, games, reviews, posts, router }) {
   const { showModal, openModal, closeModal } = useModal();
   const { showGameModal, openGameModal, closeGameModal } = useGameModal();
   const { selectedGame, carouselGames, setSelectedGame } = useGames(games ? games : dummyGames);
@@ -51,7 +52,9 @@ export default function MyApp({ Component, pageProps, games, reviews, posts }) {
                 closeGameModal,
               }}>
               <GetInTouchModalContext.Provider value={{ showModal, openModal, closeModal }}>
-                <Component {...pageProps} />
+                <AnimatePresence exitBeforeEnter>
+                  <Component {...pageProps} key={router.route} />
+                </AnimatePresence>
               </GetInTouchModalContext.Provider>
             </GameModalContext.Provider>
           </ReviewsContext.Provider>
