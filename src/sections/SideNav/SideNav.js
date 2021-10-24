@@ -56,7 +56,10 @@ function SideNav({ isOpen = false, onClose }) {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <Container animate={isOpen ? variants.OPEN : variants.CLOSED} {...sideNavAnim}>
+      <Container
+        initial={false}
+        animate={isOpen ? variants.OPEN : variants.CLOSED}
+        {...sideNavAnim}>
         <ContainerWrapper>
           <TitleContainer>
             <Link onClick={handleRoute} data-route="/" {...easeInBottomAnim}>
