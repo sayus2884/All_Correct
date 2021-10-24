@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
+import { AnimatePresence } from "framer-motion";
 import {
   Container,
   ContainerWrapper,
@@ -37,6 +38,8 @@ function SideNav({ isOpen = false, onClose }) {
     });
   }, []);
 
+  useEffect(() => {}, [isOpen]);
+
   const handleShowModal = (event) => {
     event.preventDefault();
     openModal();
@@ -52,32 +55,34 @@ function SideNav({ isOpen = false, onClose }) {
   };
 
   return (
-    <Container animate={isOpen ? variants.OPEN : variants.CLOSED} {...sideNavAnim}>
-      <ContainerWrapper>
-        <TitleContainer>
-          <Link onClick={handleRoute} data-route="/" {...easeInBottomAnim}>
-            <Title>
-              <Highlight>Allcorrect</Highlight>
-            </Title>
-          </Link>
-          <CloseButton onClick={onClose} {...easeInBottomAnim} />
-        </TitleContainer>
-
-        <Menu variants={staggerOptions}>
-          {routes.slice(1).map(({ name, route }, i) => (
-            <Link onClick={handleRoute} data-route={route} key={i} {...easeInBottomAnim}>
-              <SubText className="header">{name}</SubText>
+    <AnimatePresence exitBeforeEnter>
+      <Container animate={isOpen ? variants.OPEN : variants.CLOSED} {...sideNavAnim}>
+        <ContainerWrapper>
+          <TitleContainer>
+            <Link onClick={handleRoute} data-route="/" {...easeInBottomAnim}>
+              <Title>
+                <Highlight>Allcorrect</Highlight>
+              </Title>
             </Link>
-          ))}
+            <CloseButton onClick={onClose} {...easeInBottomAnim} />
+          </TitleContainer>
 
-          <Link onClick={handleShowModal} key={routes.length} {...easeInBottomAnim}>
-            <SubText className="header">
-              <Highlight>Get in touch</Highlight>
-            </SubText>
-          </Link>
-        </Menu>
-      </ContainerWrapper>
-    </Container>
+          <Menu variants={staggerOptions}>
+            {routes.slice(1).map(({ name, route }, i) => (
+              <Link onClick={handleRoute} data-route={route} key={i} {...easeInBottomAnim}>
+                <SubText className="header">{name}</SubText>
+              </Link>
+            ))}
+
+            <Link onClick={handleShowModal} key={routes.length} {...easeInBottomAnim}>
+              <SubText className="header">
+                <Highlight>Get in touch</Highlight>
+              </SubText>
+            </Link>
+          </Menu>
+        </ContainerWrapper>
+      </Container>
+    </AnimatePresence>
   );
 }
 
