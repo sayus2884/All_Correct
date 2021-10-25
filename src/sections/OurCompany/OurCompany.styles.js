@@ -47,6 +47,10 @@ export const Text = styled(OGText)`
 `;
 
 export const Link = styled(OGLink)`
+  &.mobile-show {
+    display: none;
+  }
+
   @media screen and (max-width: 376px) {
     &.mobile-show {
       display: block;

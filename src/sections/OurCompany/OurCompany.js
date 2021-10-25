@@ -18,7 +18,7 @@ function OurCompany() {
             highly competent native and Russian speakers to test games on the iOS, Android, and PC
             platforms.
           </Text>
-          <Link href="#">
+          <Link href="#" className="mobile-show">
             <Title>Portfolio &#10230;</Title>
           </Link>
         </DescriptionContainer>
@@ -35,7 +35,7 @@ function OurCompany() {
             Since 2010, we have been introducing lean production technology into the company
             management.
           </Text>
-          <Link href="#">
+          <Link href="#" className="mobile-show">
             <Title>Work with us &#10230;</Title>
           </Link>
         </DescriptionContainer>
