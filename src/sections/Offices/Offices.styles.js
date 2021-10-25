@@ -3,10 +3,6 @@ import OGSection from "../../components/Section/Section.js";
 
 export const Section = styled(OGSection)`
   margin-bottom: 200px;
-
-  img {
-    z-index: 1;
-  }
 `;
 
 export const OfficesTitle = styled.h2`
