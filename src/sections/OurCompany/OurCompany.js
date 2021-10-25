@@ -1,6 +1,4 @@
-import { Section, Column, DescriptionContainer, Text } from "./OurCompany.styles";
-
-import Link from "../../components/Link/Link.js";
+import { Section, Column, DescriptionContainer, Text, Link } from "./OurCompany.styles";
 import Title from "../../components/Title/Title.js";
 
 function OurCompany() {
@@ -20,6 +18,9 @@ function OurCompany() {
             highly competent native and Russian speakers to test games on the iOS, Android, and PC
             platforms.
           </Text>
+          <Link href="#">
+            <Title>Portfolio &#10230;</Title>
+          </Link>
         </DescriptionContainer>
       </Column>
       <Column>
@@ -34,9 +35,13 @@ function OurCompany() {
             Since 2010, we have been introducing lean production technology into the company
             management.
           </Text>
+          <Link href="#">
+            <Title>Work with us &#10230;</Title>
+          </Link>
         </DescriptionContainer>
       </Column>
-      <Column className="links">
+
+      <Column className="links mobile-hidden">
         <Link href="#">
           <Title>Portfolio &#10230;</Title>
         </Link>
