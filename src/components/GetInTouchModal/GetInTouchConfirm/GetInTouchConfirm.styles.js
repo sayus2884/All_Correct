@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  height: 861px;
+  height: 100%;
 `;
 
 export const TextWrapper = styled.div`
@@ -13,7 +13,6 @@ export const TextWrapper = styled.div`
   align-items: flex-start;
   flex-direction: column;
   gap: 80px;
-  padding: 40px 40px 0;
 `;
 
 export const Text = styled.p`
@@ -41,8 +40,6 @@ export const Button = styled.button`
   border: none;
   text-align: left;
   display: block;
-  padding-left: 40px;
-  padding-bottom: 40px;
 
   &:hover {
     cursor: pointer;

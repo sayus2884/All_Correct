@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const Background = styled.div`
+export const Background = styled(motion.div)`
   width: 100vw;
   height: auto;
   position: fixed;
@@ -32,22 +32,30 @@ export const ModalWrapper = styled(motion.div)`
   -o-transform: translate3d(0%, 0, 0);
   transform: translate3d(0%, 0, 0);
 
+  form {
+    height: 100%;
+    position: relative;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   input {
     font-family: ${(props) => props.theme.fonts.inter};
     outline: none;
-    width: 80%;
+    width: 100%;
     padding: 15px;
-    margin: 0 40px;
+
     box-sizing: border-box;
   }
 
   textarea {
     font-family: ${(props) => props.theme.fonts.inter};
     outline: none;
-    width: 80%;
-    height: 100px;
+    width: 100%;
+    min-height: 100px;
     padding: 15px;
-    margin: 40px 40px;
   }
 
   input[type="file"] {
@@ -73,8 +81,7 @@ export const ModalWrapper = styled(motion.div)`
     color: ${(props) => props.theme.colors.white};
     box-sizing: border-box;
     display: block;
-    margin: 40px 40px;
-    width: 80%;
+    width: 100%;
     max-width: 324px;
     min-height: 50px;
     padding: 15px 83px;
@@ -97,7 +104,7 @@ export const Title = styled.p`
   text-align: left;
   letter-spacing: -0.02em;
   color: ${(props) => props.theme.fonts.dark};
-  padding: 40px 40px 60px;
+  padding-bottom: 20px;
   margin: 0;
 `;
 
@@ -113,12 +120,11 @@ export const Text = styled.p`
 export const CheckItem = styled.label`
   display: flex;
   align-items: center;
-  margin-left: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 `;
 
 export const Info = styled.p`
-  margin: 0 40px 93px;
+  margin-bottom: 50px;
   font-family: ${(props) => props.theme.fonts.inter};
   font-style: normal;
   font-weight: 500;
@@ -129,13 +135,17 @@ export const Info = styled.p`
 `;
 
 export const Button = styled.button`
+  position: absolute;
+  bottom: 0;
+
+  text-align: left;
   font-family: ${(props) => props.theme.fonts.inter};
   font-style: normal;
   font-weight: bold;
   font-size: 32px;
   line-height: 39px;
   letter-spacing: -0.02em;
-  margin: 200px 0 0 40px;
+
   color: ${(props) =>
     props.handleDisabledStyled ? props.theme.colors.grey : props.theme.colors.blue};
   background-color: ${(props) => props.theme.colors.white};
