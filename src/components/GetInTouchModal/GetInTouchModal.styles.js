@@ -135,6 +135,9 @@ export const Info = styled.p`
 `;
 
 export const Button = styled.button`
+  position: absolute;
+  bottom: 0;
+
   text-align: left;
   font-family: ${(props) => props.theme.fonts.inter};
   font-style: normal;
