@@ -5,6 +5,10 @@ import OGText from "../../components/Text/Text.js";
 
 export const Section = styled(OGSection)`
   margin-top: 180px;
+
+  @media screen and (max-width: 376px) {
+    margin-top: 100px;
+  }
 `;
 
 export const Title = styled(OGTitle)`
@@ -23,6 +27,10 @@ export const LinksContainer = styled.div`
   display: flex;
   justify-content: end;
   gap: 71px;
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+  }
 `;
 
 export const Link = styled.a`

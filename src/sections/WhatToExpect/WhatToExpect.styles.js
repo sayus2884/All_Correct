@@ -42,6 +42,10 @@ export const ExpectList = styled.ol`
     justify-content: center;
     align-items: center;
   }
+
+  @media screen and (max-width: 376px) {
+    flex-direction: column;
+  }
 `;
 export const Text = styled(OGText)`
   max-width: 503px;
