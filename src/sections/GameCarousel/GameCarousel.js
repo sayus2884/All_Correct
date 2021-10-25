@@ -19,7 +19,7 @@ import GameModalContext from "../../context/GameModalContext";
 function GameCarousel() {
   const { openGameModal, setSelectedGame, carouselGames } = useContext(GameModalContext);
 
-  const handleTitleClick = (event) => {
+  const handleOpenGameModal = (event) => {
     event.preventDefault();
     setSelectedGame(carouselGames[parseInt(event.currentTarget.dataset.index)]);
     openGameModal(true);
@@ -38,7 +38,7 @@ function GameCarousel() {
         infiniteLoop={true}>
         {carouselGames.slice(0, 5).map((game, index) => (
           <Item key={index}>
-            <ImageWrapper>
+            <ImageWrapper onClick={handleOpenGameModal} data-index={index}>
               <Image
                 alt={game.title}
                 src={game.images[0]}
@@ -50,7 +50,7 @@ function GameCarousel() {
             </ImageWrapper>
 
             <Info className="info">
-              <TitleContainer onClick={handleTitleClick} data-index={index}>
+              <TitleContainer onClick={handleOpenGameModal} data-index={index}>
                 <SubTitle>
                   We've localized <br />
                   <Highlight> {game.title}</Highlight> game <br />
