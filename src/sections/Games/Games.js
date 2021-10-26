@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 import GameModalContext from "../../context/GameModalContext";
+import Highlight from "../../components/Highlight/Highlight";
 
 function Games() {
   const { games, openGameModal, setSelectedGame } = useContext(GameModalContext);
@@ -104,21 +105,25 @@ function Games() {
         </DropDown>
       </MenuList>
       <GamesGrid>
-        {filteredGames
-          .filter((element, i) => i < indexShow)
-          .map((e, i) => (
-            <GameCard
-              key={i}
-              index={i}
-              game={e}
-              height={300}
-              onClick={() => {
-                setSelectedGame(e);
-                openGameModal();
-              }}
+        {filteredGames.length === 0 ?
+          (<Highlight>No Matches</Highlight>)
+          :
+          (filteredGames
+            .filter((element, i) => i < indexShow)
+            .map((e, i) => (
+              <GameCard
+                key={i}
+                index={i}
+                game={e}
+                height={300}
+                onClick={() => {
+                  setSelectedGame(e);
+                  openGameModal();
+                }}
 
-            />
-          ))}
+              />
+            )))
+        }
       </GamesGrid>
 
       {indexShow < filteredGames.length && (
