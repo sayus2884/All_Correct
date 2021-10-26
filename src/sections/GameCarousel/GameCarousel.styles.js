@@ -64,7 +64,6 @@ export const Carousel = styled(Slider)`
 export const Item = styled.div`
   display: flex;
   width: 100%;
-  cursor: pointer;
   gap: 20px;
 
   @media screen and (max-width: 376px) {
@@ -91,6 +90,7 @@ export const ImageWrapper = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   flex: 1;
 `;
 
