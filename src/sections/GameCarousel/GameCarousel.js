@@ -29,7 +29,7 @@ function GameCarousel() {
     <Section>
       <Carousel
         showStatus={false}
-        showArrows={false}
+        // showArrows={false}
         showThumbs={false}
         emulateTouch={true}
         autoPlay={false}
