@@ -1,8 +1,8 @@
 import styled from "styled-components";
-
+import { motion } from "framer-motion";
 import OGLink from "../Link/Link";
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   cursor: pointer;
   display: flex;
   flex-direction: column;

@@ -1,9 +1,10 @@
 import Highlight from "../Highlight/Highlight";
 import { Container, Img, Link } from "./GameCard.styles";
 import Image from "next/image";
-import { useState } from "react";
 
-function GameCard({ game, width, height, onClick }) {
+import { gameCardAnim } from '../../styles/animations';
+
+function GameCard({ game, width, height, onClick, index }) {
   const { title, publisher, images } = game;
 
   const handleOnClick = (event) => {
@@ -12,7 +13,8 @@ function GameCard({ game, width, height, onClick }) {
   };
 
   return (
-    <Container delay={5} onClick={handleOnClick}>
+    <Container delay={5} onClick={handleOnClick}
+      {...gameCardAnim}>
       <Img width={width} height={height}>
         <Image
           src={images[0]}
