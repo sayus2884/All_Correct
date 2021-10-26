@@ -4,6 +4,9 @@ import OGSubTitle from "../SubTitle/SubTitle";
 export const Container = styled.li`
   position: relative;
   border-bottom: 1px solid ${(props) => props.theme.colors.white};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const HeaderContainer = styled.div`

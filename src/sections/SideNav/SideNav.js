@@ -37,7 +37,7 @@ function SideNav({ isOpen = false, onClose }) {
     });
   }, []);
 
-  useEffect(() => {}, [isOpen]);
+  useEffect(() => { }, [isOpen]);
 
   const handleShowModal = (event) => {
     event.preventDefault();

@@ -29,14 +29,14 @@ function GameTesting({ games }) {
             punctuation errors, typos and incorrectly displayed text. After the customer introduces
             corrections based on the report, our testers go through the game again using a set
             script to check whether all the changes were correctly introduced to the game. This
-            stage is called regression testing. 
+            stage is called regression testing.
           </SubText>
         </OrderedItem>
         <OrderedItem>
           <SubText>3.</SubText>
           <SubText>
             Functional testing, which determine the stability of the game or software product by
-            checking the crucial functionality of the application. 
+            checking the crucial functionality of the application.
           </SubText>
         </OrderedItem>
         <OrderedItem>
