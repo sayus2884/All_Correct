@@ -1,84 +1,133 @@
-# Example app with styled-components
+# Introduction
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+The **allcorrect** website is created using [Next.js](https://nextjs.org/), a front-end React framework; [styled-components](https://styled-components.com/), a styling component; and [Framer Motion](https://www.framer.com/motion/), an animation library.
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+## Getting Started
 
-## Preview
+To get started with the project, ensure that you have Node version **14.17.x** or **latest** installed in your system.
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+1. Open your command line and enter **`cd direct/path/to/project`**.
+2. Enter the command `npm install`
+3. After node has installed all the packages, enter the command **`npm run dev`** to run the project in developer mode.
+4. Open your browser and go to http://localhost:3000 to view the project.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+To run the project in production mode, enter the command **`npm run build && npm run start`**.
 
-## Deploy your own
+## Project Structure
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-### Try it on CodeSandbox
-
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
-
-### Notes
-
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
+The project structure is as follows:
 
 ```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
+project
+│   README.md
+│   package.json
+│   .gitignore
+│   ...
+│
+└───public
+│   │   favicon.ico
+│   │
+│   └───images
+│       │   type1/image1.png
+│       │   type2/image2.png
+│       │   ...
+│
+└───src
+    │
+    └───components
+    │   │
+    │   └───ComponentName
+    │       │   ComponentName.js
+    │       │   ComponentName.styles.js
+    │
+    └───context
+    │   │   ContextName1.js
+    │   │   ContextName2.js
+    │   │   ...
+    │
+    └───hooks
+    │   │   hook-name-1.js
+    │   │   hook-name-2.js
+    │   │   ...
+    │
+    └───pages
+    │   │   _app.js
+    │   │   _document.js
+    │   │   page-name-1.js
+    │   │   page-name-2.js
+    │   └───api
+    │   │   │   endpoint.js
+    │   │   │   ...
+    │   │
+    │   └───page-name-1
+    │       │   [queryId].js
+    │
+    └───sections
+    │   │
+    │   └───SectionComponent
+    │       │   SectionComponent.js
+    │       │   SectionComponent.styles.js
+    │
+    └───styles
+    │   │   animations.js
+    │   │   global.styles.js
+    │   │   ...
+    │
+    └───utils
+    │   │   constantFile.js
+    │   │   helperFile.js
+    │   │   ...
+    │
 
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
 ```
 
-**pages/index.js**
+### Components
 
-```javascript
-import StyledLink from '../components/StyledLink'
+**Components** found in the **`/src/components`** are composed mainly of html tags or components made from their individual style file.
 
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
+Each **section** is made up of `basic` components found in the `/src/components` folder and are also styled by it's own style.
 
-</details>
+Each component is accompanied by their own **style** file to handle CSS related code and is denotated with the suffix, `.styles.js`.
+
+### Pages
+
+Each page is comprised of **`section`** components found in the `/src/sections` folder. The route (Ex. [http://localhost:3000/**portfolio**](http://localhost:3000/portfolio)) is associate by it's file name (`portfolio.js`). To create new pages/routes, simply create a new javascript file under the `/src/pages`.
+
+For more information on how to create pages, refer to this [documentation](https://nextjs.org/docs/basic-features/pages).
+
+### Animations
+
+Animations are created using Framer-motion. Use the **`src/styles/animation.js`** to create new or edit existing animations.
+
+Refer to this [documentation](https://www.framer.com/docs/) for guides on creating animations.
+Refer to this [documentation](https://www.framer.com/docs/) for using styled-components in conjunction with Framer-motion.
+
+### Project Settings
+
+The project file settings, found in the root of the project, are configuration files for developing, and building the project. The following are their uses:
+
+- **package.json**. Contains the dependency packages that the website needs and command scripts to build or run the project locally.
+- **prettier.config.js**. Contains the configuration settings for the [prettier](https://prettier.io/) code formatter for a cleaner code.
+- **.babelrc**. Contains the settings for Babel, a Javascript compiler, to compile the code into a backwards compatible code for older browsers.
+- **.gitignore**. Ignores the files that you don't want in your git repository.
+- **.prettierignore**. Ignores the files that you don't need to refactor with the same coding style specified in `prettier.config.js`.
+
+## Building the App
+
+To build the project and get production ready code, just run `npm run build`
+
+## How to Deploy
+
+The recommended way to deploy the project is through Vercel's platform. You can read this [documentation](https://nextjs.org/docs/deployment).
+
+If you want to use pre-existing servers or cloud services, as long as it supports hosting **Node.js** web application, refer to this [documentation](https://nextjs.org/docs/deployment#other-hosting-options).
+
+## Recommendations
+
+- To increase readability and maintainability of the code, it is recommended to adopt a global styling system. The recommended CSS framework to use is [Tailwind CSS](https://tailwindcss.com/) as it follows a utility-first philosophy and has a convenient configuration file that is easy to manage and integrate into the project.
+
+  You can find an example usage of it [here](https://github.com/sayus2884/portfolio).
+
+- When creating components, use **colocation** as much as possible. Colocation, in context with the project, means that any logic, state, or information should be closely tied to it's component as much as possible to avoid multiple renders that causes the website to run slow.
+
+  A good use case for it is a sign in form with `username` and `password` inputs. In React, in order to get the value in any text input, you need to use the `onChange` handler which causes the whole component that the input is located in, to render every key press. So if you placed the state for that input on top website's tree, you'll slow down the website's performance. To avoid this, it is always best to separate forms in their own component as opposed to placing them inside parent components that has complex states in them. You can read more about colocation [here](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster).
