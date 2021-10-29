@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start"
   },
   "dependencies": {
     "framer-motion": "^4.1.17",
