@@ -7,20 +7,18 @@
 // Page transitions with Framer
 // ref: https://reacttricks.com/animating-next-page-transitions-with-framer-motion/
 
+export const VARIANTS = {
+  OPEN: "open",
+  CLOSED: "closed",
+};
 
 export const gameCardAnim = {
   initial: {
     opacity: 0,
-    translateX: -200,
-    translateY: -200,
+    translateY: 100,
   },
-  animate: { opacity: 1, translateX: 50, translateY: 50 },
-  transition: { duration: 1, type: "spring" }
-};
-
-export const VARIANTS = {
-  OPEN: "open",
-  CLOSED: "closed",
+  animate: { opacity: 1, translateY: 0 },
+  transition: { duration: 0.5, type: "tween" },
 };
 
 export const sectionAnim = {
