@@ -33,7 +33,8 @@ function Games() {
   const [type, setType] = useState("All");
   const [filteredGames, setFilteredGames] = useState(games);
 
-  const data = () => {
+  const filterGames = () => {
+    setIndexShow(0);
     if (platform === "All" && genre === "All" && type === "All") {
       return games;
     } else if (platform !== "All") {
@@ -49,14 +50,18 @@ function Games() {
   };
 
   useEffect(() => {
-    setFilteredGames(data());
-  }, [platform, genre, type])
+    setIndexShow(6);
+  }, [filterGames]);
+
+  useEffect(() => {
+    setFilteredGames(filterGames());
+  }, [platform, genre, type]);
 
   return (
     <Section>
       <MenuList>
         <DropDown
-          title={platform === 'All' ? "Platform" : platform}
+          title={platform === "All" ? "Platform" : platform}
           id="platform"
           onItemSelected={(e) => {
             setPlatform(e);
@@ -70,7 +75,7 @@ function Games() {
           <DropDownItem value={"Cross-platform"} />
         </DropDown>
         <DropDown
-          title={genre === 'All' ? "Genre" : genre}
+          title={genre === "All" ? "Genre" : genre}
           id="genre"
           onItemSelected={(e) => {
             setGenre(e);
@@ -91,7 +96,7 @@ function Games() {
           <DropDownItem value={"Puzzle"} />
         </DropDown>
         <DropDown
-          title={type === 'All' ? "Type of project" : type}
+          title={type === "All" ? "Type of project" : type}
           id="type"
           onItemSelected={(e) => {
             setType(e);
@@ -105,10 +110,10 @@ function Games() {
         </DropDown>
       </MenuList>
       <GamesGrid>
-        {filteredGames.length === 0 ?
-          (<Highlight>No Matches</Highlight>)
-          :
-          (filteredGames
+        {filteredGames.length === 0 ? (
+          <Highlight>No Matches</Highlight>
+        ) : (
+          filteredGames
             .filter((element, i) => i < indexShow)
             .map((e, i) => (
               <GameCard
@@ -120,10 +125,9 @@ function Games() {
                   setSelectedGame(e);
                   openGameModal();
                 }}
-
               />
-            )))
-        }
+            ))
+        )}
       </GamesGrid>
 
       {indexShow < filteredGames.length && (
