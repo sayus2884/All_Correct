@@ -66,9 +66,7 @@ function GameTesting({ games }) {
         ))}
       </GamesContainer>
 
-      <Link href="#" scroll={false}>
-        All localization and functional game testing projects &#10230;
-      </Link>
+      <Link href="/portfolio">All localization and functional game testing projects &#10230;</Link>
     </>
   );
 }

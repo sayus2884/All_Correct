@@ -13,40 +13,6 @@ function Reviews({ reviews = [], title = "Reviews" }) {
   let timeout;
   let interval;
 
-  // useEffect(() => {
-  // if (scrollDirection) {
-  //   interval = setInterval(() => {
-  //     if (carousel) {
-  //       carousel.current.style.scrollSnapType = "both mandatory";
-  //       carousel.current.style.scrollBehavior = "smooth";
-  //       if (scrollDirection === "backward") {
-  //         if (carousel.current.scrollLeft - carousel.current.offsetWidth <= 0) {
-  //           clearInterval(interval);
-  //           setDirection("forward");
-  //         }
-  //         carousel.current.scrollBy({
-  //           left: -carousel.current.offsetWidth / 2,
-  //           behavior: "smooth",
-  //         });
-  //       }
-  //       if (scrollDirection === "forward") {
-  //         if (
-  //           carousel.current.scrollLeft + carousel.current.offsetWidth >=
-  //           carousel.current.scrollWidth - carousel.current.offsetWidth
-  //         ) {
-  //           clearInterval(interval);
-  //           setDirection("backward");
-  //         }
-  //         carousel.current.scrollBy({
-  //           left: carousel.current.offsetWidth / 2,
-  //           behavior: "smooth",
-  //         });
-  //       }
-  //     }
-  //   }, 2000);
-  // }
-  // }, [scrollDirection]);
-
   function handleMouseDown(e) {
     const x = e.pageX - carousel.current.offsetLeft;
     setX(x >= 0 ? x : 0);
