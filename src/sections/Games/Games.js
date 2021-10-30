@@ -50,7 +50,9 @@ function Games() {
   };
 
   useEffect(() => {
-    setIndexShow(6);
+    if (indexShow === 0) {
+      setIndexShow(6);
+    }
   }, [filterGames]);
 
   useEffect(() => {
