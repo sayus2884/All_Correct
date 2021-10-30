@@ -44,7 +44,6 @@ export const GamesContainer = styled.ul`
   }
   &::-webkit-scrollbar-track {
     border-radius: 2px;
-    margin-right: min(2.8vw, 40px);
     background: linear-gradient(to top, transparent 0 35%, #c4c4c4 35% 65%, transparent 65% 100%);
   }
   &::-webkit-scrollbar-thumb {
