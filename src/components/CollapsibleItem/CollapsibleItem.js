@@ -16,8 +16,8 @@ function CollapsibleItem({ title, children }) {
   };
 
   return (
-    <Container onClick={handleClick}>
-      <HeaderContainer>
+    <Container>
+      <HeaderContainer onClick={handleClick}>
         <SubTitle>{title}</SubTitle>
         <DropdownButton isOpen={isOpen}>
           <SubTitle>&#10230;</SubTitle>
