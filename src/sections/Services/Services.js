@@ -10,6 +10,8 @@ import GameCard from "../../components/GameCard/GameCard.js";
 import GameModalContext from "../../context/GameModalContext";
 
 function GameTesting({ games }) {
+  const { setSelectedGame, openGameModal } = useContext(GameModalContext);
+
   return (
     <>
       <OrderedList>
@@ -51,14 +53,20 @@ function GameTesting({ games }) {
       <GamesContainer>
         {games.slice(0, 4).map((game, i) => (
           <li key={i}>
-            <GameCard game={game} width={325} height={221} />
+            <GameCard
+              game={game}
+              width={325}
+              height={221}
+              onClick={() => {
+                setSelectedGame(game);
+                openGameModal();
+              }}
+            />
           </li>
         ))}
       </GamesContainer>
 
-      <Link href="#" scroll={false}>
-        All localization and functional game testing projects &#10230;
-      </Link>
+      <Link href="/portfolio">All localization and functional game testing projects &#10230;</Link>
     </>
   );
 }

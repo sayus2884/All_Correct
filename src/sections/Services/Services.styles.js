@@ -34,6 +34,26 @@ export const GamesContainer = styled.ul`
   display: flex;
   gap: 20px;
   margin-top: 60px;
+  overflow-x: auto;
+  padding-bottom: 40px;
+
+  &::-webkit-scrollbar {
+    display: block;
+    cursor: pointer;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background: linear-gradient(to top, transparent 0 35%, #c4c4c4 35% 65%, transparent 65% 100%);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.blue};
+    background: linear-gradient(to top, transparent 0 25%, #4a8eff 25% 75%, transparent 75% 100%);
+    border-radius: 2px;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.blue};
+  }
 
   @media screen and (max-width: 376px) {
     flex-direction: column;
@@ -43,7 +63,7 @@ export const GamesContainer = styled.ul`
 
 export const Link = styled(OGLink)`
   align-self: end;
-  margin-top: 80px;
+  margin-top: 40px;
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;

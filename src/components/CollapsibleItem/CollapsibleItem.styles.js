@@ -4,9 +4,6 @@ import OGSubTitle from "../SubTitle/SubTitle";
 export const Container = styled.li`
   position: relative;
   border-bottom: 1px solid ${(props) => props.theme.colors.white};
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const HeaderContainer = styled.div`
@@ -15,6 +12,10 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   padding-bottom: 30px;
   align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 376px) {
     padding-bottom: 20px;
