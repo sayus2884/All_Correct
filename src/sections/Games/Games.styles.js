@@ -28,21 +28,6 @@ export const GamesGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   overflow: hidden;
-  animation: "shrink .5s ease-out forwards";
-
-  @keyframes shrink {
-    0% {
-      transform: scaleY(0) translateY(100px);
-      opacity: 0;
-    }
-    10% {
-      transform: scaleY(1) translateY(100px);
-    }
-    100% {
-      transform: scaleY(1) translateY(0);
-      opacity: 1;
-    }
-  }
 
   @media screen and (max-width: 376px) {
     grid-template-columns: 1fr;
@@ -57,17 +42,9 @@ export const GameCard = styled.div`
   grid-template-rows: min(21vw, 300px) min-content;
   opacity: 0;
   transform: translateY(${(props) => (props.delay > 0 ? "100vh" : 0)});
-  animation: ${(props) => `fadein .5s ${props.delay * 0.1}s forwards`};
 
   &:hover {
     cursor: pointer;
-  }
-
-  @keyframes fadein {
-    to {
-      opacity: 1;
-      transform: translate(0);
-    }
   }
 `;
 

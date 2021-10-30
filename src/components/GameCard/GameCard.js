@@ -2,9 +2,9 @@ import Highlight from "../Highlight/Highlight";
 import { Container, Img, Link } from "./GameCard.styles";
 import Image from "next/image";
 
-import { gameCardAnim } from '../../styles/animations';
+import { gameCardAnim } from "../../styles/animations";
 
-function GameCard({ game, width, height, onClick, index }) {
+function GameCard({ game, width, height, onClick, index, ...props }) {
   const { title, publisher, images } = game;
 
   const handleOnClick = (event) => {
@@ -13,8 +13,7 @@ function GameCard({ game, width, height, onClick, index }) {
   };
 
   return (
-    <Container delay={5} onClick={handleOnClick}
-      {...gameCardAnim}>
+    <Container delay={5} onClick={handleOnClick} {...gameCardAnim}>
       <Img width={width} height={height}>
         <Image
           src={images[0]}

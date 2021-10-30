@@ -1,14 +1,16 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import Image from "next/image";
 import { Section, MenuList, GamesGrid, Img, Text } from "./Games.styles";
+import { AnimatePresence } from "framer-motion";
 
 import DropDown from "../../components/DropDown/DropDown.js";
 import DropDownItem from "../../components/DropDownItem/DropDownItem.js";
 import GameCard from "../../components/GameCard/GameCard.js";
-import Image from "next/image";
-import { useState } from "react";
 
 import GameModalContext from "../../context/GameModalContext";
 import Highlight from "../../components/Highlight/Highlight";
+
+import { staggerOptions } from "../../styles/animations";
 
 function Games() {
   const { games, openGameModal, setSelectedGame } = useContext(GameModalContext);

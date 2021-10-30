@@ -7,17 +7,6 @@ export const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* grid-template-columns: minmax(300px, 440px); */
-  opacity: 0;
-  transform: translateY(${(props) => (props.delay > 0 ? "100vh" : 0)});
-  animation: ${(props) => `fadein .5s ${props.delay * 0.1}s forwards`};
-
-  @keyframes fadein {
-    to {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
 `;
 
 export const Img = styled.div`
