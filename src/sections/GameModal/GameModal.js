@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence } from "framer-motion";
 import { Overlay, Container, CloseButton } from "./GameModal.styles";
@@ -12,12 +12,30 @@ import { gameModalAnim } from "../../styles/animations";
 
 function GameModal(props) {
   const { selectedGame, showGameModal, closeGameModal } = useContext(GameModalContext);
-  const [mounted, setMounted] = useState(false);
 
   const handleClose = (event) => {
     event.preventDefault();
     closeGameModal();
   };
+
+  const handleOnEscapePress = useCallback(
+    (event) => {
+      if (event.key === "Escape" && showGameModal) {
+        closeGameModal();
+      }
+    },
+    [showGameModal],
+  );
+
+  useEffect(() => {
+    if (showGameModal) {
+      document.addEventListener("keydown", handleOnEscapePress);
+    } else {
+      document.removeEventListener("keydown", handleOnEscapePress);
+    }
+
+    return () => document.removeEventListener("keydown", handleOnEscapePress);
+  }, [showGameModal]);
 
   return (
     <Portal portalId="modal-root">
