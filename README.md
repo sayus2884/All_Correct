@@ -124,9 +124,9 @@ If you want to use pre-existing servers or cloud services, as long as it support
 
 ## Recommendations
 
-- To increase readability and maintainability of the code, it is recommended to adopt a global styling system. The recommended CSS framework to use is [Tailwind CSS](https://tailwindcss.com/) as it follows a utility-first philosophy and has a convenient configuration file that is easy to manage and integrate into the project.
+- To increase readability and maintainability of the code, it is recommended to adopt a global styling system. The recommended CSS framework to use is [Tailwind CSS](https://tailwindcss.com/) as it follows a utility-first philosophy and has a convenient configuration file that is easy to manage and integrate into the project. Wichever CSS library you do use, you can remove cuttering coponents in the project such as `Title`, `Text`, `Subtext`, and etc.  
 
-  You can find an example usage of it [here](https://github.com/sayus2884/portfolio).
+  You can find an example usage of Tailwind [here](https://github.com/sayus2884/portfolio).
 
 - When creating components, use **colocation** as much as possible. Colocation, in context with the project, means that any logic, state, or information should be closely tied to it's component as much as possible to avoid multiple renders that causes the website to run slow.
 
