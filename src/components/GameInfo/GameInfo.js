@@ -67,7 +67,7 @@ function GameInfo({ game }) {
           <Carousel
             style={{ margin: 0 }}
             selectedItem={index}
-            showArrows={false}
+            showArrows={images.length > 1 ? true : false}
             showStatus={false}
             showThumbs={false}
             showIndicators={false}>
