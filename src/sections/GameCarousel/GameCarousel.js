@@ -29,16 +29,15 @@ function GameCarousel() {
     <Section>
       <Carousel
         showStatus={false}
-        // showArrows={false}
         showThumbs={false}
         emulateTouch={true}
-        autoPlay={true}
+        autoPlay={false}
         interval={2500}
         transitionTime={700}
         infiniteLoop={true}>
         {carouselGames.slice(0, 5).map((game, index) => (
           <Item key={index}>
-            <ImageWrapper onClick={handleOpenGameModal} data-index={index}>
+            <ImageWrapper data-index={index}>
               <Image
                 alt={game.title}
                 src={game.images[0]}
