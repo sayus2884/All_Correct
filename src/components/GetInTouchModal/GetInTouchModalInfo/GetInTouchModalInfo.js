@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import ErrorBoundary from "../../ErrorBoundary/ErrorBoundary";
 
@@ -12,26 +12,18 @@ import {
   CheckItem,
 } from "../GetInTouchModal.styles";
 import Checkbox from "../../Checkbox/Checkbox";
+import Highlight from "../../Highlight/Highlight";
 
 const GetInTouchModalInfo = ({ handleSubmit, handleChange, formFields, buttonDisabled }) => {
   const [isChecked, setIsChecked] = useState(false);
-  const [buttonStyle, setButtonStyle] = useState(true);
   const [fileName, setFileName] = useState("");
-
-  React.useEffect(() => {
-    if (isChecked === true && buttonDisabled === false) {
-      setButtonStyle(false);
-    } else {
-      setButtonStyle(true);
-    }
-  }, [isChecked, buttonDisabled]);
 
   function FileNameChangeHandler(e) {
     setFileName(e.target.value);
   }
 
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <Title>Get in Touch</Title>
       <ErrorBoundary>
         <input
@@ -68,38 +60,33 @@ const GetInTouchModalInfo = ({ handleSubmit, handleChange, formFields, buttonDis
           <input type="file" value={fileName} onChange={FileNameChangeHandler} />
           {fileName.length === 0 ? "Add files if needed" : fileName.slice(12, 31)}
         </label>
-        {/* <CheckboxWrapper>
-          <input
-            type="checkbox"
-            name="GDPR Agreement"
-            value="GDPR Agreement"
-            onChange={() => setChecked(!checked)}
-          />
-          <Text>GDPR Agreement</Text>
-        </CheckboxWrapper> */}
+
         <CheckItem>
           <Checkbox
             name="GDPR Agreement"
             value="GDPR Agreement"
             colorChange={true}
-            isChecked={isChecked}
-            setIsChecked={setIsChecked}
+            onChange={(e) => {
+              setIsChecked(e.target.checked);
+            }}
           />
           <Text as="span">GDPR Agreement</Text>
         </CheckItem>
 
         <Info>
           Please note that this form is strictly for project inquiries only. To apply for a job,
-          please visit our
+          please visit our{" "}
           <Link href="https://allcorrectgames.com/for-freelancers/" target="_blank" noopener="true">
-            <a>career page.</a>
+            <a>
+              <Highlight>career page.</Highlight>
+            </a>
           </Link>
         </Info>
-        <Button handleDisabledStyled={buttonStyle} onClick={handleSubmit} disabled={buttonDisabled}>
+        <Button type="submit" disabled={!isChecked || buttonDisabled}>
           Send the form &#10230;
         </Button>
       </ErrorBoundary>
-    </>
+    </form>
   );
 };
 

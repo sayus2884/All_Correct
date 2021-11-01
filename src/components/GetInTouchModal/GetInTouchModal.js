@@ -33,7 +33,7 @@ const GetInTouchModal = () => {
     } else {
       setButtonDisabled(true);
     }
-  }, [name, email, message, formFields]);
+  }, [formFields]);
 
   const handleOutsideClick = (e) => {
     if (modalRef.current === e.target) {
@@ -87,7 +87,7 @@ const GetInTouchModal = () => {
       {showModal && (
         <Background onClick={handleOutsideClick} ref={modalRef}>
           <ModalWrapper role="Form Inquiry" aria-labelledby="Form Inquiry" {...getInTouchModalAnim}>
-            <form>
+            <div>
               {step === 1 && submitted ? (
                 <GetInTouchConfirm closeModal={closeModal} />
               ) : (
@@ -100,7 +100,7 @@ const GetInTouchModal = () => {
                   closeModal={closeModal}
                 />
               )}
-            </form>
+            </div>
           </ModalWrapper>
         </Background>
       )}

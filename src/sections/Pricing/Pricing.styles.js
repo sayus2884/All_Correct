@@ -15,6 +15,8 @@ export const Title = styled(OGTitle)`
   }
 `;
 
+export const PricingForm = styled.form``;
+
 export const TextWrapper = styled.div`
   display: flex;
   margin-bottom: 84px;
@@ -115,4 +117,10 @@ export const FormButton = styled.button.attrs({ type: "submit" })`
   @media screen and (max-width: 376px) {
     text-align: left;
   }
+`;
+
+export const ThankYouText = styled.h3`
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.21;
 `;

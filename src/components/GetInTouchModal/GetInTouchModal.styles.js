@@ -10,7 +10,7 @@ export const Background = styled(motion.div)`
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 20;
 `;
 
 export const ModalWrapper = styled(motion.div)`
@@ -146,13 +146,17 @@ export const Button = styled.button`
   line-height: 39px;
   letter-spacing: -0.02em;
 
-  color: ${(props) =>
-    props.handleDisabledStyled ? props.theme.colors.grey : props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.blue};
   background-color: ${(props) => props.theme.colors.white};
   outline: none;
   border: none;
 
   &:hover {
-    cursor: ${(props) => (props.handleDisabledStyled ? "not-allowed" : "pointer")};
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: ${(props) => props.theme.colors.grey};
+    cursor: not-allowed;
   }
 `;
