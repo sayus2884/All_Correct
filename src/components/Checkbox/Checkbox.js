@@ -9,7 +9,7 @@ function Checkbox({ colorChange, isChecked, setIsChecked }) {
 
   const handleCheckboxChange = (e) => {
     setChecked(e.target.checked);
-    setIsChecked(!isChecked);
+    isChecked ? setIsChecked(!isChecked) : null;
   };
 
   return (
