@@ -109,6 +109,7 @@ export const FormButton = styled.button.attrs({ type: "submit" })`
   color: ${({ theme }) => theme.colors.blue};
   background: none;
   border: none;
+  cursor: pointer;
 
   @media screen and (max-width: 1025px) {
     text-align: right;
