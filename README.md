@@ -120,7 +120,7 @@ To build the project and get production ready code, just run `npm run build`
 
 The recommended way to deploy the project is through Vercel's platform. You can read this [documentation](https://nextjs.org/docs/deployment).
 
-If you want to use pre-existing servers or cloud services, as long as it supports hosting **Node.js** web application, refer to this [documentation](https://nextjs.org/docs/deployment#other-hosting-options).
+If you want to use pre-existing servers or cloud services, as long as it supports hosting **Node.js** web applications, refer to this [documentation](https://nextjs.org/docs/deployment#other-hosting-options).
 
 ## Recommendations
 
@@ -133,3 +133,5 @@ If you want to use pre-existing servers or cloud services, as long as it support
   A good use case for it is a sign in form with `username` and `password` inputs. In React, in order to get the value in any text input, you need to use the `onChange` handler which causes the whole component that the input is located in, to render every key press. So if you placed the state for that input on top website's tree, you'll slow down the website's performance. To avoid this, it is always best to separate forms in their own component as opposed to placing them inside parent components that has complex states in them. You can read more about colocation [here](https://kentcdodds.com/blog/state-colocation-will-make-your-react-app-faster).
   
 - The `GetInTouch` form and `Checkbox` components needs to be refactored. Much of the logic is all over the place, making the component hard to maintain or change.
+
+- There were no set coding standards implemented in the duration of the project, making some parts of the project hard to maintain or read. It is recommended to set one so future developers know what to expect and how to code in the project.
