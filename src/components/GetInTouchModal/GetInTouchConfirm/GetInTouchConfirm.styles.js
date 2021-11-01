@@ -6,6 +6,9 @@ export const Container = styled.div`
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
+
+  margin: 40px;
+  gap: 20px;
 `;
 
 export const TextWrapper = styled.div`
