@@ -4,7 +4,7 @@ import checkmark from "../../../public/images/checkbox/checkmark.svg";
 import checkmarkBlue from "../../../public/images/checkbox/checkmarkBlue.svg";
 import Image from "next/image";
 
-function Checkbox({ colorChange, onChange }) {
+function Checkbox({ colorChange, onChange = () => {} }) {
   const [checked, setChecked] = useState(false);
 
   const handleCheckboxChange = (e) => {
