@@ -6,7 +6,7 @@ import OGButton from "../../components/Button/Button.js";
 export const Section = styled(OGSection)`
   margin-top: 100px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-top: 60px;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ export const FilterOptions = styled.ul`
   gap: 20px;
   margin-bottom: 80px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     gap: 16px 10px;
   }
 `;
@@ -44,7 +44,7 @@ export const TopHeadline = styled.div`
   gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     grid-template-columns: 1fr;
   }
 `;

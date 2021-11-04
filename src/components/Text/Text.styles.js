@@ -11,7 +11,7 @@ export const Paragraph = styled.p`
     font-weight: bold;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     font-size: 16px;
     line-height: 20px;
   }

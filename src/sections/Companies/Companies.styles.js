@@ -18,7 +18,7 @@ export const SubTitle = styled(OGSubTitle)`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     font-size: 32px;
     line-height: 39px;
 
@@ -41,7 +41,7 @@ export const CompanyList = styled.ul`
     grid-template-columns: calc(231px + 104px - 44px) repeat(4, 130px);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-top: 50px;
     row-gap: 32px;
     justify-items: center;
@@ -56,7 +56,7 @@ export const CompanyItem = styled.li`
     display: block;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     &.mobile {
       display: none;
     }

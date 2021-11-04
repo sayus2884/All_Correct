@@ -6,7 +6,7 @@ export const Title = styled(OGTitle)`
     margin-bottom: 40px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     line-height: 39px;
 
     &.section-title {
@@ -26,7 +26,7 @@ export const TextWrapper = styled.div`
     margin-bottom: 16px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     margin-bottom: 60px;
 
@@ -42,7 +42,7 @@ export const CheckWrapper = styled.div`
   flex-direction: column;
   margin-left: 136px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin: 40px 0 0;
     gap: 24px;
   }
@@ -73,7 +73,7 @@ export const EmailWrapper = styled.div`
     gap: 60px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-top: 32px;
     font-size: 32px;
     line-height: 39px;
@@ -98,7 +98,7 @@ export const EmailInput = styled.input`
     width: 100%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     height: 100%;
     width: 100%;
     padding-bottom: 4px;
@@ -115,7 +115,7 @@ export const FormButton = styled.button.attrs({ type: "submit" })`
     text-align: right;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     text-align: left;
   }
 `;

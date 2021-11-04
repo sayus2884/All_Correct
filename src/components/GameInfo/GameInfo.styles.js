@@ -6,7 +6,7 @@ import OGSubText from "../../components/SubText/SubText.js";
 export const Title = styled(OGTitle)`
   margin-bottom: 40px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-left: 16px;
     max-width: 299px;
   }
@@ -20,7 +20,7 @@ export const TwoColumns = styled.div`
     gap: 20px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     gap: 44px;
   }
@@ -35,7 +35,7 @@ export const CarouselContainer = styled.div`
     min-width: 733px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     max-width: unset;
     min-width: unset;
     width: 100%;
@@ -53,7 +53,7 @@ export const Controller = styled.div`
   justify-content: space-between;
   margin-top: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin: 20px 16px 0;
   }
 `;
@@ -86,7 +86,7 @@ export const InfoContainer = styled.ul`
   flex-direction: column;
   gap: 32px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin: 0 16px;
   }
 `;
@@ -112,7 +112,7 @@ export const SubText = styled(OGSubText)`
     display: none;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     &.date {
       display: none;
     }

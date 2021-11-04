@@ -14,7 +14,7 @@ export const Section = styled(OGSection)`
     margin-bottom: 160px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin: 60px 0 100px;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@ export const Carousel = styled(Slider)`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     & .carousel {
       position: unset;
     }
@@ -66,7 +66,7 @@ export const Item = styled.div`
   width: 100%;
   gap: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
   }
 `;
@@ -81,7 +81,7 @@ export const ImageWrapper = styled.div`
     width: 650px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     height: 211px;
     width: 100%;
   }
@@ -99,7 +99,7 @@ export const TitleContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     padding: 0 16px;
   }
 `;
@@ -107,7 +107,7 @@ export const TitleContainer = styled.div`
 export const SubTitle = styled(OGSubTitle)`
   text-align: left;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     display: inline-block;
     font-size: 22px;
     line-height: 27px;
@@ -123,7 +123,7 @@ export const Link = styled(OGLink)`
   bottom: 0;
   right: 40px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     display: inline-block;
     position: unset;
     width: fit-content;

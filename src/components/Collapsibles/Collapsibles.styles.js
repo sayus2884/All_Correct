@@ -7,7 +7,7 @@ export const Container = styled.ul`
   flex-direction: column;
   gap: 70px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     gap: 40px;
   }
 `;

@@ -11,7 +11,7 @@ export const Btn = styled.button`
     cursor: pointer;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     padding: 5px 16px;
   }
 `;

@@ -10,7 +10,7 @@ export const Section = styled(OGSection)`
   margin: 100px 0 310px;
   gap: 100px 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ export const Column = styled.div`
     grid-column: span 2;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     &.mobile-hidden {
       display: none;
     }
@@ -51,7 +51,7 @@ export const Link = styled(OGLink)`
     display: none;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     &.mobile-show {
       display: block;
     }
