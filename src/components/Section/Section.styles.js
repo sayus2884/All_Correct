@@ -14,7 +14,7 @@ export const Section = styled(motion.section)`
     padding: 0 20px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-bottom: 160px;
     padding: 0 16px;
   }

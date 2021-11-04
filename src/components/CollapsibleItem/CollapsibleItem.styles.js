@@ -17,13 +17,13 @@ export const HeaderContainer = styled.div`
     cursor: pointer;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     padding-bottom: 20px;
   }
 `;
 
 export const SubTitle = styled(OGSubTitle)`
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     font-size: 24px;
     line-height: 30px;
     max-width: 290px;
@@ -64,7 +64,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     gap: 30px;
   }

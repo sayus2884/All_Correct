@@ -55,7 +55,7 @@ export const GamesContainer = styled.ul`
     background: ${(props) => props.theme.colors.blue};
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     gap: 50px;
   }
@@ -70,7 +70,7 @@ export const Link = styled(OGLink)`
   letter-spacing: -0.01em;
   max-width: 482px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-top: 60px;
   }
 `;

@@ -6,7 +6,7 @@ import OGText from "../../components/Text/Text.js";
 export const Section = styled(OGSection)`
   margin-top: 180px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     margin-top: 100px;
   }
 `;
@@ -28,7 +28,7 @@ export const LinksContainer = styled.div`
   justify-content: end;
   gap: 71px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     flex-direction: column;
   }
 `;
