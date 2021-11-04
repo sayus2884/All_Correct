@@ -14,7 +14,7 @@ export const Container = styled.nav`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     padding: 20px 16px 0;
     min-height: unset;
 
@@ -27,7 +27,7 @@ export const Container = styled.nav`
 export const Title = styled(OGTitle)`
   font-weight: 900;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     font-size: 36px;
     line-height: 44px;
   }
@@ -40,7 +40,7 @@ export const Link = styled(OGLink)`
     max-width: 378px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     max-width: 222px;
   }
 `;
@@ -55,7 +55,7 @@ export const HamburgerButton = styled(OGButton)`
   height: 44px;
   width: 44px;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     display: block;
   }
 `;
@@ -79,7 +79,7 @@ export const Menu = styled.div`
     justify-self: end;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     display: none;
 
     &.footer {

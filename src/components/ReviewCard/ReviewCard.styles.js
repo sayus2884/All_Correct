@@ -21,7 +21,7 @@ export const Container = styled.div`
     max-height: 364px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     max-height: unset;
     padding: 24px 12px 22px;
   }
@@ -46,7 +46,7 @@ export const Text = styled(OGText)`
     overflow: hidden;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     &.description {
       max-width: 309px;
     }
@@ -54,7 +54,7 @@ export const Text = styled(OGText)`
 `;
 
 export const SubText = styled(OGSubText)`
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     text-align: right;
   }
 `;

@@ -26,7 +26,7 @@ export const Container = styled.div`
     margin: 40px 20px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     margin: 35px 0 40px;
   }
 `;
@@ -50,7 +50,7 @@ export const CloseButton = styled.button`
     right: 20px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     top: 0.5rem;
     right: 16px;
   }

@@ -9,12 +9,12 @@ import OGSubTitle from "../../components/SubTitle/SubTitle";
 export const Section = styled(OGSection)`
   margin: 100px 0 160px;
 
-  @media screen and (max-width: 1025px) {
+  @media (max-width: 1025px) {
     margin-top: 38px;
     margin-bottom: 160px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     margin: 60px 0 100px;
     display: flex;
     flex-direction: column;
@@ -37,13 +37,13 @@ export const Carousel = styled(Slider)`
     }
   }
 
-  @media screen and (max-width: 1025px) {
+  @media (max-width: 1025px) {
     & .carousel .control-dots {
       left: 670px;
     }
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     & .carousel {
       position: unset;
     }
@@ -66,7 +66,7 @@ export const Item = styled.div`
   width: 100%;
   gap: 20px;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 `;
@@ -76,12 +76,12 @@ export const ImageWrapper = styled.div`
   height: 507px;
   width: 901px;
 
-  @media screen and (max-width: 1025px) {
+  @media (max-width: 1025px) {
     height: 366px;
     width: 650px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     height: 211px;
     width: 100%;
   }
@@ -99,7 +99,7 @@ export const TitleContainer = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     padding: 0 16px;
   }
 `;
@@ -107,7 +107,7 @@ export const TitleContainer = styled.div`
 export const SubTitle = styled(OGSubTitle)`
   text-align: left;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     display: inline-block;
     font-size: 22px;
     line-height: 27px;
@@ -123,7 +123,7 @@ export const Link = styled(OGLink)`
   bottom: 0;
   right: 40px;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     display: inline-block;
     position: unset;
     width: fit-content;

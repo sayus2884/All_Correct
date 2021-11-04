@@ -6,7 +6,7 @@ export const Title = styled(OGTitle)`
     margin-bottom: 40px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     line-height: 39px;
 
     &.section-title {
@@ -26,7 +26,7 @@ export const TextWrapper = styled.div`
     margin-bottom: 16px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     margin-bottom: 60px;
 
@@ -42,7 +42,7 @@ export const CheckWrapper = styled.div`
   flex-direction: column;
   margin-left: 136px;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     margin: 40px 0 0;
     gap: 24px;
   }
@@ -73,7 +73,7 @@ export const EmailWrapper = styled.div`
     gap: 60px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     margin-top: 32px;
     font-size: 32px;
     line-height: 39px;
@@ -81,12 +81,12 @@ export const EmailWrapper = styled.div`
   }
 `;
 
-export const EmailInput = styled.input.attrs({ type: "email" })`
+export const EmailInput = styled.input`
   width: 785px;
-  color: #c4c4c4;
   padding-bottom: 16px;
-  background-color: ${({ theme }) => theme.colors.dark};
-  border: none;
+  color: white;
+  background-color: transparent;
+  border: 2px solid transparent;
   border-bottom: 1px solid #c4c4c4;
   font-weight: 700;
 
@@ -98,7 +98,7 @@ export const EmailInput = styled.input.attrs({ type: "email" })`
     width: 100%;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     height: 100%;
     width: 100%;
     padding-bottom: 4px;
@@ -115,7 +115,7 @@ export const FormButton = styled.button.attrs({ type: "submit" })`
     text-align: right;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     text-align: left;
   }
 `;

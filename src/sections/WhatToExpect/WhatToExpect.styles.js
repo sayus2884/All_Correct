@@ -43,7 +43,7 @@ export const ExpectList = styled.ol`
     align-items: center;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 `;

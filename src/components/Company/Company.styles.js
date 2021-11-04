@@ -7,7 +7,7 @@ export const Container = styled.li`
     transform: translateX(-100px);
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     &:nth-child(n + 6) {
       transform: unset;
     }
@@ -19,7 +19,7 @@ export const ImageWrapper = styled.div`
   width: 130px;
   position: relative;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     height: 80px;
     width: 80px;
   }

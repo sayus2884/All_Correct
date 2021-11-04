@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
     gap: 80px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     gap: 80px;
 
@@ -78,7 +78,7 @@ export const Copyright = styled.div`
     display: flex;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     gap: 20px;
 
@@ -104,7 +104,7 @@ export const SocialWrapper = styled.ul`
   gap: 22px;
   align-self: end;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     align-self: start;
   }
 `;

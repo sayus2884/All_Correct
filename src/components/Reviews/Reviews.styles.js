@@ -13,7 +13,7 @@ export const Title = styled(OGTitle)`
     margin-bottom: 60px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     &.section-title {
       margin-bottom: 40px;
     }
@@ -55,7 +55,7 @@ export const ReviewsContainer = styled.div`
     gap: 12px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     grid-auto-columns: 309px;
     grid-template-rows: 638px;
     gap: 12px;
