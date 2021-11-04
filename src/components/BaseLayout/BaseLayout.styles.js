@@ -10,7 +10,7 @@ export const GlobalWrapper = styled.div`
   margin: auto;
   min-height: 100vh;
 
-  @media screen and (max-width: 376px) {
-    max-width: 375px;
+  @media (max-width: 600px) {
+    max-width: 600px;
   }
 `;

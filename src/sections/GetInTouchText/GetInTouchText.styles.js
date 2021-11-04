@@ -6,13 +6,13 @@ import OGTitle from "../../components/Title/Title.js";
 export const Section = styled(OGSection)`
   margin: 250px 0;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     margin: 160px 0;
   }
 `;
 
 export const Title = styled(OGTitle)`
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     max-width: 222px;
   }
 `;

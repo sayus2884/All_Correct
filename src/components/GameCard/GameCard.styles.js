@@ -18,7 +18,7 @@ export const Img = styled.div`
     min-height: 214px;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     min-height: 232px;
   }
 `;

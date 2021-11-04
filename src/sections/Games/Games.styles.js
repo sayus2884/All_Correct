@@ -5,7 +5,7 @@ export const Section = styled(OGSection)`
   overflow: visible;
   padding-top: 100px;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     padding-top: 60px;
   }
 `;
@@ -15,7 +15,7 @@ export const MenuList = styled.ul`
   display: flex;
   gap: 40px;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     flex-direction: column;
   }
 `;
@@ -29,7 +29,7 @@ export const GamesGrid = styled.div`
   grid-auto-rows: auto;
   overflow: hidden;
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
     row-gap: 40px;
   }
@@ -73,7 +73,7 @@ export const Text = styled.p`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 376px) {
+  @media (max-width: 600px) {
     &.button {
       text-align: center;
     }
