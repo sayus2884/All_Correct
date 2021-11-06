@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
     transition: all 350ms ease-in-out;
   }
 
-  textarea:focus, input:focus {
+  textarea:focus, textarea:focus-visible, input:focus, input:focus-visible {
     outline: none;
   }
 `;
