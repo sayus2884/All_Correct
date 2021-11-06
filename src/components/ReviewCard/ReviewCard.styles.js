@@ -46,8 +46,15 @@ export const Text = styled(OGText)`
     overflow: hidden;
   }
 
+  @media screen and (max-width: 1025px) {
+    &.description {
+      max-height: 180px;
+    }
+  }
+
   @media (max-width: 500px) {
     &.description {
+      max-height: 460px;
       max-width: 309px;
     }
   }
