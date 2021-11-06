@@ -35,6 +35,10 @@ const GlobalStyles = createGlobalStyle`
     -webkit-transition: all 350ms ease-in-out;
     transition: all 350ms ease-in-out;
   }
+
+  textarea:focus, input:focus {
+    outline: none;
+  }
 `;
 
 export default GlobalStyles;
