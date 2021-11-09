@@ -108,6 +108,7 @@ The project file settings, found in the root of the project, are configuration f
 
 - **package.json**. Contains the dependency packages that the website needs and command scripts to build or run the project locally.
 - **prettier.config.js**. Contains the configuration settings for the [prettier](https://prettier.io/) code formatter for a cleaner code.
+- **next.config.js**. Contains the configuration settings for the Next.js project.
 - **.babelrc**. Contains the settings for Babel, a Javascript compiler, to compile the code into a backwards compatible code for older browsers.
 - **.gitignore**. Ignores the files that you don't want in your git repository.
 - **.prettierignore**. Ignores the files that you don't need to refactor with the same coding style specified in `prettier.config.js`.
@@ -121,6 +122,8 @@ To build the project and get production ready code, just run `npm run build`
 The recommended way to deploy the project is through Vercel's platform. You can read this [documentation](https://nextjs.org/docs/deployment).
 
 If you want to use pre-existing servers or cloud services, as long as it supports hosting **Node.js** web applications, refer to this [documentation](https://nextjs.org/docs/deployment#other-hosting-options).
+
+If you want to get the static html files, go to the `next.config.js` and uncomment the **images** config object. In your command line, run `npm run export`. An `out` folder containing the static files wil be built inside the root folder of the project. You can refer to this [documentation](https://nextjs.org/docs/advanced-features/static-html-export) for clearer instructions.
 
 ## Recommendations
 
