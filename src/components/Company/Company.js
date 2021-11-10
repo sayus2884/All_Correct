@@ -1,5 +1,5 @@
 import { Container, Link, ImageWrapper } from "./Company.styles";
-import Image from "next/image";
+import Image from "next-optimized-images";
 
 function Company({ url, src, alt }) {
   return (

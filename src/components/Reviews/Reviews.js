@@ -1,5 +1,5 @@
 import { Container, Title, ReviewsContainer, Review, Body, Logo, Img } from "./Reviews.styles";
-import Image from "next/image";
+import Image from "next-optimized-images";
 import { useEffect, useRef, useState } from "react";
 
 import ReviewCard from "../ReviewCard/ReviewCard";

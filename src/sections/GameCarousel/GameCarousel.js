@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import Image from "next/image";
+import Image from "next-optimized-images";
 import Highlight from "../../components/Highlight/Highlight";
 import SubText from "../../components/SubText/SubText";
 import {

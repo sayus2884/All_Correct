@@ -1,6 +1,6 @@
 import Highlight from "../Highlight/Highlight";
 import { Container, Img, Link } from "./GameCard.styles";
-import Image from "next/image";
+import Image from "next-optimized-images";
 
 import { gameCardAnim } from "../../styles/animations";
 

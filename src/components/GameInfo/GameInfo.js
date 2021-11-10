@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import Image from "next/image";
+import Image from "next-optimized-images";
 import { Carousel } from "react-responsive-carousel";
 import {
   Title,

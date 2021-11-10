@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next-optimized-images";
 import { Section, MenuList, GamesGrid, Img, Text } from "./Games.styles";
 import { AnimatePresence } from "framer-motion";
 
