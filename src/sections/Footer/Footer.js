@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next-optimized-images";
 import facebookLogo from "../../../public/images/logos/facebook.svg";
 import linkedinLogo from "../../../public/images/logos/linkedin.svg";
 import mediumLogo from "../../../public/images/logos/medium.svg";

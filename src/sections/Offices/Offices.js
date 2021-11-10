@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next-optimized-images";
 import { Section } from "./Offices.styles";
 import Title from "../../components/Title/Title.js";
 

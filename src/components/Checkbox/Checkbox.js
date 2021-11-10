@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CheckboxContainer, HiddenCheckbox, StyledCheckbox } from "./Checkbox.styles";
 import checkmark from "../../../public/images/checkbox/checkmark.svg";
 import checkmarkBlue from "../../../public/images/checkbox/checkmarkBlue.svg";
-import Image from "next/image";
+import Image from "next-optimized-images";
 
 function Checkbox({ colorChange, onChange = () => {} }) {
   const [checked, setChecked] = useState(false);

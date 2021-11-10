@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import Image from "next/image";
+import Image from "next-optimized-images";
 import {
   Section,
   GoBack,

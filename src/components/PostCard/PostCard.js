@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next-optimized-images";
 import { Container, Content, ImageWrapper, Title, Description } from "./PostCard.styles";
 
 function PostCard({ post, isHeadline = false }) {
